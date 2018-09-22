@@ -16,7 +16,7 @@ public class Auditorio {
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
 		this.tipoAudiotorio = tipoAudiotorio;
-		//this.butacas = new Butaca[];
+		setButacas();
 	}
 
 	public int getIdAuditorio() {
@@ -55,7 +55,7 @@ public class Auditorio {
 		return butacas;
 	}
 
-	/*public void setButacas() {
+	public void setButacas() {
 		int i, j, k;
 		for(k=0;k<this.lstSecciones.size();k++) {
 			for (i=0;i<this.lstSecciones.get(k).getCantFilas();i++) {
@@ -64,6 +64,6 @@ public class Auditorio {
 				}
 			}
 		}
-	}*/
+	}
 	
 }
