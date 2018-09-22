@@ -7,16 +7,13 @@ public class Auditorio {
 	private String nombre;
 	private List<Seccion> lstSecciones= new ArrayList<Seccion>();
 	private TipoAuditorio tipoAudiotorio;
-	private Butaca[][] butacas;
 	
 	public Auditorio(){}
 
-	public Auditorio(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAudiotorio,
-			Butaca[][] butaca) {
+	public Auditorio(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAudiotorio) {
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
 		this.tipoAudiotorio = tipoAudiotorio;
-		setButacas();
 	}
 
 	public int getIdAuditorio() {
@@ -51,19 +48,10 @@ public class Auditorio {
 		this.tipoAudiotorio = tipoAudiotorio;
 	}
 
-	public Butaca[][] getButacas() {
-		return butacas;
+	@Override
+	public String toString() {
+		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", lstSecciones=" + lstSecciones
+				+ ", tipoAudiotorio=" + tipoAudiotorio + "]";
 	}
 
-	public void setButacas() {
-		int i, j, k;
-		for(k=0;k<this.lstSecciones.size();k++) {
-			for (i=0;i<this.lstSecciones.get(k).getCantFilas();i++) {
-				for (j=0;j<this.lstSecciones.get(k).getCantColumnas();j++) {
-					this.butacas[i][j] = new Butaca(i+1,j+1);
-				}
-			}
-		}
-	}
-	
 }

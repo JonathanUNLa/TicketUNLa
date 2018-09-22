@@ -1,6 +1,7 @@
 package datos;
 
 public class Butaca {
+	private int idButaca;
 	private int fila;
 	private int columna;
 	
@@ -9,6 +10,14 @@ public class Butaca {
 	public Butaca(int fila, int columna) {
 		this.fila = fila;
 		this.columna = columna;
+	}
+
+	public int getIdButaca() {
+		return idButaca;
+	}
+
+	protected void setIdButaca(int idButaca) {
+		this.idButaca = idButaca;
 	}
 
 	public int getFila() {
@@ -29,7 +38,7 @@ public class Butaca {
 
 	@Override
 	public String toString() {
-		return "Butaca [fila=" + fila + ", columna=" + columna + "]";
+		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + "]";
 	}
 	
 }

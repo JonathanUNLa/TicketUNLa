@@ -8,8 +8,8 @@
 			<generator class="identity"/>
 		</id>
 		<property column="nombre" name="nombre" type="string"/>
-		<many-to-one name = "TipoAuditorio" class = "datos.TipoAuditorio"
-		column = "TipoAuditorio" not-null = "true"/>
+		<many-to-one name = "tipoAuditorio" class = "datos.TipoAuditorio"
+		column = "tipoAuditorio" not-null = "true"/>
 		<set name = "lstSecciones" table = "Seccion" order-by = "idSeccion asc"
 		inverse = "true" lazy = "true" fetch = "select">
 			<key column = "idAuditorio" not-null = "true"/>

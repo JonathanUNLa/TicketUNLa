@@ -1,19 +1,21 @@
 package datos;
 
+import java.util.*;
+
 public class Seccion {
 	private int idSeccion;
 	private String nombreSeccion;
-	private int cantFilas;
-	private int cantColumnas;
 	private double precioSeccion;
+	private List<Butaca> lstButacas = new ArrayList<Butaca>();
 	
 	public Seccion() {}
 
-	public Seccion(String nombreSeccion, int cantFilas, int cantColumnas, double precioSeccion) {
+	public Seccion(int idSeccion, String nombreSeccion, double precioSeccion, List<Butaca> lstButacas) {
+		super();
+		this.idSeccion = idSeccion;
 		this.nombreSeccion = nombreSeccion;
-		this.cantFilas = cantFilas;
-		this.cantColumnas = cantColumnas;
 		this.precioSeccion = precioSeccion;
+		this.lstButacas = lstButacas;
 	}
 
 	public int getIdSeccion() {
@@ -32,20 +34,12 @@ public class Seccion {
 		this.nombreSeccion = nombreSeccion;
 	}
 
-	public int getCantFilas() {
-		return cantFilas;
+	public List<Butaca> getLstButacas() {
+		return lstButacas;
 	}
 
-	public void setCantFilas(int cantFilas) {
-		this.cantFilas = cantFilas;
-	}
-
-	public int getCantColumnas() {
-		return cantColumnas;
-	}
-
-	public void setCantColumnas(int cantColumnas) {
-		this.cantColumnas = cantColumnas;
+	public void setLstButacas(List<Butaca> lstButacas) {
+		this.lstButacas = lstButacas;
 	}
 
 	public double getPrecioSeccion() {
@@ -58,8 +52,8 @@ public class Seccion {
 
 	@Override
 	public String toString() {
-		return "Seccion [idSeccion=" + idSeccion + ", nombreSeccion=" + nombreSeccion + ", cantFilas=" + cantFilas
-				+ ", cantColumnas=" + cantColumnas + ", precioSeccion=" + precioSeccion + "]";
+		return "Seccion [idSeccion=" + idSeccion + ", nombreSeccion=" + nombreSeccion + ", precioSeccion="
+				+ precioSeccion + ", lstButacas=" + lstButacas + "]";
 	}
 	
 }

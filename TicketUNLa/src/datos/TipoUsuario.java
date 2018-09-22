@@ -2,14 +2,14 @@ package datos;
 
 public class TipoUsuario {
 	private int idTipoUsuario;
-	private String nombre;
+	private String nombreTipo;
 	private TipoBeneficio tipoBeneficio;
 	private Auditorio auditorio;
 	
 	public TipoUsuario() {}
 	
-	public TipoUsuario(String nombre, TipoBeneficio tipoBeneficio, Auditorio auditorio) {
-		this.nombre = nombre;
+	public TipoUsuario(String nombreTipo, TipoBeneficio tipoBeneficio, Auditorio auditorio) {
+		this.nombreTipo = nombreTipo;
 		this.tipoBeneficio = tipoBeneficio;
 		this.auditorio = auditorio;
 	}
@@ -22,12 +22,12 @@ public class TipoUsuario {
 		this.idTipoUsuario = idTipoUsuario;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getnombreTipo() {
+		return nombreTipo;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setnombreTipo(String nombreTipo) {
+		this.nombreTipo = nombreTipo;
 	}
 
 	public TipoBeneficio getTipoBeneficio() {
@@ -48,7 +48,7 @@ public class TipoUsuario {
 
 	@Override
 	public String toString() {
-		return "TipoUsuario [idTipoUsuario=" + idTipoUsuario + ", nombre=" + nombre + ", tipoBeneficio=" + tipoBeneficio
+		return "TipoUsuario [idTipoUsuario=" + idTipoUsuario + ", nombreTipo=" + nombreTipo + ", tipoBeneficio=" + tipoBeneficio
 				+ ", auditorio=" + auditorio + "]";
 	}
 	

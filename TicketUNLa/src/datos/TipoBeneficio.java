@@ -1,7 +1,7 @@
 package datos;
 
 public class TipoBeneficio {
-	private int idTipoBeneficio;
+	private int idBeneficio;
 	private String beneficio;
 	private double descuento;
 	
@@ -13,12 +13,12 @@ public class TipoBeneficio {
 		this.descuento = descuento;
 	}
 
-	public int getIdTipoBeneficio() {
-		return idTipoBeneficio;
+	public int getidBeneficio() {
+		return idBeneficio;
 	}
 
-	protected void setIdTipoBeneficio(int idTipoBeneficio) {
-		this.idTipoBeneficio = idTipoBeneficio;
+	protected void setidBeneficio(int idBeneficio) {
+		this.idBeneficio = idBeneficio;
 	}
 
 	public String getBeneficio() {
@@ -39,7 +39,7 @@ public class TipoBeneficio {
 
 	@Override
 	public String toString() {
-		return "TipoBeneficio [idTipoBeneficio=" + idTipoBeneficio + ", beneficio=" + beneficio + ", descuento="
+		return "TipoBeneficio [idBeneficio=" + idBeneficio + ", beneficio=" + beneficio + ", descuento="
 				+ descuento + "]";
 	}
 	
