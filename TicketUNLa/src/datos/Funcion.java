@@ -8,20 +8,19 @@ public class Funcion {
 	private GregorianCalendar diaHora;
 	private Evento evento;
 	private int cantEspacioRestante;
-	private List<String> lstDiaDescuento = new ArrayList<String>();
 	private double descuento;
 	private List<CodigoDescuento> lstCodDesc = new ArrayList<CodigoDescuento>();
-	
+	private DiaDescuento diaDescuento;
 	public Funcion() {}
 	
 	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento, int cantEspacioRestante,
-			List<String> lstDiaDescuento, double descuento, List<CodigoDescuento> lstCodDesc) {
+					double descuento,DiaDescuento diaDescuento, List<CodigoDescuento> lstCodDesc) {
 		
 		this.precioBase = precioBase;
 		this.diaHora = diaHora;
 		this.evento = evento;
 		this.cantEspacioRestante = cantEspacioRestante;
-		this.lstDiaDescuento = lstDiaDescuento;
+		this.diaDescuento= diaDescuento;
 		this.descuento = descuento;
 		this.lstCodDesc = lstCodDesc;	
 	}
@@ -66,13 +65,7 @@ public class Funcion {
 		this.cantEspacioRestante = cantEspacioRestante;
 	}
 
-	public List<String> getLstDiaDescuento() {
-		return lstDiaDescuento;
-	}
-
-	public void setLstDiaDescuento(List<String> lstDiaDescuento) {
-		this.lstDiaDescuento = lstDiaDescuento;
-	}
+	
 
 	public double getDescuento() {
 		return descuento;
@@ -90,10 +83,20 @@ public class Funcion {
 		this.lstCodDesc = lstCodDesc;
 	}
 
+	
+	
+	public DiaDescuento getDiaDescuento() {
+		return diaDescuento;
+	}
+
+	public void setDiaDescuento(DiaDescuento diaDescuento) {
+		this.diaDescuento = diaDescuento;
+	}
+
 	@Override
 	public String toString() {
 		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + diaHora + ", evento="
-				+ evento + ", cantEspacioRestante=" + cantEspacioRestante + ", lstDiaDescuento=" + lstDiaDescuento
+				+ evento + ", cantEspacioRestante=" + cantEspacioRestante 
 				+ ", descuento=" + descuento + ", lstCodDesc=" + lstCodDesc + "]";
 	}
 	
