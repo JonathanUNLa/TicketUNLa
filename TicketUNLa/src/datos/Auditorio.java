@@ -10,10 +10,10 @@ public class Auditorio {
 	
 	public Auditorio(){}
 
-	public Auditorio(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAudiotorio) {
+	public Auditorio(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
-		this.tipoAudiotorio = tipoAudiotorio;
+		this.tipoAudiotorio = tipoAuditorio;
 	}
 
 	public int getIdAuditorio() {

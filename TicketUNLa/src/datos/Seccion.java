@@ -10,9 +10,8 @@ public class Seccion {
 	
 	public Seccion() {}
 
-	public Seccion(int idSeccion, String nombreSeccion, double precioSeccion, List<Butaca> lstButacas) {
+	public Seccion(String nombreSeccion, double precioSeccion, List<Butaca> lstButacas) {
 		super();
-		this.idSeccion = idSeccion;
 		this.nombreSeccion = nombreSeccion;
 		this.precioSeccion = precioSeccion;
 		this.lstButacas = lstButacas;
