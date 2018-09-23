@@ -15,6 +15,6 @@
 			<key column = "idFuncion" not-null = "true"/>
 			<one-to-many class = "datos.DiaDescuento"/>
 		</set>
-		<many-to-one name = "diaDescuento" class = "datos.DiaDescuento" column = "idDiaDescuento" not-null = "true"/>
+		<many-to-one name = "diaDescuento" class = "datos.DiaDescuento" column = "diaDescuento" not-null = "true"/>
 			</class>
 </hibernate-mapping>

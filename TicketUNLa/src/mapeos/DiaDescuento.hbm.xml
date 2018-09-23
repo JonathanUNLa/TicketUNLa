@@ -3,11 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="datos.TipoBeneficio" table="tipoBeneficio">
-		<id column="idTipoBeneficio" name="idTipoBeneficio">
+	<class name="datos.DiaDescuento" table="DiaDescuento">
+		<id column="idDiaDescuento" name="idDiaDescuento">
 			<generator class="identity"/>
 		</id>
-		<property name="beneficio" column="beneficio" type="string"/>
-		<property name="descuento" column="descuento" type="double"/>
+		<property column = "dia" name = "dia" type = "string" />	
+		<property column = "descuento" name = "descuento" type = "double" />	
+		
 			</class>
 </hibernate-mapping>
