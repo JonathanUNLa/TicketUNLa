@@ -8,7 +8,7 @@ public class Test {
 		int columna=1;
 		int fila=1;
 		ButacaABM abm = new ButacaABM();
-		int ultimoIdButaca = abm.agregar(fila, columna);
+		//int ultimoIdButaca = abm.agregar(fila, columna);
 	}
 
 }

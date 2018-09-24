@@ -9,7 +9,7 @@
 		</id>
 		<property column = "codigo" name = "codigo" type = "string" />
 		<property column = "descuento" name = "descuento" type = "double" />	
-	 <many-to-one name = "seccion" class = "datos.Seccion" column = "seccionCod" not-null = "true"/>
-			 <many-to-one name = "funcion" class = "datos.Funcion" column = "funcionCod" not-null = "true"/>
+	 	<many-to-one name = "seccion" class = "datos.Seccion" column = "seccionCod" not-null = "true"/>
+		 <many-to-one name = "funcion" class = "datos.Funcion" column = "funcionCod" not-null = "true"/>
 			</class>
 </hibernate-mapping>

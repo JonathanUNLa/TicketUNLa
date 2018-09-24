@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="datos.Funcion" table="Funcion">
+		<id column="idFuncion" name="idFuncion">
+			<generator class="identity"/>
+		</id>
+		<property column = "precioBase" name = "precioBase" type = "double" />	
+		<property column = "diaHora" name = "diaHora" type = "calendar" />	
+		<many-to-one name = "evento" class = "datos.Evento" column = "evento" not-null = "true" />
+		<set name = "lstCodDesc" table = "diaDescuento" order-by = "idDiaDescuento asc"
+		inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idFuncion" not-null = "true"/>
+			<one-to-many class = "datos.DiaDescuento"/>
+		</set>
+		<many-to-one name = "diaDescuento" class = "datos.DiaDescuento" column = "diaDescuento" not-null = "true"/>
+			</class>
+</hibernate-mapping>

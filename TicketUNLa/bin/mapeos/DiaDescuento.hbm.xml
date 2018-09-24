@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="datos.DiaDescuento" table="DiaDescuento">
+		<id column="idDiaDescuento" name="idDiaDescuento">
+			<generator class="identity"/>
+		</id>
+		<property column = "dia" name = "dia" type = "string" />	
+		<property column = "descuento" name = "descuento" type = "double" />	
+		
+			</class>
+</hibernate-mapping>

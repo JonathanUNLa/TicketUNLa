@@ -20,8 +20,9 @@
 		<mapping resource="mapeos/Butaca.hbm.xml"/>
 		<mapping resource="mapeos/Evento.hbm.xml"/>
 		<mapping resource="mapeos/Funcion.hbm.xml"/>
-		<mapping resource="mapeos/CodigoDescuento.hbm.xml"/>
+		<mapping resource="mapeos/DiaDescuento.hbm.xml"/>
 		<mapping resource="mapeos/Entrada.hbm.xml"/>
+		<mapping resource="mapeos/CodigoDescuento.hbm.xml"/>
 		
 	</session-factory>
 </hibernate-configuration>

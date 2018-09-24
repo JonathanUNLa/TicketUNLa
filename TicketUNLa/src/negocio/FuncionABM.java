@@ -8,23 +8,22 @@ import datos.CodigoDescuento;
 import datos.DiaDescuento;
 import datos.Evento;
 import datos.Funcion;
-import datos.Seccion;
 
 public class FuncionABM {
-	FuncionDao dao = new FuncionDao();
 	
-	public Funcion traerFuncion(int idFuncion) throws Exception {
+	FuncionDao dao = new FuncionDao(); 
+	
+	public Funcion traerEntrada(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);
-		if (funcion==null) throw new Exception("La Funcion no existe");
+		if(funcion == null)throw new Exception("La funcion no existe");
 		return funcion;
 	}
 	
-	public List<Funcion> traerFuncion() throws Exception {
+	public List<Funcion> traerCodigoDescuento(){
 		return dao.traerFuncion();
 	}
 	
-	public int agregar(double precioBase, GregorianCalendar diaHora, Evento evento,
-			double descuento,DiaDescuento diaDescuento, List<CodigoDescuento> lstCodDesc) {
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento, List<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
 		Funcion funcion = new Funcion(precioBase,diaHora,evento,descuento,diaDescuento,lstCodDesc);
 		return dao.agregar(funcion);
 	}
@@ -33,10 +32,9 @@ public class FuncionABM {
 		dao.actualizar(funcion);
 	}
 	
-	public void eliminar(int idFuncion) throws Exception {
+	public void eliminar(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);
-		if(funcion == null)throw new Exception("La Funcion que desea eliminar no existe");
+		if(funcion == null)throw new Exception("La funcion no existe");
 		dao.eliminar(funcion);
 	}
-
 }

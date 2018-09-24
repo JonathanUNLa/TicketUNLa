@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name = "datos.Usuario" table = "usuario" >
+<id column = "idUsuario" name = "idUsuario" >
+<generator class = "identity"/>
+</id >
+<property column = "dni" name = "dni" type = "long" />
+<property column = "nombre" name = "nombre" type = "string" />
+<property column = "apellido" name = "apellido" type = "string" />
+<property column = "telefono" name = "telefono" type = "string" />
+<property column = "nombreUsuario" name = "nombreUsuario" type = "string" />
+<property column = "contraseña" name = "contraseña" type = "string" />
+<many-to-one name = "tipoBeneficio" class = "datos.TipoBeneficio" column = "tipoBeneficio" not-null = "false"/>
+<many-to-one name = "tipoUsuario" class = "datos.TipoUsuario" column = "tipoUsuario" not-null = "true"/>
+</class >
+</hibernate-mapping >

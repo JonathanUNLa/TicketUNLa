@@ -7,20 +7,20 @@ public class Usuario {
 	private String apellido;
 	private String telefono;
 	private String nombreUsuario;
-	private String contrasenia;
+	private String contraseña;
 	private TipoUsuario tipoUsuario;
 	private TipoBeneficio tipoBeneficio;
 	
 	public Usuario() {}
 	
 	public Usuario(long dni, String nombre, String apellido, String telefono, String nombreUsuario,
-			String contrasenia, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio) {
+			String contraseña, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
 		this.nombreUsuario = nombreUsuario;
-		this.contrasenia = contrasenia;
+		this.contraseña = contraseña;
 		this.tipoUsuario = tipoUsuario;
 		this.tipoBeneficio = tipoBeneficio;
 	}
@@ -73,12 +73,12 @@ public class Usuario {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getContrasenia() {
-		return contrasenia;
+	public String getContraseña() {
+		return contraseña;
 	}
 
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
 
 	public TipoUsuario getTipoUsuario() {
@@ -100,7 +100,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contrasenia=" + contrasenia
+				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
 				+ ", tipoUsuario=" + tipoUsuario + ", tipoBeneficio=" + tipoBeneficio + "]";
 	}
 	

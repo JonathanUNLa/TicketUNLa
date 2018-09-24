@@ -7,19 +7,17 @@ public class Funcion {
 	private double precioBase;
 	private GregorianCalendar diaHora;
 	private Evento evento;
-	private int cantEspacioRestante;
 	private double descuento;
 	private List<CodigoDescuento> lstCodDesc = new ArrayList<CodigoDescuento>();
 	private DiaDescuento diaDescuento;
 	public Funcion() {}
 	
-	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento, int cantEspacioRestante,
+	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento,
 					double descuento,DiaDescuento diaDescuento, List<CodigoDescuento> lstCodDesc) {
 		
 		this.precioBase = precioBase;
 		this.diaHora = diaHora;
 		this.evento = evento;
-		this.cantEspacioRestante = cantEspacioRestante;
 		this.diaDescuento= diaDescuento;
 		this.descuento = descuento;
 		this.lstCodDesc = lstCodDesc;	
@@ -57,15 +55,7 @@ public class Funcion {
 		this.evento = evento;
 	}
 
-	public int getCantEspacioRestante() {
-		return cantEspacioRestante;
-	}
 
-	public void setCantEspacioRestante(int cantEspacioRestante) {
-		this.cantEspacioRestante = cantEspacioRestante;
-	}
-
-	
 
 	public double getDescuento() {
 		return descuento;
@@ -96,8 +86,7 @@ public class Funcion {
 	@Override
 	public String toString() {
 		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + diaHora + ", evento="
-				+ evento + ", cantEspacioRestante=" + cantEspacioRestante 
-				+ ", descuento=" + descuento + ", lstCodDesc=" + lstCodDesc + "]";
+				+ evento 	+ ", descuento=" + descuento + ", lstCodDesc=" + lstCodDesc + "]";
 	}
 	
 }
