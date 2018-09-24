@@ -1,25 +1,22 @@
 package datos;
 
 public class DiaDescuento {
-	private int iDiadDescuento;
+	private int idDiaDescuento;
 	private String dia;
 	private double descuento;
-
 	
-	public DiaDescuento() {
-	}
-	public DiaDescuento(int iDiadDescuento, String dia, double descuento) {
-		super();
-		this.iDiadDescuento = iDiadDescuento;
+	
+	
+	public DiaDescuento( String dia, double descuento) {
 		this.dia = dia;
 		this.descuento = descuento;
-
 	}
-	public int getiDiadDescuento() {
-		return iDiadDescuento;
+	
+	public int getIdDiaDescuento() {
+		return idDiaDescuento;
 	}
-	public void setiDiadDescuento(int iDiadDescuento) {
-		this.iDiadDescuento = iDiadDescuento;
+	public void setIdDiaDescuento(int idDiaDescuento) {
+		this.idDiaDescuento = idDiaDescuento;
 	}
 	public String getDia() {
 		return dia;
@@ -33,10 +30,14 @@ public class DiaDescuento {
 	public void setDescuento(double descuento) {
 		this.descuento = descuento;
 	}
+
 	@Override
 	public String toString() {
-		return "DiaDescuento [iDiadDescuento=" + iDiadDescuento + ", dia=" + dia + ", descuento=" + descuento + "]";
+		return "DiaDescuento [idDiaDescuento=" + idDiaDescuento + ", dia=" + dia + ", descuento=" + descuento + "]";
 	}
+
+	
+
 	
 	
 	
