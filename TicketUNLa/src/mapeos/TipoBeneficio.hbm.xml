@@ -3,8 +3,8 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="datos.TipoBeneficio" table="tipoBeneficio">
-		<id column="idTipoBeneficio" name="idTipoBeneficio">
+	<class name="datos.TipoBeneficio" table="TipoBeneficio">
+		<id column="idTipoBeneficio" name="idBeneficio">
 			<generator class="identity"/>
 		</id>
 		<property name="beneficio" column="beneficio" type="string"/>

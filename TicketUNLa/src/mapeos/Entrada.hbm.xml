@@ -7,10 +7,10 @@
 		<id column="idEntrada" name="idEntrada">
 			<generator class="identity"/>
 		</id>
-		<many-to-one name = "Entrada" class = "datos.Entrada" column = "seccion" not-null = "false" />
-		<many-to-one name = "Entrada" class = "datos.Entrada" column = "butaca" not-null = "false" />
-		<many-to-one name = "Entrada" class = "datos.Entrada" column = "usuario" not-null = "false" />
-		<many-to-one name = "Entrada" class = "datos.Entrada" column = "funcion" not-null = "false" />
+		<many-to-one name = "seccion" class = "datos.Entrada" column = "seccion" not-null = "true" />
+		<many-to-one name = "butaca" class = "datos.Entrada" column = "butaca" not-null = "true" />
+		<many-to-one name = "usuario" class = "datos.Entrada" column = "usuario" not-null = "true" />
+		<many-to-one name = "funcion" class = "datos.Entrada" column = "funcion" not-null = "true" />
 		<property name="precioFinal" column="precioFinal" type="double"/>
 			</class>
 </hibernate-mapping>
