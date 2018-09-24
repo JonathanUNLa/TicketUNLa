@@ -3,6 +3,7 @@ package negocio;
 import java.util.List;
 import dao.ButacaDao;
 import datos.Butaca;
+import datos.Seccion;
 
 public class ButacaABM {
 	ButacaDao dao = new ButacaDao(); 
@@ -17,8 +18,8 @@ public class ButacaABM {
 		return dao.traerButaca();
 	}
 	
-	public int agregar(int fila, int columna) {
-		Butaca butaca = new Butaca(fila,columna);
+	public int agregar(int fila, int columna,Seccion seccion) {
+		Butaca butaca = new Butaca(fila,columna,seccion);
 		return dao.agregar(butaca);
 	}
 	
