@@ -30,6 +30,10 @@ public class ButacaABM {
 		return dao.traerButaca();
 	}
 	
+	public List<Butaca> traerButaca(Seccion seccion){
+		return dao.traerButaca();
+	}
+	
 	public int agregar(int fila, int columna,Seccion seccion) {
 		Butaca butaca = new Butaca(fila,columna,seccion);
 		return dao.agregar(butaca);

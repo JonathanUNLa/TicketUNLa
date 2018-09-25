@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Butaca;
+import datos.Seccion;
 
 public class ButacaDao {
 	private static Session session;
@@ -83,6 +84,22 @@ public class ButacaDao {
 		try {
 			iniciaOperacion();
 			butacas = session.createQuery("from Butaca").list();
+		} finally {
+			session.close();
+		}
+		
+		return butacas;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Butaca> traerButaca(Seccion seccion) throws HibernateException {
+		List<Butaca> butacas = null;
+		int idSeccion = seccion.getIdSeccion();
+		String hql = "from Butaca b where b.seccion=" + idSeccion;
+		
+		try {
+			iniciaOperacion();
+			butacas = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}
