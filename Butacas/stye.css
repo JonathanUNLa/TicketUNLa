@@ -1,0 +1,24 @@
+table {
+    float:left;
+    table-layout:fixed;
+    border-width:1px;
+    border-style:solid;
+    width:400px;
+    height:400px;
+    border-color:black;
+    position:absolute;
+}
+td {
+    padding:2px;
+    border-color:black;
+    background: rgb(12, 173, 52);
+    border-width:1px;
+    border-style:solid;
+}
+.seleccionada {
+    background:#1792b8;
+    color:black;
+}
+.ocupada {
+    background:#fce94f;
+}
