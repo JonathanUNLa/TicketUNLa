@@ -7,15 +7,31 @@ public class Seccion {
 	private String nombreSeccion;
 	private double precioSeccion;
 	private List<Butaca> lstButacas = new ArrayList<Butaca>();
+	private Auditorio auditorio;
 	
 	public Seccion() {}
 
-	public Seccion(String nombreSeccion, double precioSeccion, List<Butaca> lstButacas) {
+	public Seccion(String nombreSeccion, double precioSeccion, List<Butaca> lstButacas, Auditorio auditorio) {
 		super();
 		this.nombreSeccion = nombreSeccion;
 		this.precioSeccion = precioSeccion;
 		this.lstButacas = lstButacas;
+		this.auditorio = auditorio;
 	}
+
+
+
+	public Auditorio getAuditorio() {
+		return auditorio;
+	}
+
+
+
+	protected void setAuditorio(Auditorio auditorio) {
+		this.auditorio = auditorio;
+	}
+
+
 
 	public int getIdSeccion() {
 		return idSeccion;

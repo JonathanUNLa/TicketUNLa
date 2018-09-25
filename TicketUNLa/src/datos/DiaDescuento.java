@@ -15,7 +15,7 @@ public class DiaDescuento {
 	public int getIdDiaDescuento() {
 		return idDiaDescuento;
 	}
-	public void setIdDiaDescuento(int idDiaDescuento) {
+	protected void setIdDiaDescuento(int idDiaDescuento) {
 		this.idDiaDescuento = idDiaDescuento;
 	}
 	public String getDia() {

@@ -14,6 +14,7 @@ public class TipoUsuario {
 		this.auditorio = auditorio;
 	}
 
+
 	public int getIdTipoUsuario() {
 		return idTipoUsuario;
 	}
@@ -22,11 +23,11 @@ public class TipoUsuario {
 		this.idTipoUsuario = idTipoUsuario;
 	}
 
-	public String getnombreTipo() {
+	public String getNombreTipo() {
 		return nombreTipo;
 	}
 
-	public void setnombreTipo(String nombreTipo) {
+	public void setNombreTipo(String nombreTipo) {
 		this.nombreTipo = nombreTipo;
 	}
 

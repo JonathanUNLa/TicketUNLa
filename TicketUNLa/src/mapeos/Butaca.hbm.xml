@@ -7,7 +7,7 @@
 		<id column="idButaca" name="idButaca">
 			<generator class="identity"/>
 		</id>
-		<property column = "columna" name = "columna" type = "double" />
+		<property column = "columna" name = "columna" type = "int" />
 		<property column = "fila" name = "fila" type = "int" />	
 	 <many-to-one name = "seccion" class = "datos.Seccion" column = "seccion" not-null = "true"/>
 		

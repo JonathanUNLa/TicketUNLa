@@ -9,17 +9,19 @@ public class Butaca {
 	public Butaca() {}
 
 	public Butaca(int fila, int columna, Seccion seccion) {
-
+		super();
 		this.fila = fila;
 		this.columna = columna;
 		this.seccion = seccion;
 	}
 
+	
+	
 	public int getIdButaca() {
 		return idButaca;
 	}
 
-	public void setIdButaca(int idButaca) {
+	protected void setIdButaca(int idButaca) {
 		this.idButaca = idButaca;
 	}
 
@@ -45,11 +47,6 @@ public class Butaca {
 
 	public void setSeccion(Seccion seccion) {
 		this.seccion = seccion;
-	}
-
-	@Override
-	public String toString() {
-		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + "]";
 	}
 
 	

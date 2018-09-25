@@ -11,18 +11,19 @@
 		<property name="show_sql"> true </property> <!-- en true muestra hql en consola -->
 		
 		<!-- Mapeo Entidades -->
-		<mapping resource="mapeos/TipoUsuario.hbm.xml"/>
+
 		<mapping resource="mapeos/TipoBeneficio.hbm.xml"/>
-		<mapping resource="mapeos/Usuario.hbm.xml"/>
 		<mapping resource="mapeos/TipoAuditorio.hbm.xml"/>
 		<mapping resource="mapeos/Auditorio.hbm.xml"/>
 		<mapping resource="mapeos/Seccion.hbm.xml"/>
 		<mapping resource="mapeos/Butaca.hbm.xml"/>
-		<mapping resource="mapeos/Evento.hbm.xml"/>
+		<mapping resource="mapeos/Entrada.hbm.xml"/>
+		<mapping resource="mapeos/Usuario.hbm.xml"/>
 		<mapping resource="mapeos/Funcion.hbm.xml"/>
 		<mapping resource="mapeos/DiaDescuento.hbm.xml"/>
-		<mapping resource="mapeos/Entrada.hbm.xml"/>
-		<mapping resource="mapeos/CodigoDescuento.hbm.xml"/>
+		<mapping resource="mapeos/Evento.hbm.xml"/>
+		<mapping resource="mapeos/TipoUsuario.hbm.xml"/>
+
 		
 	</session-factory>
 </hibernate-configuration>

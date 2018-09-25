@@ -6,14 +6,15 @@ public class Auditorio {
 	private int idAuditorio;
 	private String nombre;
 	private List<Seccion> lstSecciones= new ArrayList<Seccion>();
-	private TipoAuditorio tipoAudiotorio;
+	private TipoAuditorio tipoAuditorio;
 	
 	public Auditorio(){}
 
 	public Auditorio(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
+		super();
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
-		this.tipoAudiotorio = tipoAuditorio;
+		this.tipoAuditorio = tipoAuditorio;
 	}
 
 	public int getIdAuditorio() {
@@ -40,18 +41,14 @@ public class Auditorio {
 		this.lstSecciones = lstSecciones;
 	}
 
-	public TipoAuditorio getTipoAudiotorio() {
-		return tipoAudiotorio;
+	public TipoAuditorio getTipoAuditorio() {
+		return tipoAuditorio;
 	}
 
-	public void setTipoAudiotorio(TipoAuditorio tipoAudiotorio) {
-		this.tipoAudiotorio = tipoAudiotorio;
+	public void setTipoAuditorio(TipoAuditorio tipoAuditorio) {
+		this.tipoAuditorio = tipoAuditorio;
 	}
 
-	@Override
-	public String toString() {
-		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", lstSecciones=" + lstSecciones
-				+ ", tipoAudiotorio=" + tipoAudiotorio + "]";
-	}
-
+	
+	
 }

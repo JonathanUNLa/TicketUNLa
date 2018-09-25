@@ -6,7 +6,7 @@
 <id column = "idUsuario" name = "idUsuario" >
 <generator class = "identity"/>
 </id >
-<property column = "dni" name = "dni" type = "long" />
+<property column = "dni" name = "dni" type = "int" />
 <property column = "nombre" name = "nombre" type = "string" />
 <property column = "apellido" name = "apellido" type = "string" />
 <property column = "telefono" name = "telefono" type = "string" />

@@ -22,7 +22,7 @@ public class UsuarioABM {
 		return dao.traerUsuario();
 	}
 	
-	public int agregar(long dni, String nombre, String apellido, String telefono, String nombreUsuario, String contraseña,TipoUsuario tipoUsuario,TipoBeneficio tipoBeneficio) {
+	public int agregar(int dni, String nombre, String apellido, String telefono, String nombreUsuario, String contraseña,TipoUsuario tipoUsuario,TipoBeneficio tipoBeneficio) {
 		Usuario usuario = new Usuario(dni,nombre,apellido,telefono,nombreUsuario,contraseña,tipoUsuario,tipoBeneficio);
 		return dao.agregar(usuario);
 	}

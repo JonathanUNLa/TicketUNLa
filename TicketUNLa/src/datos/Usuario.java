@@ -2,7 +2,7 @@ package datos;
 
 public class Usuario {
 	private int idUsuario;
-	private long dni;
+	private int dni;
 	private String nombre;
 	private String apellido;
 	private String telefono;
@@ -13,7 +13,7 @@ public class Usuario {
 	
 	public Usuario() {}
 	
-	public Usuario(long dni, String nombre, String apellido, String telefono, String nombreUsuario,
+	public Usuario(int dni, String nombre, String apellido, String telefono, String nombreUsuario,
 			String contraseña, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio) {
 		this.dni = dni;
 		this.nombre = nombre;
@@ -37,7 +37,7 @@ public class Usuario {
 		return dni;
 	}
 
-	public void setDni(long dni) {
+	public void setDni(int dni) {
 		this.dni = dni;
 	}
 
