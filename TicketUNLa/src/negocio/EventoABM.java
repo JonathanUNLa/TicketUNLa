@@ -8,8 +8,18 @@ import datos.Evento;
 
 
 public class EventoABM {
+	private static EventoABM instancia;
+	protected EventoDao dao;
 	
-	EventoDao dao = new EventoDao(); 
+	protected EventoABM() {
+		dao = new EventoDao();
+	}
+	
+	public static EventoABM getInstancia() {
+		if (instancia == null) 
+			instancia = new EventoABM();
+		return instancia;
+	}
 	
 	public Evento traerEntrada(int idEvento)throws Exception {
 		Evento evento = dao.traerEvento(idEvento);

@@ -10,8 +10,18 @@ import datos.Seccion;
 import datos.Usuario;
 
 public class EntradaABM {
+	private static EntradaABM instancia;
+	protected EntradaDao dao;
 	
-	EntradaDao dao = new EntradaDao(); 
+	protected EntradaABM() {
+		dao = new EntradaDao();
+	}
+	
+	public static EntradaABM getInstancia() {
+		if (instancia == null) 
+			instancia = new EntradaABM();
+		return instancia;
+	}
 	
 	public Entrada traerEntrada(int idEntrada)throws Exception {
 		Entrada entrada = dao.traerEntrada(idEntrada);

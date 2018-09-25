@@ -6,7 +6,19 @@ import dao.TipoAuditorioDao;
 import datos.TipoAuditorio;
 
 public class TipoAuditorioABM {
-	TipoAuditorioDao dao = new TipoAuditorioDao();
+	private static TipoAuditorioABM instancia;
+	protected TipoAuditorioDao dao;
+	
+	protected TipoAuditorioABM() {
+		dao = new TipoAuditorioDao();
+	}
+	
+	public static TipoAuditorioABM getInstancia() {
+		if (instancia == null) 
+			instancia = new TipoAuditorioABM();
+		return instancia;
+	}
+	
 	
 	public TipoAuditorio traerTipoAuditorio(int idTipoAuditorio) throws Exception {
 		TipoAuditorio tipoAuditorio = dao.traerTipoAuditorio(idTipoAuditorio);

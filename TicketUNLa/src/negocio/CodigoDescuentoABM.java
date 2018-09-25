@@ -9,7 +9,19 @@ import datos.Seccion;
 
 
 public class CodigoDescuentoABM {
-	CodigoDescuentoDao dao = new CodigoDescuentoDao(); 
+	private static CodigoDescuentoABM instancia;
+	protected CodigoDescuentoDao dao;
+	
+	protected CodigoDescuentoABM() {
+		dao = new CodigoDescuentoDao();
+	}
+	
+	public static CodigoDescuentoABM getInstancia() {
+		if (instancia == null) 
+			instancia = new CodigoDescuentoABM();
+		return instancia;
+	}
+	
 	
 	public CodigoDescuento traerCodigoDescuento(int idCodigo)throws Exception {
 		CodigoDescuento butaca = dao.traerCodigoDescuento(idCodigo);

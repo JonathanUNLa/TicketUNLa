@@ -6,7 +6,19 @@ import dao.DiaDescuentoDao;
 import datos.DiaDescuento;
 
 public class DiaDescuentoABM {
-	DiaDescuentoDao dao = new DiaDescuentoDao(); 
+	private static DiaDescuentoABM instancia;
+	protected DiaDescuentoDao dao;
+	
+	protected DiaDescuentoABM() {
+		dao = new DiaDescuentoDao();
+	}
+	
+	public static DiaDescuentoABM getInstancia() {
+		if (instancia == null) 
+			instancia = new DiaDescuentoABM();
+		return instancia;
+	}
+	
 	
 	public DiaDescuento traerDiaDescuento(int idDiaDescuento)throws Exception {
 		DiaDescuento diaDescuento = dao.traerDiaDescuento(idDiaDescuento);

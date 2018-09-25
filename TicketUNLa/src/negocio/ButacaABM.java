@@ -1,12 +1,24 @@
 package negocio;
 
 import java.util.List;
+
 import dao.ButacaDao;
 import datos.Butaca;
 import datos.Seccion;
 
 public class ButacaABM {
-	ButacaDao dao = new ButacaDao(); 
+	private static ButacaABM instancia;
+	protected ButacaDao dao;
+	
+	protected ButacaABM() {
+		dao = new ButacaDao();
+	}
+	
+	public static ButacaABM getInstancia() {
+		if (instancia == null) 
+			instancia = new ButacaABM();
+		return instancia;
+	}
 	
 	public Butaca traerButaca(int idButaca)throws Exception {
 		Butaca butaca = dao.traerButaca(idButaca);

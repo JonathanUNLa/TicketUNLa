@@ -8,8 +8,18 @@ import datos.Seccion;
 import datos.TipoAuditorio;
 
 public class AuditorioABM {
+	private static AuditorioABM instancia;
+	protected AuditorioDao dao;
 	
-	AuditorioDao dao = new AuditorioDao();
+	protected AuditorioABM() {
+		dao = new AuditorioDao();
+	}
+	
+	public static AuditorioABM getInstancia() {
+		if (instancia == null) 
+			instancia = new AuditorioABM();
+		return instancia;
+	}
 	
 	public Auditorio traerAuditorio(int idAuditorio) throws Exception {
 		Auditorio auditorio = dao.traerAuditorio(idAuditorio);

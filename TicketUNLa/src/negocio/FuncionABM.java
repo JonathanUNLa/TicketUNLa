@@ -10,8 +10,18 @@ import datos.Evento;
 import datos.Funcion;
 
 public class FuncionABM {
+	private static FuncionABM instancia;
+	protected FuncionDao dao;
 	
-	FuncionDao dao = new FuncionDao(); 
+	protected FuncionABM() {
+		dao = new FuncionDao();
+	}
+	
+	public static FuncionABM getInstancia() {
+		if (instancia == null) 
+			instancia = new FuncionABM();
+		return instancia;
+	}
 	
 	public Funcion traerEntrada(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);

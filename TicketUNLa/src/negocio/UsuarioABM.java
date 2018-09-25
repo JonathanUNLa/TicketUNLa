@@ -9,8 +9,18 @@ import datos.Usuario;
 
 
 public class UsuarioABM {
+	private static UsuarioABM instancia;
+	protected UsuarioDao dao;
 	
-	UsuarioDao dao = new UsuarioDao(); 
+	protected UsuarioABM() {
+		dao = new UsuarioDao();
+	}
+	
+	public static UsuarioABM getInstancia() {
+		if (instancia == null) 
+			instancia = new UsuarioABM();
+		return instancia;
+	}
 	
 	public Usuario traerEntrada(int idUsuario)throws Exception {
 		Usuario usuario = dao.traerUsuario(idUsuario);

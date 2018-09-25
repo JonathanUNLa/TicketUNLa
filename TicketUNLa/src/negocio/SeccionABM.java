@@ -8,7 +8,18 @@ import datos.Butaca;
 import datos.Seccion;
 
 public class SeccionABM {
-	SeccionDao dao = new SeccionDao();
+	private static SeccionABM instancia;
+	protected SeccionDao dao;
+	
+	protected SeccionABM() {
+		dao = new SeccionDao();
+	}
+	
+	public static SeccionABM getInstancia() {
+		if (instancia == null) 
+			instancia = new SeccionABM();
+		return instancia;
+	}
 	
 	public Seccion traerSeccion(int idSeccion) throws Exception {
 		Seccion seccion = dao.traerSeccion(idSeccion);

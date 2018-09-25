@@ -1,6 +1,7 @@
 package negocio;
 
 import java.util.List;
+
 import dao.TipoUsuarioDao;
 import datos.Auditorio;
 import datos.TipoBeneficio;
@@ -8,7 +9,18 @@ import datos.TipoUsuario;
 
 
 public class TipoUsuarioABM {
-	TipoUsuarioDao dao = new TipoUsuarioDao();
+	private static TipoUsuarioABM instancia;
+	protected TipoUsuarioDao dao;
+	
+	protected TipoUsuarioABM() {
+		dao = new TipoUsuarioDao();
+	}
+	
+	public static TipoUsuarioABM getInstancia() {
+		if (instancia == null) 
+			instancia = new TipoUsuarioABM();
+		return instancia;
+	}
 	
 	public TipoUsuario traerTipoUsuario(int idTipoUsuario) throws Exception {
 		TipoUsuario tipoUsuario = dao.traerTipoUsuario(idTipoUsuario);

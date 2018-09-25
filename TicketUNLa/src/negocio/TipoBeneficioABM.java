@@ -6,7 +6,18 @@ import dao.TipoBeneficioDao;
 import datos.TipoBeneficio;
 
 public class TipoBeneficioABM {
-	TipoBeneficioDao dao = new TipoBeneficioDao();
+	private static TipoBeneficioABM instancia;
+	protected TipoBeneficioDao dao;
+	
+	protected TipoBeneficioABM() {
+		dao = new TipoBeneficioDao();
+	}
+	
+	public static TipoBeneficioABM getInstancia() {
+		if (instancia == null) 
+			instancia = new TipoBeneficioABM();
+		return instancia;
+	}
 	
 	public TipoBeneficio traerTipoBeneficio(int idTipoBeneficio) throws Exception {
 		TipoBeneficio tipoBeneficio = dao.traerTipoBeneficio(idTipoBeneficio);
