@@ -2,6 +2,7 @@ package negocio;
 
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Set;
 
 import dao.FuncionDao;
 import datos.CodigoDescuento;
@@ -33,7 +34,7 @@ public class FuncionABM {
 		return dao.traerFuncion();
 	}
 	
-	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento, List<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento, Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
 		Funcion funcion = new Funcion(precioBase,diaHora,evento,descuento,diaDescuento,lstCodDesc);
 		return dao.agregar(funcion);
 	}

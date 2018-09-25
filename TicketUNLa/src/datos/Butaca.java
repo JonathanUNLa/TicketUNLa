@@ -17,6 +17,12 @@ public class Butaca {
 
 	
 	
+	public Butaca(int fila, int columna) {
+		super();
+		this.fila = fila;
+		this.columna = columna;
+	}
+
 	public int getIdButaca() {
 		return idButaca;
 	}

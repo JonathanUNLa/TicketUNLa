@@ -1,6 +1,7 @@
 package negocio;
 
 import java.util.List;
+import java.util.Set;
 
 import dao.AuditorioDao;
 import datos.Auditorio;
@@ -31,7 +32,12 @@ public class AuditorioABM {
 		return dao.traerAuditorio();
 	}
 	
-	public int agregar(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
+	public int agregar(String nombre, TipoAuditorio tipoAuditorio) {
+		Auditorio auditorio = new Auditorio(nombre,tipoAuditorio);
+		return dao.agregar(auditorio);
+	}
+	
+	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
 		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio);
 		return dao.agregar(auditorio);
 	}

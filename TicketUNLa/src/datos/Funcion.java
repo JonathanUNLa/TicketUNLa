@@ -8,12 +8,12 @@ public class Funcion {
 	private GregorianCalendar diaHora;
 	private Evento evento;
 	private double descuento;
-	private List<CodigoDescuento> lstCodDesc = new ArrayList<CodigoDescuento>();
+	private Set<CodigoDescuento> lstCodDesc ;
 	private DiaDescuento diaDescuento;
 	public Funcion() {}
 	
 	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento,
-					double descuento,DiaDescuento diaDescuento, List<CodigoDescuento> lstCodDesc) {
+					double descuento,DiaDescuento diaDescuento, Set<CodigoDescuento> lstCodDesc) {
 		
 		this.precioBase = precioBase;
 		this.diaHora = diaHora;
@@ -65,11 +65,11 @@ public class Funcion {
 		this.descuento = descuento;
 	}
 
-	public List<CodigoDescuento> getLstCodDesc() {
+	public Set<CodigoDescuento> getLstCodDesc() {
 		return lstCodDesc;
 	}
 
-	public void setLstCodDesc(List<CodigoDescuento> lstCodDesc) {
+	public void setLstCodDesc(Set<CodigoDescuento> lstCodDesc) {
 		this.lstCodDesc = lstCodDesc;
 	}
 

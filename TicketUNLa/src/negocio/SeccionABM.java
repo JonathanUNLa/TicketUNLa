@@ -1,6 +1,7 @@
 package negocio;
 
 import java.util.List;
+import java.util.Set;
 
 import dao.SeccionDao;
 import datos.Auditorio;
@@ -31,8 +32,12 @@ public class SeccionABM {
 		return dao.traerSeccion();
 	}
 	
-	public int agregar(String nombreSeccion, double precioSeccion, List<Butaca> lstButacas,Auditorio auditorio) {
+	public int agregar(String nombreSeccion, double precioSeccion, Set<Butaca> lstButacas,Auditorio auditorio) {
 		Seccion seccion = new Seccion(nombreSeccion, precioSeccion, lstButacas,auditorio);
+		return dao.agregar(seccion);
+	}
+	public int agregar(String nombreSeccion, double precioSeccion,Auditorio auditorio) {
+		Seccion seccion = new Seccion(nombreSeccion, precioSeccion,auditorio);
 		return dao.agregar(seccion);
 	}
 	

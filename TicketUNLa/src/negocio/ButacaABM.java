@@ -39,6 +39,10 @@ public class ButacaABM {
 		return dao.agregar(butaca);
 	}
 	
+	public int agregar(int fila, int columna) {
+		Butaca butaca = new Butaca(fila,columna);
+		return dao.agregar(butaca);
+	}
 	public void modificar(Butaca butaca) {
 		dao.actualizar(butaca);
 	}

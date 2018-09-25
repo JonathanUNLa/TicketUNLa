@@ -5,15 +5,23 @@ import java.util.*;
 public class Auditorio {
 	private int idAuditorio;
 	private String nombre;
-	private List<Seccion> lstSecciones= new ArrayList<Seccion>();
+	private Set<Seccion> lstSecciones;
 	private TipoAuditorio tipoAuditorio;
 	
 	public Auditorio(){}
 
-	public Auditorio(String nombre, List<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
+	public Auditorio(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
 		super();
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
+		this.tipoAuditorio = tipoAuditorio;
+	}
+	
+	
+
+	public Auditorio(String nombre, TipoAuditorio tipoAuditorio) {
+		super();
+		this.nombre = nombre;
 		this.tipoAuditorio = tipoAuditorio;
 	}
 
@@ -33,11 +41,11 @@ public class Auditorio {
 		this.nombre = nombre;
 	}
 
-	public List<Seccion> getLstSecciones() {
+	public Set<Seccion> getLstSecciones() {
 		return lstSecciones;
 	}
 
-	public void setLstSecciones(List<Seccion> lstSecciones) {
+	public void setLstSecciones(Set<Seccion> lstSecciones) {
 		this.lstSecciones = lstSecciones;
 	}
 

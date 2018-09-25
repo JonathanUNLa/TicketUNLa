@@ -6,12 +6,12 @@ public class Seccion {
 	private int idSeccion;
 	private String nombreSeccion;
 	private double precioSeccion;
-	private List<Butaca> lstButacas = new ArrayList<Butaca>();
+	private Set<Butaca> lstButacas;
 	private Auditorio auditorio;
 	
 	public Seccion() {}
 
-	public Seccion(String nombreSeccion, double precioSeccion, List<Butaca> lstButacas, Auditorio auditorio) {
+	public Seccion(String nombreSeccion, double precioSeccion, Set<Butaca> lstButacas, Auditorio auditorio) {
 		super();
 		this.nombreSeccion = nombreSeccion;
 		this.precioSeccion = precioSeccion;
@@ -20,6 +20,13 @@ public class Seccion {
 	}
 
 
+
+	public Seccion(String nombreSeccion, double precioSeccion, Auditorio auditorio) {
+		super();
+		this.nombreSeccion = nombreSeccion;
+		this.precioSeccion = precioSeccion;
+		this.auditorio = auditorio;
+	}
 
 	public Auditorio getAuditorio() {
 		return auditorio;
@@ -49,11 +56,11 @@ public class Seccion {
 		this.nombreSeccion = nombreSeccion;
 	}
 
-	public List<Butaca> getLstButacas() {
+	public Set<Butaca> getLstButacas() {
 		return lstButacas;
 	}
 
-	public void setLstButacas(List<Butaca> lstButacas) {
+	public void setLstButacas(Set<Butaca> lstButacas) {
 		this.lstButacas = lstButacas;
 	}
 
