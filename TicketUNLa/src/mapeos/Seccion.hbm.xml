@@ -9,6 +9,12 @@
 		</id>
 		<property column="nombreSeccion" name="nombreSeccion" type="string"/>
 		<property column="precioSeccion" name="precioSeccion" type="double"/>
+		<set name = "lstButacas" table = "Butaca" order-by = "idButaca asc"
+		inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idSeccion" not-null = "true"/>
+			<one-to-many class = "datos.Butaca"/>
+		</set>
 		<many-to-one name = "auditorio" class = "datos.Auditorio" column = "auditorio" not-null = "true"/>
+		
 	</class>
 </hibernate-mapping>
