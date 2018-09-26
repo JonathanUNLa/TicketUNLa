@@ -31,25 +31,23 @@ public class TestMain {
 		EntradaABM entradaAbm = EntradaABM.getInstancia();
 		
 		try {
-		/*	tipoAuditorioAbm.agregar("estadio");
+			tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
-			tipoAuditorioAbm.agregar("cine");*/
-			//butacaAbm.agregar(1, 1);
-			//butacaAbm.agregar(1, 2);
-		/*	butacaAbm.agregar(2, 1, null);
-			butacaAbm.agregar(2, 2, null);
-			butacaAbm.agregar(1, 1, null);
-			butacaAbm.agregar(1, 2, null);
-			butacaAbm.agregar(2, 1, null);
-			butacaAbm.agregar(2, 2, null);
-			butacaAbm.agregar(1, 1, null);
-			butacaAbm.agregar(1, 2, null);
-			butacaAbm.agregar(2, 1, null);*/
-			//butacaAbm.agregar(2, 2, seccionAbm.traerSeccion(3));
-			//auditorioAbm.agregar("Colon", tipoAuditorioAbm.traerTipoAuditorio(1));
+			tipoAuditorioAbm.agregar("cine");
 			seccionAbm.agregar("seccion 1", 12.5, auditorioAbm.traerAuditorio(1));
-			/*seccionAbm.agregar("seccion 2", 12.5, butacaAbm.traerButaca(seccionAbm.traerSeccion(2)), auditorioAbm.traerAuditorio(1));
-			seccionAbm.agregar("seccion 3", 12.5, butacaAbm.traerButaca(seccionAbm.traerSeccion(3)), auditorioAbm.traerAuditorio(1));
+			seccionAbm.agregar("seccion 2", 12.5, auditorioAbm.traerAuditorio(1));
+			seccionAbm.agregar("seccion 3", 12.5, auditorioAbm.traerAuditorio(1));
+			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(1));
+			butacaAbm.agregar(2, 2, seccionAbm.traerSeccion(1));
+			butacaAbm.agregar(1, 1, seccionAbm.traerSeccion(1));
+			butacaAbm.agregar(1, 2, seccionAbm.traerSeccion(1));
+			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(2));
+			butacaAbm.agregar(2, 2, seccionAbm.traerSeccion(2));
+			butacaAbm.agregar(1, 1, seccionAbm.traerSeccion(2));
+			butacaAbm.agregar(1, 2, seccionAbm.traerSeccion(2));
+			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(3));
+			/*Seccion s= new seccion(seccionAbm.traerSeccion(1).getNombreSeccion(),seccionAbm.traerSeccion(1).)
+			seccionAbm.modificar(Seccion);
 			auditorioAbm.agregar("El Monumental", seccionAbm.traerSeccion(), tipoAuditorioAbm.traerTipoAuditorio(1));
 			auditorioAbm.agregar("hoyts", seccionAbm.traerSeccion(), tipoAuditorioAbm.traerTipoAuditorio(3));*/
 			
