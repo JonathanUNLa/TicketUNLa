@@ -21,13 +21,13 @@ public class EventoABM {
 		return instancia;
 	}
 	
-	public Evento traerEntrada(int idEvento)throws Exception {
+	public Evento traerEvento(int idEvento)throws Exception {
 		Evento evento = dao.traerEvento(idEvento);
 		if(evento == null)throw new Exception("El evento no existe");
 		return evento;
 	}
 	
-	public List<Evento> traerCodigoDescuento(){
+	public List<Evento> traerEvento(){
 		return dao.traerEvento();
 	}
 	

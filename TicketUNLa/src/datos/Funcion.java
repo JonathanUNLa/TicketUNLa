@@ -22,6 +22,16 @@ public class Funcion {
 		this.descuento = descuento;
 		this.lstCodDesc = lstCodDesc;	
 	}
+	
+	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento,
+			double descuento,DiaDescuento diaDescuento) {
+
+		this.precioBase = precioBase;
+		this.diaHora = diaHora;
+		this.evento = evento;
+		this.diaDescuento= diaDescuento;
+		this.descuento = descuento;
+	}
 
 	public int getIdFuncion() {
 		return idFuncion;

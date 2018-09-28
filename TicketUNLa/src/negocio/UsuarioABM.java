@@ -22,13 +22,13 @@ public class UsuarioABM {
 		return instancia;
 	}
 	
-	public Usuario traerEntrada(int idUsuario)throws Exception {
+	public Usuario traerUsuario(int idUsuario)throws Exception {
 		Usuario usuario = dao.traerUsuario(idUsuario);
 		if(usuario == null)throw new Exception("El usuario no existe");
 		return usuario;
 	}
 	
-	public List<Usuario> traerCodigoDescuento(){
+	public List<Usuario> traerUsuario(){
 		return dao.traerUsuario();
 	}
 	

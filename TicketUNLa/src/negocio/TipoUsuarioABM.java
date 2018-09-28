@@ -4,7 +4,6 @@ import java.util.List;
 
 import dao.TipoUsuarioDao;
 import datos.Auditorio;
-import datos.TipoBeneficio;
 import datos.TipoUsuario;
 
 
@@ -32,8 +31,8 @@ public class TipoUsuarioABM {
 		return dao.traerTipoUsuario();
 	}
 	
-	public int agregar(String nombreTipo,TipoBeneficio tipoBeneficio,Auditorio auditorio) {
-		TipoUsuario tipoUsuario = new TipoUsuario(nombreTipo,tipoBeneficio,auditorio);
+	public int agregar(String nombreTipo,Auditorio auditorio) {
+		TipoUsuario tipoUsuario = new TipoUsuario(nombreTipo,auditorio);
 		return dao.agregar(tipoUsuario);
 	}
 	

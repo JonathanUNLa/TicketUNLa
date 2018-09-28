@@ -29,7 +29,7 @@ public class EntradaABM {
 		return entrada;
 	}
 	
-	public List<Entrada> traerCodigoDescuento(){
+	public List<Entrada> traerEntrada(){
 		return dao.traerEntrada();
 	}
 	

@@ -17,6 +17,7 @@
 		<mapping resource="mapeos/Auditorio.hbm.xml"/>
 		<mapping resource="mapeos/Seccion.hbm.xml"/>
 		<mapping resource="mapeos/Butaca.hbm.xml"/>
+		<mapping resource="mapeos/CodigoDescuento.hbm.xml"/>
 		<mapping resource="mapeos/Entrada.hbm.xml"/>
 		<mapping resource="mapeos/Usuario.hbm.xml"/>
 		<mapping resource="mapeos/Funcion.hbm.xml"/>

@@ -24,18 +24,23 @@ public class FuncionABM {
 		return instancia;
 	}
 	
-	public Funcion traerEntrada(int idFuncion)throws Exception {
+	public Funcion traerFuncion(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);
 		if(funcion == null)throw new Exception("La funcion no existe");
 		return funcion;
 	}
 	
-	public List<Funcion> traerCodigoDescuento(){
+	public List<Funcion> traerFuncion(){
 		return dao.traerFuncion();
 	}
 	
 	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento, Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
 		Funcion funcion = new Funcion(precioBase,diaHora,evento,descuento,diaDescuento,lstCodDesc);
+		return dao.agregar(funcion);
+	}
+	
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento,DiaDescuento diaDescuento) {
+		Funcion funcion = new Funcion(precioBase,diaHora,evento,descuento,diaDescuento);
 		return dao.agregar(funcion);
 	}
 	

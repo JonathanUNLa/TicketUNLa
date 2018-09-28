@@ -5,7 +5,7 @@ public class DiaDescuento {
 	private String dia;
 	private double descuento;
 	
-	
+	public DiaDescuento() {}
 	
 	public DiaDescuento( String dia, double descuento) {
 		this.dia = dia;

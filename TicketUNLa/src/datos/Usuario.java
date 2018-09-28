@@ -33,7 +33,7 @@ public class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
-	public long getDni() {
+	public int getDni() {
 		return dni;
 	}
 

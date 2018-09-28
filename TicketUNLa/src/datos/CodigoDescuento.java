@@ -16,11 +16,11 @@ public class CodigoDescuento {
 		this.funcion = funcion;
 	}
 
-	public int getidCodigo() {
+	public int getIdCodigo() {
 		return idCodigo;
 	}
 
-	protected void setidCodigo(int idCodigo) {
+	protected void setIdCodigo(int idCodigo) {
 		this.idCodigo = idCodigo;
 	}
 

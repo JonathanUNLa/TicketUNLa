@@ -31,10 +31,12 @@ public class TestMain {
 		EntradaABM entradaAbm = EntradaABM.getInstancia();
 		
 		try {
-			tipoAuditorioAbm.agregar("estadio");
+			/*tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
-			tipoAuditorioAbm.agregar("cine");
-			seccionAbm.agregar("seccion 1", 12.5, auditorioAbm.traerAuditorio(1));
+			tipoAuditorioAbm.agregar("cine");*/
+			/*auditorioAbm.agregar("El Monumental", tipoAuditorioAbm.traerTipoAuditorio(1));
+			auditorioAbm.agregar("Colon", tipoAuditorioAbm.traerTipoAuditorio(2));
+			/*seccionAbm.agregar("seccion 1", 12.5, auditorioAbm.traerAuditorio(1));
 			seccionAbm.agregar("seccion 2", 12.5, auditorioAbm.traerAuditorio(1));
 			seccionAbm.agregar("seccion 3", 12.5, auditorioAbm.traerAuditorio(1));
 			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(1));
@@ -45,11 +47,26 @@ public class TestMain {
 			butacaAbm.agregar(2, 2, seccionAbm.traerSeccion(2));
 			butacaAbm.agregar(1, 1, seccionAbm.traerSeccion(2));
 			butacaAbm.agregar(1, 2, seccionAbm.traerSeccion(2));
-			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(3));
-			/*Seccion s= new seccion(seccionAbm.traerSeccion(1).getNombreSeccion(),seccionAbm.traerSeccion(1).)
-			seccionAbm.modificar(Seccion);
-			auditorioAbm.agregar("El Monumental", seccionAbm.traerSeccion(), tipoAuditorioAbm.traerTipoAuditorio(1));
-			auditorioAbm.agregar("hoyts", seccionAbm.traerSeccion(), tipoAuditorioAbm.traerTipoAuditorio(3));*/
+			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(3));*/
+			/*eventoAbm.agregar("Evento 1", auditorioAbm.traerAuditorio(1));
+			eventoAbm.agregar("Evento 2", auditorioAbm.traerAuditorio(2));
+			diaDescuentoAbm.agregar("Lunes", 15.0);
+			diaDescuentoAbm.agregar("Martes", 20.0);
+			funcionAbm.agregar(500.0, new GregorianCalendar(), eventoAbm.traerEvento(1), 10.0, diaDescuentoAbm.traerDiaDescuento(1));
+			funcionAbm.agregar(550.0, new GregorianCalendar(), eventoAbm.traerEvento(1), 10.0, diaDescuentoAbm.traerDiaDescuento(1));
+			funcionAbm.agregar(600.0, new GregorianCalendar(), eventoAbm.traerEvento(2), 10.0, diaDescuentoAbm.traerDiaDescuento(2));
+			funcionAbm.agregar(650.0, new GregorianCalendar(), eventoAbm.traerEvento(2), 10.0, diaDescuentoAbm.traerDiaDescuento(2));*/
+			codigoDescuentoAbm.agregar("SDE5697", 20.0, seccionAbm.traerSeccion(1), funcionAbm.traerFuncion(1));
+			/*tipoUsuarioAbm.agregar("Administrador", auditorioAbm.traerAuditorio(1));
+			tipoUsuarioAbm.agregar("Cliente", auditorioAbm.traerAuditorio(1));
+			tipoUsuarioAbm.agregar("Empleado", auditorioAbm.traerAuditorio(1));
+			tipoBeneficioAbm.agregar("Jubilado", 10);
+			tipoBeneficioAbm.agregar("Estudiante", 5);*/
+			usuarioAbm.agregar(30, "Jonathan", "Yañez", "43698789", "Jon", "soyputo123", tipoUsuarioAbm.traerTipoUsuario(2), tipoBeneficioAbm.traerTipoBeneficio(1));
+			usuarioAbm.agregar(40, "Jose", "Lucero", "40364587", "asd", "123456", tipoUsuarioAbm.traerTipoUsuario(1), null);
+			usuarioAbm.agregar(50, "Empleado", "Asd", "43698789", "asdasd", "asd123", tipoUsuarioAbm.traerTipoUsuario(3), null);
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
