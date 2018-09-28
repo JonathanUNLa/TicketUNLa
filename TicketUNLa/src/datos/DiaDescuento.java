@@ -35,13 +35,4 @@ public class DiaDescuento {
 	public String toString() {
 		return "DiaDescuento [idDiaDescuento=" + idDiaDescuento + ", dia=" + dia + ", descuento=" + descuento + "]";
 	}
-
-	
-
-	
-	
-	
-	
-	
-	
 }

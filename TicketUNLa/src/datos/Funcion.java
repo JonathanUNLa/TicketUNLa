@@ -96,7 +96,7 @@ public class Funcion {
 	@Override
 	public String toString() {
 		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + diaHora + ", evento="
-				+ evento 	+ ", descuento=" + descuento + ", lstCodDesc=" + lstCodDesc + "]";
+				+ evento.getNombre() + ", descuento=" + descuento + "]";
 	}
 	
 }

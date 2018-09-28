@@ -57,6 +57,9 @@ public class Auditorio {
 		this.tipoAuditorio = tipoAuditorio;
 	}
 
-	
-	
+	@Override
+	public String toString() {
+		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", tipoAuditorio=" + tipoAuditorio.getNombre() + "]";
+	}
+
 }

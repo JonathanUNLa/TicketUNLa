@@ -19,8 +19,6 @@ public class Seccion {
 		this.auditorio = auditorio;
 	}
 
-
-
 	public Seccion(String nombreSeccion, double precioSeccion, Auditorio auditorio) {
 		super();
 		this.nombreSeccion = nombreSeccion;
@@ -75,7 +73,7 @@ public class Seccion {
 	@Override
 	public String toString() {
 		return "Seccion [idSeccion=" + idSeccion + ", nombreSeccion=" + nombreSeccion + ", precioSeccion="
-				+ precioSeccion + ", lstButacas=" + lstButacas + "]";
+				+ precioSeccion + "]";
 	}
 	
 }

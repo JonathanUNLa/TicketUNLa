@@ -59,7 +59,7 @@ public class CodigoDescuento {
 	@Override
 	public String toString() {
 		return "CodigoDescuento [idCodigo=" + idCodigo + ", codigo=" + codigo + ", descuento="
-				+ descuento + ", seccion=" + seccion + ", funcion=" + funcion + "]";
+				+ descuento + ", seccion=" + seccion.getNombreSeccion() + ", funcion=" + funcion.getIdFuncion() + "]";
 	}
 	
 }

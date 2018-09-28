@@ -14,8 +14,6 @@ public class Butaca {
 		this.columna = columna;
 		this.seccion = seccion;
 	}
-
-	
 	
 	public Butaca(int fila, int columna) {
 		super();
@@ -55,6 +53,10 @@ public class Butaca {
 		this.seccion = seccion;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + ", seccion=" + seccion.getNombreSeccion()
+				+ "]";
+	}
 	
 }

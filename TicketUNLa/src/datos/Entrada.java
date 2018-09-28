@@ -69,8 +69,8 @@ public class Entrada {
 
 	@Override
 	public String toString() {
-		return "Entrada [idEntrada=" + idEntrada + ", seccion=" + seccion + ", butaca=" + butaca + ", usuario="
-				+ usuario + ", funcion=" + funcion + ", precioFinal=" + precioFinal + "]";
+		return "Entrada [idEntrada=" + idEntrada + ", seccion=" + seccion.getNombreSeccion() + ", butaca=" + butaca + ", usuario="
+				+ usuario.getNombre() + ", funcion=" + funcion.getIdFuncion() + ", precioFinal=" + precioFinal + "]";
 	}
 	
 }
