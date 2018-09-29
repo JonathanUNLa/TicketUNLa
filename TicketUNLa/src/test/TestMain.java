@@ -73,7 +73,7 @@ public class TestMain {
 			System.out.println(funcionAbm.traerFuncionHql(1));
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
 			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));*/
-			System.out.println(usuarioAbm.traerUsuarioHql(1));
+			System.out.println(usuarioAbm.traerUsuarioHql(4));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

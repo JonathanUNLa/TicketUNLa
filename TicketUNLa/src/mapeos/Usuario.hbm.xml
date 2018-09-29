@@ -14,6 +14,6 @@
 <property column = "contraseña" name = "contraseña" type = "string" />
 <many-to-one name = "tipoBeneficio" class = "datos.TipoBeneficio" column = "tipoBeneficio" not-null = "false"/>
 <many-to-one name = "tipoUsuario" class = "datos.TipoUsuario" column = "tipoUsuario" not-null = "true"/>
-<many-to-one name = "auditorio" class = "datos.Auditorio" column = "auditorio" not-null = "true"/>
+<many-to-one name = "auditorio" class = "datos.Auditorio" column = "auditorio" not-null = "false"/>
 </class >
 </hibernate-mapping >
