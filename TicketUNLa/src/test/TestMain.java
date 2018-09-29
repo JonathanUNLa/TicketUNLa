@@ -67,6 +67,12 @@ public class TestMain {
 			usuarioAbm.agregar(30, "Jonathan", "Yañez", "43698789", "Jon", "soyputo123", tipoUsuarioAbm.traerTipoUsuario(2), tipoBeneficioAbm.traerTipoBeneficio(1));
 			usuarioAbm.agregar(40, "Jose", "Lucero", "40364587", "asd", "123456", tipoUsuarioAbm.traerTipoUsuario(1), null);
 			usuarioAbm.agregar(50, "Empleado", "Asd", "43698789", "asdasd", "asd123", tipoUsuarioAbm.traerTipoUsuario(3), null);*/
+			//System.out.println(butacaAbm.traerButaca(1));
+			//System.out.println(seccionAbm.traerSeccion(1));
+		//	System.out.println(eventoAbm.traerEvento(1));
+			//System.out.println(auditorioAbm.traerAuditorio(1));
+		//	System.out.println(usuarioAbm.traerUsuario(1));
+			System.out.println(funcionAbm.traerFuncion(1));
 			
 		} catch (Exception e) {
 			e.printStackTrace();

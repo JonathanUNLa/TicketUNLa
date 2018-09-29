@@ -101,7 +101,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
 				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() + "]";
+				+ ", tipoUsuario=" +tipoUsuario.getNombreTipo() +  ", tipoBeneficio=" + tipoBeneficio.getBeneficio()+ "]";
 	}
 	
 }

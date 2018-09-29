@@ -55,7 +55,7 @@ public class Butaca {
 
 	@Override
 	public String toString() {
-		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + ", seccion=" + seccion.getNombreSeccion()
+		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + ", seccion=" +seccion.getNombreSeccion()
 				+ "]";
 	}
 	

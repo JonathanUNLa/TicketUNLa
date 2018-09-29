@@ -68,7 +68,10 @@ public class FuncionDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (Funcion) session.get(Funcion.class, idFuncion);
+			String hql= "from Funcion f "+
+						"inner join fetch f.diaDescuento "+
+						"where f.idFuncion= "+idFuncion;
+			objeto = (Funcion) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
 		}

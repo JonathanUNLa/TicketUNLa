@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+
 import datos.Butaca;
 import datos.Seccion;
 
@@ -69,7 +70,10 @@ public class ButacaDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (Butaca) session.get(Butaca.class, idButaca);
+			String hql= "from Butaca b "
+						+ "inner join fetch b.seccion " 
+						+ "where b.idButaca= "+idButaca;
+			objeto = (Butaca) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
 		}
@@ -90,6 +94,9 @@ public class ButacaDao {
 		
 		return butacas;
 	}
+	
+
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Butaca> traerButaca(Seccion seccion) throws HibernateException {

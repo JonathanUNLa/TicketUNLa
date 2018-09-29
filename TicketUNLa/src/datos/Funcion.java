@@ -2,35 +2,33 @@ package datos;
 
 import java.util.*;
 
+import funciones.Funciones;
+
 public class Funcion {
 	private int idFuncion;
 	private double precioBase;
 	private GregorianCalendar diaHora;
 	private Evento evento;
-	private double descuento;
 	private Set<CodigoDescuento> lstCodDesc ;
 	private DiaDescuento diaDescuento;
 	public Funcion() {}
 	
 	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento,
-					double descuento,DiaDescuento diaDescuento, Set<CodigoDescuento> lstCodDesc) {
+					DiaDescuento diaDescuento, Set<CodigoDescuento> lstCodDesc) {
 		
 		this.precioBase = precioBase;
 		this.diaHora = diaHora;
 		this.evento = evento;
 		this.diaDescuento= diaDescuento;
-		this.descuento = descuento;
 		this.lstCodDesc = lstCodDesc;	
 	}
 	
-	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento,
-			double descuento,DiaDescuento diaDescuento) {
-
+	public Funcion(double precioBase, GregorianCalendar diaHora, Evento evento, DiaDescuento diaDescuento) {
 		this.precioBase = precioBase;
 		this.diaHora = diaHora;
 		this.evento = evento;
 		this.diaDescuento= diaDescuento;
-		this.descuento = descuento;
+
 	}
 
 	public int getIdFuncion() {
@@ -67,14 +65,6 @@ public class Funcion {
 
 
 
-	public double getDescuento() {
-		return descuento;
-	}
-
-	public void setDescuento(double descuento) {
-		this.descuento = descuento;
-	}
-
 	public Set<CodigoDescuento> getLstCodDesc() {
 		return lstCodDesc;
 	}
@@ -93,10 +83,13 @@ public class Funcion {
 		this.diaDescuento = diaDescuento;
 	}
 
+	
+	
 	@Override
 	public String toString() {
-		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + diaHora + ", evento="
-				+ evento.getNombre() + ", descuento=" + descuento + "]";
+		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + Funciones.traerDia(diaHora) + ", evento="
+				+ evento + " lstCodDesc=" +lstCodDesc +  ", diaDescuento=" + diaDescuento.getDia()
+				+ "]";
 	}
 	
 }

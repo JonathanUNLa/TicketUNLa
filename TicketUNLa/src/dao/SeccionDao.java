@@ -68,7 +68,10 @@ public class SeccionDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (Seccion) session.get(Seccion.class, idSeccion);
+			String hql= "from Seccion s "+
+						"inner join fetch s.auditorio "+
+						"where s.idSeccion= "+ idSeccion;
+			objeto = (Seccion) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
 		}

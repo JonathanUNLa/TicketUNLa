@@ -34,13 +34,13 @@ public class FuncionABM {
 		return dao.traerFuncion();
 	}
 	
-	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento, Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
-		Funcion funcion = new Funcion(precioBase,diaHora,evento,descuento,diaDescuento,lstCodDesc);
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,  Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
+		Funcion funcion = new Funcion(precioBase,diaHora,evento, diaDescuento,lstCodDesc);
 		return dao.agregar(funcion);
 	}
 	
-	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,double descuento,DiaDescuento diaDescuento) {
-		Funcion funcion = new Funcion(precioBase,diaHora,evento,descuento,diaDescuento);
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento, DiaDescuento diaDescuento) {
+		Funcion funcion = new Funcion(precioBase,diaHora,evento, diaDescuento);
 		return dao.agregar(funcion);
 	}
 	
