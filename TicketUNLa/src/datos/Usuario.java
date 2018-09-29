@@ -10,11 +10,13 @@ public class Usuario {
 	private String contraseña;
 	private TipoUsuario tipoUsuario;
 	private TipoBeneficio tipoBeneficio;
-	
+	private Auditorio auditorio;
 	public Usuario() {}
 	
-	public Usuario(int dni, String nombre, String apellido, String telefono, String nombreUsuario,
-			String contraseña, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio) {
+	
+	
+	public Usuario( int dni, String nombre, String apellido, String telefono, String nombreUsuario,
+			String contraseña, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio, Auditorio auditorio) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -23,6 +25,7 @@ public class Usuario {
 		this.contraseña = contraseña;
 		this.tipoUsuario = tipoUsuario;
 		this.tipoBeneficio = tipoBeneficio;
+		this.auditorio = auditorio;
 	}
 
 	public int getIdUsuario() {
@@ -97,11 +100,26 @@ public class Usuario {
 		this.tipoBeneficio = tipoBeneficio;
 	}
 
+	
+	
+	public Auditorio getAuditorio() {
+		return auditorio;
+	}
+
+
+
+	public void setAuditorio(Auditorio auditorio) {
+		this.auditorio = auditorio;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
 				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", tipoUsuario=" +tipoUsuario.getNombreTipo() +  ", tipoBeneficio=" + tipoBeneficio.getBeneficio()+ "]";
+				+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() + ", auditorio=" + auditorio.getNombre()
+				+ "]";
 	}
 	
 }

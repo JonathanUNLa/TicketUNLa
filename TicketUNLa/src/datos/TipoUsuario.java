@@ -3,13 +3,11 @@ package datos;
 public class TipoUsuario {
 	private int idTipoUsuario;
 	private String nombreTipo;
-	private Auditorio auditorio;
 	
 	public TipoUsuario() {}
 	
-	public TipoUsuario(String nombreTipo, Auditorio auditorio) {
+	public TipoUsuario(String nombreTipo  ) {
 		this.nombreTipo = nombreTipo;
-		this.auditorio = auditorio;
 	}
 
 
@@ -29,17 +27,10 @@ public class TipoUsuario {
 		this.nombreTipo = nombreTipo;
 	}
 
-	public Auditorio getAuditorio() {
-		return auditorio;
-	}
-
-	public void setAuditorio(Auditorio auditorio) {
-		this.auditorio = auditorio;
-	}
 
 	@Override
 	public String toString() {
-		return "TipoUsuario [idTipoUsuario=" + idTipoUsuario + ", nombreTipo=" + nombreTipo + ", auditorio=" + auditorio + "]";
+		return "TipoUsuario [idTipoUsuario=" + idTipoUsuario + ", nombreTipo=" + nombreTipo  + "]";
 	}
 	
 }

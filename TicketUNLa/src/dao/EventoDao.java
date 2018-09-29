@@ -68,6 +68,18 @@ public class EventoDao {
 		
 		try {
 			iniciaOperacion();
+			objeto = (Evento) session.get(Evento.class, idEvento);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	public Evento traerEventoHql(int idEvento) throws HibernateException {
+		Evento objeto = null;
+		
+		try {
+			iniciaOperacion();
 			String hql= "from Evento e "+
 						"inner join fetch e.auditorio "+
 						"where e.idEvento= "+idEvento;

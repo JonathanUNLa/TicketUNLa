@@ -28,6 +28,11 @@ public class AuditorioABM {
 		return auditorio;
 	}
 	
+	public Auditorio traerAuditorioHql(int idAuditorio) throws Exception {
+		Auditorio auditorio = dao.traerAuditorioHql(idAuditorio);
+		if (auditorio==null) throw new Exception("El auditorio no existe");
+		return auditorio;
+	}
 	public List<Auditorio> traerAuditorio() throws Exception {
 		return dao.traerAuditorio();
 	}

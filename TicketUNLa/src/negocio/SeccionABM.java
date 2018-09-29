@@ -22,11 +22,11 @@ public class SeccionABM {
 		return instancia;
 	}
 	
-	/*public Seccion traerSeccion(int idSeccion) throws Exception {
-		Seccion seccion = dao.traerSeccion(idSeccion);
+	public Seccion traerSeccionHql(int idSeccion) throws Exception {
+		Seccion seccion = dao.traerSeccionHql(idSeccion);
 		if (seccion==null) throw new Exception("El Seccion no existe");
 		return seccion;
-	}*/
+	}
 	
 	public Seccion traerSeccion(int idSeccion)throws Exception{
 		Seccion seccion = dao.traerSeccion(idSeccion);

@@ -63,8 +63,20 @@ public class SeccionDao {
 			session.close();
 		}
 	}
-	
 	public Seccion traerSeccion(int idSeccion) throws HibernateException {
+		Seccion objeto = null;
+		
+		try {
+			iniciaOperacion();
+			objeto = (Seccion) session.get(Seccion.class, idSeccion);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Seccion traerSeccionHql(int idSeccion) throws HibernateException {
 		Seccion objeto = null;
 		
 		try {

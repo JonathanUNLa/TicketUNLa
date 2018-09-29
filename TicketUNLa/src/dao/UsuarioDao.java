@@ -64,9 +64,20 @@ public class UsuarioDao {
 			session.close();
 		}
 	}
-	
-	
 	public Usuario traerUsuario(int idUsuario) throws HibernateException {
+		Usuario objeto = null;
+		
+		try {
+			iniciaOperacion();
+			objeto = (Usuario) session.get(Usuario.class, idUsuario);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
 		Usuario objeto = null;
 		
 		try {

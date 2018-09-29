@@ -69,6 +69,18 @@ public class FuncionDao {
 		
 		try {
 			iniciaOperacion();
+			objeto = (Funcion) session.get(Funcion.class, idFuncion);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	public Funcion traerFuncionHql(int idFuncion) throws HibernateException {
+		Funcion objeto = null;
+		
+		try {
+			iniciaOperacion();
 			String hql= "from Funcion f "+
 						"inner join fetch f.evento "+
 						"inner join fetch f.lstCodDesc dsc " +

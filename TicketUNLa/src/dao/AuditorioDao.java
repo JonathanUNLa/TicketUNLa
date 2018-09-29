@@ -70,6 +70,19 @@ public class AuditorioDao {
 		
 		try {
 			iniciaOperacion();
+			objeto = (Auditorio) session.get(Auditorio.class, idAuditorio);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Auditorio traerAuditorioHql(int idAuditorio) throws HibernateException {
+		Auditorio objeto = null;
+		
+		try {
+			iniciaOperacion();
 			String hql= "from Auditorio a "+
 						"inner join fetch a.tipoAuditorio "+
 						"inner join fetch a.lstSecciones  lst "+
