@@ -22,10 +22,17 @@ public class SeccionABM {
 		return instancia;
 	}
 	
-	public Seccion traerSeccion(int idSeccion) throws Exception {
+	/*public Seccion traerSeccion(int idSeccion) throws Exception {
 		Seccion seccion = dao.traerSeccion(idSeccion);
 		if (seccion==null) throw new Exception("El Seccion no existe");
 		return seccion;
+	}*/
+	
+	public Seccion traerSeccion(int idSeccion)throws Exception{
+		Seccion seccion = dao.traerSeccion(idSeccion);
+		if(seccion!=null){
+			return seccion;
+		}else throw new Exception ("id de Factura no existe");
 	}
 	
 	public List<Seccion> traerSeccion() throws Exception {

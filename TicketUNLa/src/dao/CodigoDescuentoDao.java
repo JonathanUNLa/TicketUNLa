@@ -68,7 +68,11 @@ public class CodigoDescuentoDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (CodigoDescuento) session.get(CodigoDescuento.class, idCodigoDescuento);
+			String hql= "from CodigoDescuento c "+
+						"inner join fetch c.seccion "+
+						"inner join fetch c.funcion "+
+						"where c.idCodigoDescuento= "+idCodigoDescuento;
+			objeto = (CodigoDescuento) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
 		}

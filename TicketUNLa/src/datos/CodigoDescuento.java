@@ -1,7 +1,7 @@
 package datos;
 
 public class CodigoDescuento {
-	private int idCodigo;
+	private int idCodigoDescuento;
 	private String codigo;
 	private double descuento;
 	private Seccion seccion;
@@ -16,12 +16,12 @@ public class CodigoDescuento {
 		this.funcion = funcion;
 	}
 
-	public int getIdCodigo() {
-		return idCodigo;
+	public int getIdCodigoDescuento() {
+		return idCodigoDescuento;
 	}
 
-	protected void setIdCodigo(int idCodigo) {
-		this.idCodigo = idCodigo;
+	protected void setIdCodigoDescuento(int idCodigo) {
+		this.idCodigoDescuento = idCodigo;
 	}
 
 	public String getCodigo() {
@@ -58,7 +58,7 @@ public class CodigoDescuento {
 
 	@Override
 	public String toString() {
-		return "CodigoDescuento [idCodigo=" + idCodigo + ", codigo=" + codigo + ", descuento="
+		return "CodigoDescuento [idCodigo=" + idCodigoDescuento + ", codigo=" + codigo + ", descuento="
 				+ descuento + ", seccion=" + seccion.getNombreSeccion() + ", funcion=" + funcion.getIdFuncion() + "]";
 	}
 	

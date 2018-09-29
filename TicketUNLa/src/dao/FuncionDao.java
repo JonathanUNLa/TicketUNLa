@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -69,9 +70,12 @@ public class FuncionDao {
 		try {
 			iniciaOperacion();
 			String hql= "from Funcion f "+
-						"inner join fetch f.diaDescuento "+
+						"inner join fetch f.evento "+
+						"left join fetch f.lstCodDesc " +
+						"left join fetch f.diaDescuento "+
 						"where f.idFuncion= "+idFuncion;
 			objeto = (Funcion) session.createQuery(hql).uniqueResult();
+			Hibernate.initialize(objeto.getLstCodDesc());
 		} finally {
 			session.close();
 		}
