@@ -24,11 +24,11 @@ public class FuncionABM {
 		return instancia;
 	}
 	
-	/*public Funcion traerFuncion(int idFuncion)throws Exception {
-		Funcion funcion = dao.traerFuncion(idFuncion);
+	public Funcion traerFuncionHql(int idFuncion)throws Exception {
+		Funcion funcion = dao.traerFuncionHql(idFuncion);
 		if(funcion == null)throw new Exception("La funcion no existe");
 		return funcion;
-	}*/
+	}
 	public Funcion traerFuncion(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);
 		if(funcion!=null){

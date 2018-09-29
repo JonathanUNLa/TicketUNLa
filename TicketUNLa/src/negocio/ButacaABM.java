@@ -25,7 +25,7 @@ public class ButacaABM {
 		if(butaca == null)throw new Exception("La Butaca no existe");
 		return butaca;
 	}
-	public Butaca traerButacaHQl(int idButaca)throws Exception {
+	public Butaca traerButacaHql(int idButaca)throws Exception {
 		Butaca butaca = dao.traerButacaHql(idButaca);
 		if(butaca == null)throw new Exception("La Butaca no existe");
 		return butaca;
