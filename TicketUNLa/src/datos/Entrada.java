@@ -67,6 +67,31 @@ public class Entrada {
 		this.precioFinal = precioFinal;
 	}
 
+	
+
+/*	public double calcularPrecioFinal(){
+		double precio=0;
+		double desCod=0;
+		for(CodigoDescuento s:funcion.getLstCodDesc()) {
+			if(s.getCodigo().equals(codigo)) {
+				desCod=s.getDescuento();
+			}
+		}
+		precio=funcion.getPrecioBase()+butaca.getSeccion().getPrecioSeccion();
+
+		if(usuario.getTipoBeneficio()!=null) {
+			desCod+=usuario.getTipoBeneficio().getDescuento();
+		}
+		if(desCod>100) {
+			precio=0;
+		}else {
+			precio-=precio*(desCod/100);
+		}
+		return precio;
+		
+	}*/
+
+	
 	@Override
 	public String toString() {
 		return "Entrada [idEntrada=" + idEntrada + ", seccion=" + seccion.getNombreSeccion() + ", butaca=" + butaca + ", usuario="
