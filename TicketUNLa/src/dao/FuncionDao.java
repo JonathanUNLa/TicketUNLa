@@ -71,8 +71,10 @@ public class FuncionDao {
 			iniciaOperacion();
 			String hql= "from Funcion f "+
 						"inner join fetch f.evento "+
-						"left join fetch f.lstCodDesc " +
-						"left join fetch f.diaDescuento "+
+						"inner join fetch f.lstCodDesc dsc " +
+						"inner join fetch dsc.seccion "+
+						"inner join fetch dsc.funcion "+
+						"iner join fetch f.diaDescuento "+
 						"where f.idFuncion= "+idFuncion;
 			objeto = (Funcion) session.createQuery(hql).uniqueResult();
 			Hibernate.initialize(objeto.getLstCodDesc());

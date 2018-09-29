@@ -72,8 +72,9 @@ public class TestMain {
 		//	System.out.println(eventoAbm.traerEvento(1));
 			//System.out.println(auditorioAbm.traerAuditorio(1));
 		//	System.out.println(usuarioAbm.traerUsuario(1));
-			//System.out.println(funcionAbm.traerFuncion(1));
-			System.out.println(codigoDescuentoAbm.traerCodigoDescuento(1));
+			System.out.println(funcionAbm.traerFuncion(1));
+			//System.out.println(auditorioAbm.traerAuditorio(1));
+			//	System.out.println(codigoDescuentoAbm.traerCodigoDescuento(1));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -2,10 +2,12 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import datos.Auditorio;
+import datos.Seccion;
 
 
 public class AuditorioDao {
@@ -68,7 +70,13 @@ public class AuditorioDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (Auditorio) session.get(Auditorio.class, idAuditorio);
+			String hql= "from Auditorio a "+
+						"inner join fetch a.tipoAuditorio "+
+						"inner join fetch a.lstSecciones  lst "+
+						"inner join fetch lst.lstButacas  "+
+						"where a.idAuditorio= "+ idAuditorio;
+			objeto = (Auditorio) session.createQuery(hql).uniqueResult();
+			
 		} finally {
 			session.close();
 		}
