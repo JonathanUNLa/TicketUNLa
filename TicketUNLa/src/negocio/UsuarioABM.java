@@ -33,6 +33,11 @@ public class UsuarioABM {
 		if(usuario == null)throw new Exception("El usuario no existe");
 		return usuario;
 	}
+	public Usuario traerUsuarioEHql(int idUsuario)throws Exception {
+		Usuario usuario = dao.traerEmpleadoHql(idUsuario);
+		if(usuario == null)throw new Exception("El usuario no existe");
+		return usuario;
+	}
 	public List<Usuario> traerUsuario(){
 		return dao.traerUsuario();
 	}
