@@ -6,8 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import datos.Butaca;
-import datos.Seccion;
 import datos.Usuario;
 
 public class UsuarioDao {
@@ -83,13 +81,15 @@ public class UsuarioDao {
 		try {
 			iniciaOperacion();
 
-			
-			String 	hql = "from Usuario a "
-					+ "inner join fetch a.tipoBeneficio "
-					+ "left join fetch a.tipoUsuario "
-					+ "left join fetch a.auditorio "
-					+"where a.idUsuario=" +idUsuario;
-							
+			String hql= "from Usuario a "+
+					"inner join fetch a.tipoUsuario "+
+					"left join fetch a.tipoBeneficio "+
+					"left join fetch a.auditorio d "+
+					"inner join fetch d.tipoAuditorio "+
+					"left join fetch d.lstSecciones s "+
+					"left join fetch s.lstButacas "+
+					"where a.idUsuario= "+idUsuario;
+		
 			objeto =  (Usuario) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
@@ -97,9 +97,7 @@ public class UsuarioDao {
 		
 		return objeto;
 	}
-	//	String hql = "from Butaca b where b.seccion=" + idSeccion
-	//butacas = (Butaca) session.createQuery(hql).uniqueResult();
-
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Usuario> traerUsuario() throws HibernateException {
