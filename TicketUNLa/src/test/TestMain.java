@@ -2,7 +2,6 @@ package test;
 
 import java.util.*;
 
-import datos.Butaca;
 import negocio.AuditorioABM;
 import negocio.ButacaABM;
 import negocio.CodigoDescuentoABM;
@@ -33,7 +32,7 @@ public class TestMain {
 		EntradaABM entradaAbm = EntradaABM.getInstancia();
 		
 		try {
-		/*	tipoAuditorioAbm.agregar("estadio");
+			/*tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
 			auditorioAbm.agregar("El Monumental", tipoAuditorioAbm.traerTipoAuditorio(1));
@@ -67,14 +66,17 @@ public class TestMain {
 			usuarioAbm.agregar(30, "Jonathan", "Yañez", "43698789", "Jon", "soyputo123", tipoUsuarioAbm.traerTipoUsuario(2), tipoBeneficioAbm.traerTipoBeneficio(1),null);
 			usuarioAbm.agregar(40, "Jose", "Lucero", "40364587", "asd", "123456", tipoUsuarioAbm.traerTipoUsuario(1), null,null);
 			usuarioAbm.agregar(50, "Empleado", "Asd", "43698789", "asdasd", "asd123", tipoUsuarioAbm.traerTipoUsuario(3), null,null);
+			usuarioAbm.agregar(30, "Jonathan", "Yañez", "43698789", "Jon", "soyputo123", tipoUsuarioAbm.traerTipoUsuario(2), tipoBeneficioAbm.traerTipoBeneficio(1),auditorioAbm.traerAuditorio(1));
 			System.out.println(butacaAbm.traerButacaHql(1));
 			System.out.println(seccionAbm.traerSeccionHql(1));
 			System.out.println(eventoAbm.traerEventoHql(1));
-			System.out.println(funcionAbm.traerFuncionHql(1));
+			//System.out.println(funcionAbm.traerFuncionHql(1));
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
-			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));*/
-			//usuarioAbm.agregar(50, "nehuen", "verges", "116876680", "dream", "321", tipoUsuarioAbm.traerTipoUsuario(3), null,auditorioAbm.traerAuditorio(1));
-			System.out.println(usuarioAbm.traerUsuarioHql(1));
+			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
+			System.out.println(usuarioAbm.traerUsuarioHql(4));
+			entradaAbm.agregar(butacaAbm.traerButaca(1), funcionAbm.traerFuncion(1), usuarioAbm.traerUsuario(1), 20);*/
+			System.out.println(entradaAbm.traerEntradaHql(1));
+			//entradaAbm.agregar(butacaAbm.traerButaca(1), funcionAbm.traerFuncion(1), usuarioAbm.traerUsuario(1));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

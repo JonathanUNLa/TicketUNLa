@@ -2,7 +2,6 @@ package datos;
 
 public class Entrada {
 	private int idEntrada;
-	private Seccion seccion;
 	private Butaca butaca;
 	private Usuario usuario;
 	private Funcion funcion;
@@ -10,13 +9,11 @@ public class Entrada {
 	
 	public Entrada() {}
 	
-	public Entrada(Seccion seccion, Butaca butaca, Usuario usuario, Funcion funcion,
-			double precioFinal) {
-		this.seccion = seccion;
+	public Entrada(Butaca butaca, Usuario usuario, Funcion funcion) {
 		this.butaca = butaca;
 		this.usuario = usuario;
 		this.funcion = funcion;
-		this.precioFinal = precioFinal;
+		//this.precioFinal = calcularPrecioFinal();
 	}
 
 	public int getIdEntrada() {
@@ -26,15 +23,7 @@ public class Entrada {
 	protected void setIdEntrada(int idEntrada) {
 		this.idEntrada = idEntrada;
 	}
-
-	public Seccion getSeccion() {
-		return seccion;
-	}
-
-	public void setSeccion(Seccion seccion) {
-		this.seccion = seccion;
-	}
-
+	
 	public Butaca getButaca() {
 		return butaca;
 	}
@@ -67,9 +56,7 @@ public class Entrada {
 		this.precioFinal = precioFinal;
 	}
 
-	
-
-/*	public double calcularPrecioFinal(){
+	/*public double calcularPrecioFinal(){
 		double precio=0;
 		double desCod=0;
 		for(CodigoDescuento s:funcion.getLstCodDesc()) {
@@ -94,7 +81,7 @@ public class Entrada {
 	
 	@Override
 	public String toString() {
-		return "Entrada [idEntrada=" + idEntrada + ", seccion=" + seccion.getNombreSeccion() + ", butaca=" + butaca + ", usuario="
+		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca + ", usuario="
 				+ usuario.getNombre() + ", funcion=" + funcion.getIdFuncion() + ", precioFinal=" + precioFinal + "]";
 	}
 	

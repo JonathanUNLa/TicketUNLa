@@ -81,7 +81,8 @@ public class UsuarioDao {
 		try {
 			iniciaOperacion();
 
-			String hql= "from Usuario a "+
+			
+			String 	hql =  "from Usuario a "+
 					"inner join fetch a.tipoUsuario "+
 					"left join fetch a.tipoBeneficio "+
 					"left join fetch a.auditorio d "+
@@ -89,7 +90,7 @@ public class UsuarioDao {
 					"left join fetch d.lstSecciones s "+
 					"left join fetch s.lstButacas "+
 					"where a.idUsuario= "+idUsuario;
-		
+							
 			objeto =  (Usuario) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
@@ -97,7 +98,9 @@ public class UsuarioDao {
 		
 		return objeto;
 	}
-	
+	//	String hql = "from Butaca b where b.seccion=" + idSeccion
+	//butacas = (Butaca) session.createQuery(hql).uniqueResult();
+
 	
 	@SuppressWarnings("unchecked")
 	public List<Usuario> traerUsuario() throws HibernateException {
