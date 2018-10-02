@@ -52,12 +52,12 @@ public class TestMain {
 			eventoAbm.agregar("Evento 1", auditorioAbm.traerAuditorio(1));
 			eventoAbm.agregar("Evento 2", auditorioAbm.traerAuditorio(2));
 			diaDescuentoAbm.agregar("Lunes", 15.0);
-			diaDescuentoAbm.agregar("Martes", 20.0);
-			funcionAbm.agregar(500.0, new GregorianCalendar(), eventoAbm.traerEvento(1), diaDescuentoAbm.traerDiaDescuento(1));
+			diaDescuentoAbm.agregar("Martes", 20.0);*/
+			/*funcionAbm.agregar(500.0, new GregorianCalendar(), eventoAbm.traerEvento(1), diaDescuentoAbm.traerDiaDescuento(1));
 			funcionAbm.agregar(550.0, new GregorianCalendar(), eventoAbm.traerEvento(1), diaDescuentoAbm.traerDiaDescuento(1));
 			funcionAbm.agregar(600.0, new GregorianCalendar(), eventoAbm.traerEvento(2), diaDescuentoAbm.traerDiaDescuento(2));
-			funcionAbm.agregar(650.0, new GregorianCalendar(), eventoAbm.traerEvento(2), diaDescuentoAbm.traerDiaDescuento(2));
-			codigoDescuentoAbm.agregar("SDE5697", 100.0, seccionAbm.traerSeccion(1), funcionAbm.traerFuncion(1));
+			funcionAbm.agregar(650.0, new GregorianCalendar(), eventoAbm.traerEvento(2), diaDescuentoAbm.traerDiaDescuento(2));*/
+			//codigoDescuentoAbm.agregar("SDE5697", 100.0, seccionAbm.traerSeccion(1), funcionAbm.traerFuncion(1));
 			tipoUsuarioAbm.agregar("Administrador");
 			tipoUsuarioAbm.agregar("Cliente");
 			tipoUsuarioAbm.agregar("Empleado");
@@ -72,7 +72,7 @@ public class TestMain {
 			System.out.println(eventoAbm.traerEventoHql(1));
 			System.out.println(funcionAbm.traerFuncionHql(1));
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
-			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));*/
+			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
 			System.out.println(usuarioAbm.traerUsuarioHql(1));
 			//entradaAbm.agregar(butacaAbm.traerButacaHql(1), usuarioAbm.traerUsuarioHql(4), funcionAbm.traerFuncionHql(1),"SDE5697");
 			//System.out.println(entradaAbm.traerEntradaHql(1));

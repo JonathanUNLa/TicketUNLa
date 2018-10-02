@@ -42,8 +42,8 @@ public class UsuarioABM {
 		return dao.traerUsuario();
 	}
 	
-	public int agregar(int dni, String nombre, String apellido, String telefono, String nombreUsuario, String contraseña,TipoUsuario tipoUsuario,TipoBeneficio tipoBeneficio,Auditorio auditorio) {
-		Usuario usuario = new Usuario(dni, nombre, apellido, telefono, nombreUsuario, contraseña, tipoUsuario, tipoBeneficio, auditorio);
+	public int agregar(int dni, String nombre, String apellido, String telefono, String nombreUsuario, String contrasenia,TipoUsuario tipoUsuario,TipoBeneficio tipoBeneficio,Auditorio auditorio) {
+		Usuario usuario = new Usuario(dni, nombre, apellido, telefono, nombreUsuario, contrasenia, tipoUsuario, tipoBeneficio, auditorio);
 		return dao.agregar(usuario);
 	}
 	
