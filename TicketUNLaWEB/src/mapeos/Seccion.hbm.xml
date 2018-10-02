@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="datos.Seccion" table="Seccion">
+		<id column="idSeccion" name="idSeccion">
+			<generator class="identity"/>
+		</id>
+		<property column="nombreSeccion" name="nombreSeccion" type="string"/>
+		<property column="precioSeccion" name="precioSeccion" type="double"/>
+		<set name = "lstButacas" table = "Butaca" order-by = "idButaca asc"
+		inverse = "true" lazy = "true" fetch = "select">
+			<key column = "idButaca" not-null = "false"/>
+			<one-to-many class = "datos.Butaca"/>
+		</set>
+		<many-to-one name = "auditorio" class = "datos.Auditorio" column = "auditorio" not-null = "false"/>
+		
+	</class>
+</hibernate-mapping>
