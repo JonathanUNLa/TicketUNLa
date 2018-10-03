@@ -26,11 +26,6 @@ public class EventoABM {
 		if(evento == null)throw new Exception("El evento no existe");
 		return evento;
 	}
-	public Evento traerEventoHql(int idEvento)throws Exception {
-		Evento evento = dao.traerEventoHql(idEvento);
-		if(evento == null)throw new Exception("El evento no existe");
-		return evento;
-	}
 	
 	public List<Evento> traerEvento(){
 		return dao.traerEvento();

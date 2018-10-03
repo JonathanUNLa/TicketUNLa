@@ -3,7 +3,6 @@ package negocio;
 import java.util.List;
 
 import dao.UsuarioDao;
-import datos.Auditorio;
 import datos.TipoBeneficio;
 import datos.TipoUsuario;
 import datos.Usuario;
@@ -28,22 +27,13 @@ public class UsuarioABM {
 		if(usuario == null)throw new Exception("El usuario no existe");
 		return usuario;
 	}
-	public Usuario traerUsuarioHql(int idUsuario)throws Exception {
-		Usuario usuario = dao.traerUsuarioHql(idUsuario);
-		if(usuario == null)throw new Exception("El usuario no existe");
-		return usuario;
-	}
-	public Usuario traerUsuarioEHql(int idUsuario)throws Exception {
-		Usuario usuario = dao.traerEmpleadoHql(idUsuario);
-		if(usuario == null)throw new Exception("El usuario no existe");
-		return usuario;
-	}
+	
 	public List<Usuario> traerUsuario(){
 		return dao.traerUsuario();
 	}
 	
-	public int agregar(int dni, String nombre, String apellido, String telefono, String nombreUsuario, String contrasenia,TipoUsuario tipoUsuario,TipoBeneficio tipoBeneficio,Auditorio auditorio) {
-		Usuario usuario = new Usuario(dni, nombre, apellido, telefono, nombreUsuario, contrasenia, tipoUsuario, tipoBeneficio, auditorio);
+	public int agregar(int dni, String nombre, String apellido, String telefono, String nombreUsuario, String contraseña,TipoUsuario tipoUsuario,TipoBeneficio tipoBeneficio) {
+		Usuario usuario = new Usuario(dni,nombre,apellido,telefono,nombreUsuario,contraseña,tipoUsuario,tipoBeneficio);
 		return dao.agregar(usuario);
 	}
 	

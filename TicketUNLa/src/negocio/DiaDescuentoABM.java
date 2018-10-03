@@ -26,8 +26,6 @@ public class DiaDescuentoABM {
 		return diaDescuento;
 	}
 	
-
-	
 	public List<DiaDescuento> traerDiaDescuento(){
 		return dao.traerDiaDescuento();
 	}

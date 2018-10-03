@@ -88,7 +88,7 @@ public class Funcion {
 	@Override
 	public String toString() {
 		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + Funciones.traerDia(diaHora) + ", evento="
-				+ evento.getNombre()  + " lstCodDesc=" +lstCodDesc +  ", diaDescuento=" + diaDescuento.getDia()
+				+ evento + " lstCodDesc=" +lstCodDesc +  ", diaDescuento=" + diaDescuento.getDia()
 				+ "]";
 	}
 	

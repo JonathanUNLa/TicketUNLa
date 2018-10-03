@@ -76,28 +76,6 @@ public class EntradaDao {
 		return objeto;
 	}
 	
-	public Entrada traerEntradaHql(int idEntrada) throws HibernateException {
-		Entrada objeto = null;
-		
-		try {
-			iniciaOperacion();
-
-			
-			String 	hql =  "from Entrada e "+
-					"inner join fetch e.butaca "+
-					"left join fetch e.butaca.seccion "+
-					"inner join fetch e.usuario "+
-					"inner join fetch e.funcion "+
-					"where e.idEntrada= "+idEntrada;
-							
-			objeto =  (Entrada) session.createQuery(hql).uniqueResult();
-		} finally {
-			session.close();
-		}
-		
-		return objeto;
-	}
-	
 	@SuppressWarnings("unchecked")
 	public List<Entrada> traerEntrada() throws HibernateException {
 		List<Entrada> entradas = null;

@@ -3,6 +3,7 @@ package negocio;
 import java.util.List;
 
 import dao.TipoUsuarioDao;
+import datos.Auditorio;
 import datos.TipoUsuario;
 
 
@@ -30,8 +31,8 @@ public class TipoUsuarioABM {
 		return dao.traerTipoUsuario();
 	}
 	
-	public int agregar(String nombreTipo ) {
-		TipoUsuario tipoUsuario = new TipoUsuario(nombreTipo);
+	public int agregar(String nombreTipo,Auditorio auditorio) {
+		TipoUsuario tipoUsuario = new TipoUsuario(nombreTipo,auditorio);
 		return dao.agregar(tipoUsuario);
 	}
 	

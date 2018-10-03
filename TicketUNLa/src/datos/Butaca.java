@@ -49,7 +49,6 @@ public class Butaca {
 		return seccion;
 	}
 
-
 	public void setSeccion(Seccion seccion) {
 		this.seccion = seccion;
 	}

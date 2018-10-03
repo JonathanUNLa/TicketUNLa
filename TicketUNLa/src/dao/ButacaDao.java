@@ -64,19 +64,8 @@ public class ButacaDao {
 			session.close();
 		}
 	}
+	
 	public Butaca traerButaca(int idButaca) throws HibernateException {
-		Butaca objeto = null;
-		
-		try {
-			iniciaOperacion();
-			objeto = (Butaca) session.get(Butaca.class, idButaca);
-		} finally {
-			session.close();
-		}
-		
-		return objeto;
-	}
-	public Butaca traerButacaHql(int idButaca) throws HibernateException {
 		Butaca objeto = null;
 		
 		try {
