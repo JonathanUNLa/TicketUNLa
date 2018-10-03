@@ -121,7 +121,7 @@ public class Entrada {
 	@Override
 	public String toString() {
 		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca +  ", funcion="
-				+ funcion + ", codigo=" + codigo + ", precioFinal=" + precioFinal + ", reserva=" + reserva + "]";
+				+ funcion + ", codigo=" + codigo + ", precioFinal=" + precioFinal + ", reserva=" +  "]";
 	}
 
 	

@@ -16,6 +16,7 @@ public class ReservaDao {
 		tx = session.beginTransaction();
 	}
 	
+	
 	private void manejaExcepcion(HibernateException he) throws HibernateException {
 		tx.rollback();
 		throw new HibernateException("Error en la capa de acceso a datos", he);
@@ -82,7 +83,16 @@ public class ReservaDao {
 			iniciaOperacion();
 			String hql= "from Reserva r "+
 						"inner join fetch r.usuario u "+
-						"inner join fetch r.lstEntradas "+
+						"inner join fetch r.lstEntradas e "+
+						"left join fetch e.butaca s "+
+						"left join fetch e.funcion v "+
+						"left join fetch s.seccion "+
+						"left join fetch u.tipoBeneficio "+
+						"left join fetch u.tipoUsuario "+
+						"left join fetch v.diaDescuento "+
+						"inner join fetch v.evento "+
+						"left join fetch v.lstCodDesc lst "+
+						"inner join fetch lst.seccion "+
 						"where r.idReserva= "+ idReserva;
 			
 			
