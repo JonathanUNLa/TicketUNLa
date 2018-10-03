@@ -23,12 +23,16 @@ public class CodigoDescuentoABM {
 	}
 	
 	
-	public CodigoDescuento traerCodigoDescuento(int idCodigo)throws Exception {
-		CodigoDescuento butaca = dao.traerCodigoDescuento(idCodigo);
+	public CodigoDescuento traerCodigoDescuento(int idCodigoDescuento)throws Exception {
+		CodigoDescuento butaca = dao.traerCodigoDescuento(idCodigoDescuento);
 		if(butaca == null)throw new Exception("El Codigo no existe");
 		return butaca;
 	}
-	
+	public CodigoDescuento traerCodigoDescuentoHql(int idCodigoDescuento)throws Exception {
+		CodigoDescuento butaca = dao.traerCodigoDescuentoHql(idCodigoDescuento);
+		if(butaca == null)throw new Exception("El Codigo no existe");
+		return butaca;
+	}
 	public List<CodigoDescuento> traerCodigoDescuento(){
 		return dao.traerCodigoDescuento();
 	}

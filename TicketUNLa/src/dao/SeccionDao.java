@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -62,16 +63,30 @@ public class SeccionDao {
 			session.close();
 		}
 	}
-	
 	public Seccion traerSeccion(int idSeccion) throws HibernateException {
 		Seccion objeto = null;
 		
 		try {
 			iniciaOperacion();
+			objeto = (Seccion) session.get(Seccion.class, idSeccion);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Seccion traerSeccionHql(int idSeccion) throws HibernateException {
+		Seccion objeto = null;
+		
+		try {
+			iniciaOperacion();
 			String hql= "from Seccion s "+
-						"inner join fetch s.auditorio "+
+						"left join fetch s.lstButacas "+
+						"left join fetch s.auditorio "+
 						"where s.idSeccion= "+ idSeccion;
 			objeto = (Seccion) session.createQuery(hql).uniqueResult();
+			Hibernate.initialize(objeto.getLstButacas());
 		} finally {
 			session.close();
 		}

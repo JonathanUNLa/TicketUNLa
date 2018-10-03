@@ -76,6 +76,25 @@ public class AuditorioDao {
 		return objeto;
 	}
 	
+	public Auditorio traerAuditorioHql(int idAuditorio) throws HibernateException {
+		Auditorio objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Auditorio a "+
+						"left join fetch a.tipoAuditorio "+
+						"left join fetch a.lstSecciones  lst "+
+						"left join fetch lst.lstButacas  "+
+						"where a.idAuditorio= "+ idAuditorio;
+			objeto = (Auditorio) session.createQuery(hql).uniqueResult();
+			
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Auditorio> traerAuditorio() throws HibernateException {
 		List<Auditorio> auditorios = null;

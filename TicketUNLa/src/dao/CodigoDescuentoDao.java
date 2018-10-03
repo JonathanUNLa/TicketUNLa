@@ -63,6 +63,22 @@ public class CodigoDescuentoDao {
 		}
 	}
 	
+	public CodigoDescuento traerCodigoDescuentoHql(int idCodigoDescuento) throws HibernateException {
+		CodigoDescuento objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from CodigoDescuento c "+
+						"inner join fetch c.seccion "+
+						"inner join fetch c.funcion "+
+						"where c.idCodigoDescuento= "+idCodigoDescuento;
+			objeto = (CodigoDescuento) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
 	public CodigoDescuento traerCodigoDescuento(int idCodigoDescuento) throws HibernateException {
 		CodigoDescuento objeto = null;
 		

@@ -29,12 +29,18 @@ public class EntradaABM {
 		return entrada;
 	}
 	
+	public Entrada traerEntradaHql(int idEntrada)throws Exception {
+		Entrada entrada = dao.traerEntradaHql(idEntrada);
+		if(entrada == null)throw new Exception("La Entrada no existe");
+		return entrada;
+	}
+	
 	public List<Entrada> traerEntrada(){
 		return dao.traerEntrada();
 	}
 	
-	public int agregar(Seccion seccion,Butaca butaca, Funcion funcion,Usuario usuario, double precioFinal) {
-		Entrada entrada = new Entrada(seccion,butaca,usuario,funcion,precioFinal);
+	public int agregar(Butaca butaca,Usuario usuario, Funcion funcion, String codigo) {
+		Entrada entrada = new Entrada(butaca,usuario,funcion, codigo);
 		return dao.agregar(entrada);
 	}
 	

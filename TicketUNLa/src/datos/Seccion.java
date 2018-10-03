@@ -73,7 +73,9 @@ public class Seccion {
 	@Override
 	public String toString() {
 		return "Seccion [idSeccion=" + idSeccion + ", nombreSeccion=" + nombreSeccion + ", precioSeccion="
-				+ precioSeccion + " auditorio= "+auditorio.getNombre()+"]";
+				+ precioSeccion + ", lstButacas=" + lstButacas + ", auditorio=" + auditorio.getNombre() + "]";
 	}
+
+
 	
 }

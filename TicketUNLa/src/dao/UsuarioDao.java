@@ -6,8 +6,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import datos.Butaca;
-import datos.Seccion;
 import datos.Usuario;
 
 public class UsuarioDao {
@@ -64,19 +62,54 @@ public class UsuarioDao {
 			session.close();
 		}
 	}
-	
-	
 	public Usuario traerUsuario(int idUsuario) throws HibernateException {
 		Usuario objeto = null;
 		
 		try {
 			iniciaOperacion();
-			String 	hql = "from Usuario a "
-						+ "inner join fetch a.tipoBeneficio "
-						+ "inner join fetch a.tipoUsuario "
-						+"where a.idUsuario=" +idUsuario;
+			objeto = (Usuario) session.get(Usuario.class, idUsuario);
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Usuario traerEmpleadoHql(int idUsuario) throws HibernateException {
+		Usuario objeto = null;
+		
+		try {
+			iniciaOperacion();
+
+			
+			String 	hql =  "from Usuario a "+
+					"inner join fetch a.tipoUsuario "+
+					"left join fetch a.tipoBeneficio "+
+					"left join fetch a.auditorio d "+
+					"inner join fetch d.tipoAuditorio "+
+					"left join fetch d.lstSecciones s "+
+					"left join fetch s.lstButacas "+
+					"where a.idUsuario= "+idUsuario;
 							
 			objeto =  (Usuario) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
+		Usuario objeto = null;
+		
+		try {
+			iniciaOperacion();
+	String 	hql = "from Usuario a "
+			+ "inner join fetch a.tipoBeneficio "
+			+ "inner join fetch a.tipoUsuario "
+			+ "left join fetch a.auditorio "
+			+"where a.idUsuario=" +idUsuario;
+	objeto =  (Usuario) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
 		}

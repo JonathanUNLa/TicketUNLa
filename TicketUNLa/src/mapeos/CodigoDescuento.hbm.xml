@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
 	<class name="datos.CodigoDescuento" table="codigoDescuento">
-		<id column="idCodigoDescuento" name="idCodigo">
+		<id column="idCodigoDescuento" name="idCodigoDescuento">
 			<generator class="identity"/>
 		</id>
 		<property column = "codigo" name = "codigo" type = "string" />

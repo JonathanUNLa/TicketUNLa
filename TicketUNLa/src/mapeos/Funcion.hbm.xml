@@ -10,10 +10,10 @@
 		<property column = "precioBase" name = "precioBase" type = "double" />	
 		<property column = "diaHora" name = "diaHora" type = "calendar" />	
 		<many-to-one name = "evento" class = "datos.Evento" column = "evento" not-null = "true" />
-		<set name = "lstCodDesc" table = "diaDescuento" order-by = "idDiaDescuento asc"
+		<set name = "lstCodDesc" table = "CodigoDescuentoo" order-by = "idCodigoDescuento asc"
 		inverse = "true" lazy = "true" fetch = "select">
-			<key column = "idFuncion" not-null = "true"/>
-			<one-to-many class = "datos.DiaDescuento"/>
+			<key column = "idCodigoDescuento" not-null = "true"/>
+			<one-to-many class = "datos.CodigoDescuento"/>
 		</set>
 		<many-to-one name = "diaDescuento" class = "datos.DiaDescuento" column = "diaDescuento" not-null = "true"/>
 			</class>

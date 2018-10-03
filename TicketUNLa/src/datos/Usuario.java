@@ -7,22 +7,25 @@ public class Usuario {
 	private String apellido;
 	private String telefono;
 	private String nombreUsuario;
-	private String contraseña;
+	private String contrasenia;
 	private TipoUsuario tipoUsuario;
 	private TipoBeneficio tipoBeneficio;
-	
+	private Auditorio auditorio;
 	public Usuario() {}
 	
-	public Usuario(int dni, String nombre, String apellido, String telefono, String nombreUsuario,
-			String contraseña, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio) {
+	
+	
+	public Usuario( int dni, String nombre, String apellido, String telefono, String nombreUsuario,
+			String contrasenia, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio, Auditorio auditorio) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
 		this.nombreUsuario = nombreUsuario;
-		this.contraseña = contraseña;
+		this.contrasenia = contrasenia;
 		this.tipoUsuario = tipoUsuario;
 		this.tipoBeneficio = tipoBeneficio;
+		this.auditorio = auditorio;
 	}
 
 	public int getIdUsuario() {
@@ -73,12 +76,12 @@ public class Usuario {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasenia() {
+		return contrasenia;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
 	}
 
 	public TipoUsuario getTipoUsuario() {
@@ -97,11 +100,41 @@ public class Usuario {
 		this.tipoBeneficio = tipoBeneficio;
 	}
 
+	
+	
+	public Auditorio getAuditorio() {
+		return auditorio;
+	}
+
+
+
+	public void setAuditorio(Auditorio auditorio) {
+		this.auditorio = auditorio;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-				+ ", tipoUsuario=" +tipoUsuario.getNombreTipo() +  ", tipoBeneficio=" + tipoBeneficio.getBeneficio()+ "]";
+		String retorno=null;
+		
+		if(auditorio==null) {
+			retorno= "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
+					+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contrasenia=" + contrasenia
+					+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() +"]";
+		}else {
+
+			retorno= "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
+					+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contrasenia=" + contrasenia
+					+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() +auditorio+"]";
+		}
+
+		
+		return retorno;
+	/*	return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
+				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseï¿½a=" + contrasenia
+				+ ", tipoUsuario=" + tipoUsuario + ", tipoBeneficio=" + tipoBeneficio + ", auditorio=" + auditorio
+				+ "]";*/
 	}
 	
 }

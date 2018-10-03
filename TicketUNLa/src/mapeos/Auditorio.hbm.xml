@@ -11,7 +11,7 @@
 	
 		<set name = "lstSecciones" table = "Seccion" order-by = "idSeccion asc"
 		inverse = "true" lazy = "true" fetch = "select">
-			<key column = "idAuditorio" not-null = "false"/>
+			<key column = "idSeccion" not-null = "false"/>
 			<one-to-many class = "datos.Seccion"/>
 		</set>
 			<many-to-one name = "tipoAuditorio" class = "datos.TipoAuditorio"
