@@ -12,5 +12,6 @@
 		<many-to-one name = "funcion" class = "datos.Funcion" column = "funcion" not-null = "true" />
 		<property name="precioFinal" column="precioFinal" type="double"/>
 		<property name="codigo" column="codigo" type="string"/>
+		<many-to-one name = "reserva" class = "datos.Reserva" column = "reserva" not-null = "true" />
 			</class>
 </hibernate-mapping>

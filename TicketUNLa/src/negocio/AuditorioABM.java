@@ -5,6 +5,7 @@ import java.util.Set;
 
 import dao.AuditorioDao;
 import datos.Auditorio;
+import datos.Evento;
 import datos.Seccion;
 import datos.TipoAuditorio;
 
@@ -42,8 +43,8 @@ public class AuditorioABM {
 		return dao.agregar(auditorio);
 	}
 	
-	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
-		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio);
+	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio,Set<Evento> lstEventos) {
+		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio, lstEventos);
 		return dao.agregar(auditorio);
 	}
 	

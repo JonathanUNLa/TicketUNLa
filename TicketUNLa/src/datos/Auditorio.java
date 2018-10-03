@@ -7,22 +7,35 @@ public class Auditorio {
 	private String nombre;
 	private Set<Seccion> lstSecciones;
 	private TipoAuditorio tipoAuditorio;
+	private Set<Evento> lstEventos;
 	
 	public Auditorio(){}
 
-	public Auditorio(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
+	public Auditorio(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio, Set<Evento> lstEventos) {
 		super();
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
 		this.tipoAuditorio = tipoAuditorio;
+		this.lstEventos = lstEventos;
 	}
-	
-	
 
+
+
+	
 	public Auditorio(String nombre, TipoAuditorio tipoAuditorio) {
 		super();
 		this.nombre = nombre;
 		this.tipoAuditorio = tipoAuditorio;
+	}
+
+
+
+	public Set<Evento> getLstEventos() {
+		return lstEventos;
+	}
+
+	public void setLstEventos(Set<Evento> lstEventos) {
+		this.lstEventos = lstEventos;
 	}
 
 	public int getIdAuditorio() {
@@ -59,9 +72,11 @@ public class Auditorio {
 
 	@Override
 	public String toString() {
-		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", lstSecciones=" +lstSecciones
-				+ ", tipoAuditorio=" + tipoAuditorio.getNombre() + "]";
+		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", lstSecciones=" + lstSecciones
+				+ ", tipoAuditorio=" + tipoAuditorio + ", lstEvento=" + lstEventos + "]";
 	}
+
+
 
 
 }

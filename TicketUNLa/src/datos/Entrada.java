@@ -7,12 +7,13 @@ public class Entrada {
 	private Funcion funcion;
 	private String codigo;
 	private double precioFinal;
+	private Reserva reserva;
 	
 	public Entrada() {}
 	
 	
 	
-	public Entrada(Butaca butaca, Usuario usuario, Funcion funcion, String codigo) {
+	public Entrada(Butaca butaca, Usuario usuario, Funcion funcion, String codigo,Reserva reserva) {
 
 		this.butaca = butaca;
 		this.usuario = usuario;
@@ -29,6 +30,20 @@ public class Entrada {
 		this.idEntrada = idEntrada;
 	}
 	
+	
+	
+	public Reserva getReserva() {
+		return reserva;
+	}
+
+
+
+	public void setReserva(Reserva reserva) {
+		this.reserva = reserva;
+	}
+
+
+
 	public Butaca getButaca() {
 		return butaca;
 	}
@@ -105,11 +120,14 @@ public class Entrada {
 		
 	}
 
-	
+
+
 	@Override
 	public String toString() {
-		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca + ", usuario="
-				+ usuario.getNombre() + ", funcion=" + funcion.getIdFuncion() + ", precioFinal=" + precioFinal + "]";
+		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca + ", usuario=" + usuario + ", funcion="
+				+ funcion + ", codigo=" + codigo + ", precioFinal=" + precioFinal + ", reserva=" + reserva + "]";
 	}
+
+	
 	
 }
