@@ -29,7 +29,7 @@ public class ReservaABM {
 		return reserva;
 	}
 	public Reserva traerReservaHql(int idReserva)throws Exception {
-		Reserva reserva = dao.traerReserva(idReserva);
+		Reserva reserva = dao.traerReservaHql(idReserva);
 		if(reserva == null)throw new Exception("La Reserva no existe");
 		return reserva;
 	}

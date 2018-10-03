@@ -35,7 +35,7 @@ public class TestMain {
 		try {
 			
 			// agregar 
-			tipoAuditorioAbm.agregar("estadio");
+		/*	tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
 			auditorioAbm.agregar("El Monumental", tipoAuditorioAbm.traerTipoAuditorio(1));
@@ -71,7 +71,7 @@ public class TestMain {
 			usuarioAbm.agregar(50, "Empleado", "Asd", "43698789", "asdasd", "asd123", tipoUsuarioAbm.traerTipoUsuario(3), null,null);
 			
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
-			
+			*/
 			//traer e imprimir
 			/*
 			System.out.println(butacaAbm.traerButacaHql(1));
@@ -81,9 +81,12 @@ public class TestMain {
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
 			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
 			System.out.println(usuarioAbm.traerUsuarioHql(1));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(1), usuarioAbm.traerUsuarioHql(4), funcionAbm.traerFuncionHql(1),"SDE5697");
+			
 			System.out.println(entradaAbm.traerEntradaHql(1));
+			
 			*/
+			//entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
+			System.out.println(reservaAbm.traerReservaHql(1));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

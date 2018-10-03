@@ -8,7 +8,6 @@
 			<generator class="identity"/>
 		</id>
 		<many-to-one name = "butaca" class = "datos.Butaca" column = "butaca" not-null = "true" />
-		<many-to-one name = "usuario" class = "datos.Usuario" column = "usuario" not-null = "true" />
 		<many-to-one name = "funcion" class = "datos.Funcion" column = "funcion" not-null = "true" />
 		<property name="precioFinal" column="precioFinal" type="double"/>
 		<property name="codigo" column="codigo" type="string"/>

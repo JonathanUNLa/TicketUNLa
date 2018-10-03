@@ -39,8 +39,8 @@ public class EntradaABM {
 		return dao.traerEntrada();
 	}
 	
-	public int agregar(Butaca butaca,Usuario usuario, Funcion funcion, String codigo, Reserva reserva) {
-		Entrada entrada = new Entrada(butaca,usuario,funcion, codigo, reserva);
+	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva) {
+		Entrada entrada = new Entrada(butaca, funcion, codigo, reserva);
 		return dao.agregar(entrada);
 	}
 	

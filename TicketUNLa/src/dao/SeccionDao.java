@@ -38,6 +38,7 @@ public class SeccionDao {
 		return id;
 	}
 	
+	
 	public void actualizar(Seccion objeto) throws HibernateException {
 		try {
 			iniciaOperacion();

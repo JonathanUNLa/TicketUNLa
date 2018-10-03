@@ -36,6 +36,7 @@ public class ReservaDao {
 		return id;
 	}
 	
+	
 	public void actualizar(Reserva objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
@@ -79,7 +80,22 @@ public class ReservaDao {
 		
 		try {
 			iniciaOperacion();
-			objeto = (Reserva) session.get(Reserva.class, idReserva);
+			String hql= "from Reserva r "+
+						"inner  join fetch r.usuario u "+
+						"inner join fetch r.lstEntradas e "+
+						"inner join fetch u.tipoUsuario "+
+						"left join fetch u.tipoBeneficio "+
+						"left join fetch u.auditorio "+
+						"left join fetch e.funcion "+
+						"left join fetch e.butaca b "+
+						"left join fetch b.seccion s "+
+						"inner join fetch s.auditorio "+
+						"where r.Reserva= "+ idReserva;
+			
+			
+
+
+			objeto = (Reserva) session.createQuery(hql).uniqueResult();
 		} finally {
 			session.close();
 		}
