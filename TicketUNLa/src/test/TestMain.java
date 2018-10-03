@@ -83,9 +83,11 @@ public class TestMain {
 			System.out.println(usuarioAbm.traerUsuarioHql(1));
 			
 			System.out.println(entradaAbm.traerEntradaHql(1));
-			
+			m
 			*/
+			
 			//entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
+			//entradaAbm.agregar(butacaAbm.traerButacaHql(1), funcionAbm.traerFuncionHql(1), "asd", reservaAbm.traerReserva(1));
 			System.out.println(reservaAbm.traerReservaHql(1));
 		} catch (Exception e) {
 			e.printStackTrace();

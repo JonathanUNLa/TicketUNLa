@@ -82,12 +82,7 @@ public class ReservaDao {
 			iniciaOperacion();
 			String hql= "from Reserva r "+
 						"inner join fetch r.usuario u "+
-						"inner join fetch r.lstEntradas e "+
-						"left join fetch u.auditorio "+
-						"left join fetch e.funcion "+
-						"left join fetch e.butaca b "+
-						"left join fetch b.seccion s "+
-
+						"inner join fetch r.lstEntradas "+
 						"where r.idReserva= "+ idReserva;
 			
 			
