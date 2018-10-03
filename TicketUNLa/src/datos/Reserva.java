@@ -64,7 +64,6 @@ public class Reserva {
 		public void setEntregado(boolean entregado) {
 			this.entregado = entregado;
 		}
-
 		
 		
 		
