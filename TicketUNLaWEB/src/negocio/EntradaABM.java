@@ -6,7 +6,7 @@ import dao.EntradaDao;
 import datos.Butaca;
 import datos.Entrada;
 import datos.Funcion;
-import datos.Seccion;
+import datos.Reserva;
 import datos.Usuario;
 
 public class EntradaABM {
@@ -39,8 +39,8 @@ public class EntradaABM {
 		return dao.traerEntrada();
 	}
 	
-	public int agregar(Butaca butaca,Usuario usuario, Funcion funcion, String codigo) {
-		Entrada entrada = new Entrada(butaca,usuario,funcion, codigo);
+	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva) {
+		Entrada entrada = new Entrada(butaca, funcion, codigo, reserva);
 		return dao.agregar(entrada);
 	}
 	
