@@ -7,6 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.Evento;
 import datos.Funcion;
 
 public class FuncionDao {
@@ -97,6 +98,47 @@ public class FuncionDao {
 		return objeto;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Funcion> traerFuncionEvento(int idEvento) throws HibernateException {
+		List<Funcion> funcion = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Funcion f "+
+						"inner join fetch f.evento e "+
+						"inner join fetch f.lstCodDesc dsc " +
+						"inner join fetch dsc.seccion "+
+						"inner join fetch dsc.funcion "+
+						"inner join fetch f.diaDescuento "+
+						"where e.idEvento= "+idEvento;
+			funcion =  session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return funcion;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Funcion> traerFuncionEvento(String nombre) throws HibernateException {
+		List<Funcion> funcion = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Funcion f "+
+						"inner join fetch f.evento e "+
+						"inner join fetch f.lstCodDesc dsc " +
+						"inner join fetch dsc.seccion "+
+						"inner join fetch dsc.funcion "+
+						"inner join fetch f.diaDescuento "+
+						"where e.nombre= "+ "'"+nombre+"'";
+			funcion =  session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return funcion;
+	}
 	@SuppressWarnings("unchecked")
 	public List<Funcion> traerFuncion() throws HibernateException {
 		List<Funcion> funciones = null;

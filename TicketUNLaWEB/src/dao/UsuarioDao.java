@@ -75,7 +75,7 @@ public class UsuarioDao {
 		return objeto;
 	}
 	
-	public Usuario traerEmpleadoHql(int idUsuario) throws HibernateException {
+	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
 		Usuario objeto = null;
 		
 		try {
@@ -86,9 +86,10 @@ public class UsuarioDao {
 					"inner join fetch a.tipoUsuario "+
 					"left join fetch a.tipoBeneficio "+
 					"left join fetch a.auditorio d "+
-					"inner join fetch d.tipoAuditorio "+
+					"left join fetch d.tipoAuditorio "+
 					"left join fetch d.lstSecciones s "+
-					"left join fetch s.lstButacas "+
+					"left join fetch s.lstButacas b "+
+					"left join fetch b.seccion "+
 					"where a.idUsuario= "+idUsuario;
 							
 			objeto =  (Usuario) session.createQuery(hql).uniqueResult();
@@ -97,41 +98,6 @@ public class UsuarioDao {
 		}
 		
 		return objeto;
-	}
-	
-	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
-		Usuario objeto = null;
-		
-		try {
-			iniciaOperacion();
-	String 	hql = "from Usuario a "
-			+ "inner join fetch a.tipoBeneficio "
-			+ "inner join fetch a.tipoUsuario "
-			+ "left join fetch a.auditorio "
-			+"where a.idUsuario=" +idUsuario;
-	objeto =  (Usuario) session.createQuery(hql).uniqueResult();
-		} finally {
-			session.close();
-		}
-		
-		return objeto;
-	}
-	//	String hql = "from Butaca b where b.seccion=" + idSeccion
-	//butacas = (Butaca) session.createQuery(hql).uniqueResult();
-
-	
-	@SuppressWarnings("unchecked")
-	public List<Usuario> traerUsuario() throws HibernateException {
-		List<Usuario> Usuarios = null;
-		
-		try {
-			iniciaOperacion();
-			Usuarios = session.createQuery("from Usuario").list();
-		} finally {
-			session.close();
-		}
-		
-		return Usuarios;
 	}
 	
 	public Usuario traerUsuario(String nombreUsuario) throws HibernateException {
@@ -145,6 +111,38 @@ public class UsuarioDao {
 		}
 		return objeto;
 	}
-	
-	
+/*	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
+		Usuario objeto = null;
+		
+		try {
+			iniciaOperacion();
+	String 	hql = "from Usuario a "
+			+ "left join fetch a.tipoBeneficio "
+			+ "inner join fetch a.tipoUsuario "
+			+ "left join fetch a.auditorio "
+			+"where a.idUsuario=" +idUsuario;
+	objeto =  (Usuario) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	//	String hql = "from Butaca b where b.seccion=" + idSeccion
+	//butacas = (Butaca) session.createQuery(hql).uniqueResult();
+
+	*/
+	@SuppressWarnings("unchecked")
+	public List<Usuario> traerUsuario() throws HibernateException {
+		List<Usuario> Usuarios = null;
+		
+		try {
+			iniciaOperacion();
+			Usuarios = session.createQuery("from Usuario").list();
+		} finally {
+			session.close();
+		}
+		
+		return Usuarios;
+	}
 }

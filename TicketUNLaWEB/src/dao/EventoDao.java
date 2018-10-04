@@ -75,13 +75,58 @@ public class EventoDao {
 		
 		return objeto;
 	}
+	
+	
+	public List<Evento> traerEventoAuditorio(int idAuditorio) throws HibernateException {
+		List<Evento> eventos = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Evento e "+
+					"left join fetch e.auditorio a "+
+					"left join fetch a.tipoAuditorio "+
+					"left join fetch a.lstSecciones s "+
+					"left join fetch s.lstButacas lst "+
+					"left join fetch lst.seccion "+
+					"where e.auditorio= "+idAuditorio;
+			eventos =  session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return eventos;
+	}
+	
+	public List<Evento> traerEventoAuditorio(String auditorio) throws HibernateException {
+		List<Evento> eventos = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Evento e "+
+					"left join fetch e.auditorio a "+
+					"left join fetch a.tipoAuditorio "+
+					"left join fetch a.lstSecciones s "+
+					"left join fetch s.lstButacas lst "+
+					"left join fetch lst.seccion "+
+					"where a.nombre= "+"'"+auditorio+"'";
+			eventos =  session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return eventos;
+	}
+
 	public Evento traerEventoHql(int idEvento) throws HibernateException {
 		Evento objeto = null;
 		
 		try {
 			iniciaOperacion();
 			String hql= "from Evento e "+
-						"inner join fetch e.auditorio "+
+						"inner join fetch e.auditorio a "+
+					"inner join fetch a.tipoAuditorio "+
+						"left join fetch a.lstSecciones s "+
+						"left join fetch s.lstButacas "+
 						"where e.idEvento= "+idEvento;
 			objeto = (Evento) session.createQuery(hql).uniqueResult();
 		} finally {

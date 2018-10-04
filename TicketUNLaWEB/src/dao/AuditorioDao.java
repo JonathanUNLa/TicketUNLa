@@ -84,7 +84,8 @@ public class AuditorioDao {
 			String hql= "from Auditorio a "+
 						"left join fetch a.tipoAuditorio "+
 						"left join fetch a.lstSecciones  lst "+
-						"left join fetch lst.lstButacas  "+
+						"left join fetch lst.lstButacas  b "+
+						"left join fetch b.seccion "+
 						"where a.idAuditorio= "+ idAuditorio;
 			objeto = (Auditorio) session.createQuery(hql).uniqueResult();
 			

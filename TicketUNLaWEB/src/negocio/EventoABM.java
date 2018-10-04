@@ -32,6 +32,18 @@ public class EventoABM {
 		return evento;
 	}
 	
+
+	public List<Evento> traerEventoAuditorio(int idAuditorio)throws Exception {
+		List<Evento> evento = dao.traerEventoAuditorio(idAuditorio);
+		if(evento == null)throw new Exception("El evento no existe");
+		return evento;
+	}
+	public List<Evento> traerEventoAuditorio(String auditorio)throws Exception {
+		List<Evento> evento = dao.traerEventoAuditorio(auditorio);
+		if(evento == null)throw new Exception("El evento no existe");
+		return evento;
+	}
+	
 	public List<Evento> traerEvento(){
 		return dao.traerEvento();
 	}

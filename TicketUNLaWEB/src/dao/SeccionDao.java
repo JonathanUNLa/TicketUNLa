@@ -38,6 +38,7 @@ public class SeccionDao {
 		return id;
 	}
 	
+	
 	public void actualizar(Seccion objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
@@ -82,9 +83,11 @@ public class SeccionDao {
 		try {
 			iniciaOperacion();
 			String hql= "from Seccion s "+
-						"left join fetch s.lstButacas "+
-						"left join fetch s.auditorio "+
-						"where s.idSeccion= "+ idSeccion;
+					"left join fetch s.lstButacas b "+
+					"left join fetch b.seccion "+
+					"left join fetch s.auditorio a "+
+					"left join fetch a.tipoAuditorio "+
+					"where s.idSeccion= "+ idSeccion;
 			objeto = (Seccion) session.createQuery(hql).uniqueResult();
 			Hibernate.initialize(objeto.getLstButacas());
 		} finally {
