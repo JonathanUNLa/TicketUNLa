@@ -33,8 +33,8 @@ public class UsuarioABM {
 		if(usuario == null)throw new Exception("El usuario no existe");
 		return usuario;
 	}
-	public Usuario traerUsuario(String nombreUsuario)throws Exception {
-		Usuario usuario = dao.traerUsuario(nombreUsuario);
+	public Usuario traerUsuarioEHql(int idUsuario)throws Exception {
+		Usuario usuario = dao.traerEmpleadoHql(idUsuario);
 		if(usuario == null)throw new Exception("El usuario no existe");
 		return usuario;
 	}
@@ -56,4 +56,12 @@ public class UsuarioABM {
 		if(usuario == null)throw new Exception("La funcion no existe");
 		dao.eliminar(usuario);
 	}
+	
+	public Usuario traerUsuario(String nombreUsuario)throws Exception {
+		Usuario usuario = dao.traerUsuario(nombreUsuario);
+		if(usuario == null)throw new Exception("El usuario no existe");
+		return usuario;
+	}
+	
+	
 }

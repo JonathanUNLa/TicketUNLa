@@ -83,11 +83,7 @@ public class Funcion {
 		this.diaDescuento = diaDescuento;
 	}
 
-	public String damianSeLaCome() {
-		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + Funciones.traerDia(diaHora) + ", evento="
-				+ evento.getNombre()  +  ", diaDescuento=" + diaDescuento.getDia()
-				+ "]";
-	}
+	
 	
 	@Override
 	public String toString() {

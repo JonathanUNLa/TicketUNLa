@@ -75,7 +75,7 @@ public class UsuarioDao {
 		return objeto;
 	}
 	
-	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
+	public Usuario traerEmpleadoHql(int idUsuario) throws HibernateException {
 		Usuario objeto = null;
 		
 		try {
@@ -86,10 +86,9 @@ public class UsuarioDao {
 					"inner join fetch a.tipoUsuario "+
 					"left join fetch a.tipoBeneficio "+
 					"left join fetch a.auditorio d "+
-					"left join fetch d.tipoAuditorio "+
+					"inner join fetch d.tipoAuditorio "+
 					"left join fetch d.lstSecciones s "+
-					"left join fetch s.lstButacas b "+
-					"left join fetch b.seccion "+
+					"left join fetch s.lstButacas "+
 					"where a.idUsuario= "+idUsuario;
 							
 			objeto =  (Usuario) session.createQuery(hql).uniqueResult();
@@ -100,24 +99,13 @@ public class UsuarioDao {
 		return objeto;
 	}
 	
-	public Usuario traerUsuario(String nombreUsuario) throws HibernateException {
-		Usuario objeto = null;
-		try {
-			iniciaOperacion();
-			objeto = (Usuario) session.createQuery("from Usuario u inner join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
-													"'"+nombreUsuario+"'").uniqueResult();
-		} finally {
-			session.close();
-		}
-		return objeto;
-	}
-/*	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
+	public Usuario traerUsuarioHql(int idUsuario) throws HibernateException {
 		Usuario objeto = null;
 		
 		try {
 			iniciaOperacion();
 	String 	hql = "from Usuario a "
-			+ "left join fetch a.tipoBeneficio "
+			+ "inner join fetch a.tipoBeneficio "
 			+ "inner join fetch a.tipoUsuario "
 			+ "left join fetch a.auditorio "
 			+"where a.idUsuario=" +idUsuario;
@@ -131,7 +119,7 @@ public class UsuarioDao {
 	//	String hql = "from Butaca b where b.seccion=" + idSeccion
 	//butacas = (Butaca) session.createQuery(hql).uniqueResult();
 
-	*/
+	
 	@SuppressWarnings("unchecked")
 	public List<Usuario> traerUsuario() throws HibernateException {
 		List<Usuario> Usuarios = null;
@@ -145,4 +133,18 @@ public class UsuarioDao {
 		
 		return Usuarios;
 	}
+	
+	public Usuario traerUsuario(String nombreUsuario) throws HibernateException {
+		Usuario objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Usuario) session.createQuery("from Usuario u inner join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
+													"'"+nombreUsuario+"'").uniqueResult();
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	
 }

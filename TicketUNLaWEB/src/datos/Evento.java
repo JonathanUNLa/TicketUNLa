@@ -1,6 +1,5 @@
 package datos;
 
-
 public class Evento {
 	private int idEvento;
 	private String nombre;
@@ -12,8 +11,6 @@ public class Evento {
 		this.nombre = nombre;
 		this.auditorio = auditorio;
 	}
-
-	
 
 	public int getIdEvento() {
 		return idEvento;
@@ -39,13 +36,9 @@ public class Evento {
 		this.auditorio = auditorio;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Evento [idEvento=" + idEvento + ", nombre=" + nombre + ", auditorio=" + auditorio  + "]";
+		return "Evento [idEvento=" + idEvento + ", nombre=" + nombre + ", auditorio=" + auditorio.getNombre() + "]";
 	}
-
-
 	
 }

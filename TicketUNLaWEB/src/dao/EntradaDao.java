@@ -84,13 +84,10 @@ public class EntradaDao {
 
 			
 			String 	hql =  "from Entrada e "+
-					"inner  join fetch e.butaca s "+
-					"inner  join fetch e.funcion v "+
-					"left join fetch s.seccion "+
-					"left join fetch v.diaDescuento "+
-					"left join fetch v.lstCodDesc lst "+
-					"left join fetch v.evento "+
-					"left join fetch lst.seccion "+
+					"inner join fetch e.butaca "+
+					"left join fetch e.butaca.seccion "+
+					"inner join fetch e.usuario "+
+					"inner join fetch e.funcion "+
 					"where e.idEntrada= "+idEntrada;
 							
 			objeto =  (Entrada) session.createQuery(hql).uniqueResult();

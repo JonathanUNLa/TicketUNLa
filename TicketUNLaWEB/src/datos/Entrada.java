@@ -3,29 +3,23 @@ package datos;
 public class Entrada {
 	private int idEntrada;
 	private Butaca butaca;
+	private Usuario usuario;
 	private Funcion funcion;
 	private String codigo;
 	private double precioFinal;
-	private Reserva reserva;
 	
 	public Entrada() {}
 	
 	
 	
+	public Entrada(Butaca butaca, Usuario usuario, Funcion funcion, String codigo) {
 
-
-	public Entrada(Butaca butaca, Funcion funcion, String codigo, Reserva reserva) {
-		super();
 		this.butaca = butaca;
+		this.usuario = usuario;
 		this.funcion = funcion;
 		this.codigo = codigo;
-		this.precioFinal=500;
-		this.reserva = reserva;
+		this.precioFinal = calcularPrecioFinal();
 	}
-
-
-
-
 
 	public int getIdEntrada() {
 		return idEntrada;
@@ -35,20 +29,6 @@ public class Entrada {
 		this.idEntrada = idEntrada;
 	}
 	
-	
-	
-	public Reserva getReserva() {
-		return reserva;
-	}
-
-
-
-	public void setReserva(Reserva reserva) {
-		this.reserva = reserva;
-	}
-
-
-
 	public Butaca getButaca() {
 		return butaca;
 	}
@@ -57,7 +37,13 @@ public class Entrada {
 		this.butaca = butaca;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Funcion getFuncion() {
 		return funcion;
@@ -89,7 +75,7 @@ public class Entrada {
 
 
 
-	/*public double esValido() {
+	public double esValido() {
 		double desc=0;
 		for (CodigoDescuento c : funcion.getLstCodDesc()) {
 			if(codigo.equals(c.getCodigo())) {
@@ -107,7 +93,10 @@ public class Entrada {
 		}
 		precio=funcion.getPrecioBase()+butaca.getSeccion().getPrecioSeccion();
 
-				if(desCod==100) {
+		if(usuario.getTipoBeneficio()!=null) {
+			desCod+=usuario.getTipoBeneficio().getDescuento();
+		}
+		if(desCod==100) {
 			precio=0;
 		}else {
 			precio-=precio*(desCod/100);
@@ -116,14 +105,11 @@ public class Entrada {
 		
 	}
 
-
-*/
+	
 	@Override
 	public String toString() {
-		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca +  ", funcion="
-				+ funcion + ", codigo=" + codigo + ", precioFinal=" + precioFinal + ", reserva=" +  "]";
+		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca + ", usuario="
+				+ usuario.getNombre() + ", funcion=" + funcion.getIdFuncion() + ", precioFinal=" + precioFinal + "]";
 	}
-
-	
 	
 }

@@ -5,7 +5,6 @@ import java.util.Set;
 
 import dao.AuditorioDao;
 import datos.Auditorio;
-import datos.Evento;
 import datos.Seccion;
 import datos.TipoAuditorio;
 

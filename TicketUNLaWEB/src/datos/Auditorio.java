@@ -15,21 +15,16 @@ public class Auditorio {
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
 		this.tipoAuditorio = tipoAuditorio;
-
 	}
-
-
-
 	
+	
+
 	public Auditorio(String nombre, TipoAuditorio tipoAuditorio) {
 		super();
 		this.nombre = nombre;
 		this.tipoAuditorio = tipoAuditorio;
 	}
 
-
-
-	
 	public int getIdAuditorio() {
 		return idAuditorio;
 	}
@@ -64,11 +59,9 @@ public class Auditorio {
 
 	@Override
 	public String toString() {
-		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", lstSecciones=" + lstSecciones
-				+ ", tipoAuditorio=" + tipoAuditorio + "]";
+		return "Auditorio [idAuditorio=" + idAuditorio + ", nombre=" + nombre + ", lstSecciones=" +lstSecciones
+				+ ", tipoAuditorio=" + tipoAuditorio.getNombre() + "]";
 	}
-
-
 
 
 }
