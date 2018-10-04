@@ -43,8 +43,8 @@ public class AuditorioABM {
 		return dao.agregar(auditorio);
 	}
 	
-	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio,Set<Evento> lstEventos) {
-		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio, lstEventos);
+	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
+		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio);
 		return dao.agregar(auditorio);
 	}
 	

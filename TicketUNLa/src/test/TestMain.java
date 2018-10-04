@@ -35,8 +35,8 @@ public class TestMain {
 		try {
 			
 			// agregar 
+		/*	
 			
-			/*reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
 			tipoAuditorioAbm.agregar("Vacio");
 			auditorioAbm.agregar("Auditorio Vacio", tipoAuditorioAbm.traerTipoAuditorio(1));
 			seccionAbm.agregar("seccion Vacia", 0, auditorioAbm.traerAuditorio(1));
@@ -77,26 +77,26 @@ public class TestMain {
 			usuarioAbm.agregar(30, "Jonathan", "Yañez", "43698789", "Jon", "soyputo123", tipoUsuarioAbm.traerTipoUsuario(2), tipoBeneficioAbm.traerTipoBeneficio(2),auditorioAbm.traerAuditorio(1));
 			usuarioAbm.agregar(40, "Jose", "Lucero", "40364587", "asd", "123456", tipoUsuarioAbm.traerTipoUsuario(1), tipoBeneficioAbm.traerTipoBeneficio(1),auditorioAbm.traerAuditorio(1));
 			usuarioAbm.agregar(50, "Empleado", "Asd", "43698789", "asdasd", "asd123", tipoUsuarioAbm.traerTipoUsuario(3), tipoBeneficioAbm.traerTipoBeneficio(1),auditorioAbm.traerAuditorio(1));
-			
-			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);*/
+			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
+			*/
+			//entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
 			
 			//traer e imprimir
-			/*
-			System.out.println(butacaAbm.traerButacaHql(1));
-			System.out.println(seccizonAbm.traerSeccionHql(1));
+			
+		/*	System.out.println(butacaAbm.traerButacaHql(1));
+			System.out.println(seccionAbm.traerSeccionHql(1));
 			System.out.println(eventoAbm.traerEventoHql(1));
 			System.out.println(funcionAbm.traerFuncionHql(1));
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
-			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
-			System.out.println(usuarioAbm.traerUsuarioHql(1));
+			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));*/
+		//	System.out.println(usuarioAbm.traerUsuario("Jon"));
+			//System.out.println(entradaAbm.traerEntradaHql(1));
+			System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
 			
-			System.out.println(entradaAbm.traerEntradaHql(1));
 			
-			*/
 			
-			//entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
 			//entradaAbm.agregar(butacaAbm.traerButacaHql(1), funcionAbm.traerFuncionHql(1), "asd", reservaAbm.traerReserva(1));
-			System.out.println(reservaAbm.traerReservaHql(1));
+		//System.out.println(reservaAbm.traerReservaHql(1));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
