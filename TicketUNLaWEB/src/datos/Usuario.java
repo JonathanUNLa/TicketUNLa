@@ -116,7 +116,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		String retorno=null;
+	/*	String retorno=null;
 		
 		if(auditorio==null) {
 			retorno= "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
@@ -128,13 +128,12 @@ public class Usuario {
 					+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseÃ±a=" + contraseña
 					+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() +auditorio+"]";
 		}
-
-		
-		return retorno;
-	/*	return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseï¿½a=" + contraseÃ±a
+				return retorno;
+	*/
+		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
+				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
 				+ ", tipoUsuario=" + tipoUsuario + ", tipoBeneficio=" + tipoBeneficio + ", auditorio=" + auditorio
-				+ "]";*/
+				+ "]";
 	}
 	
 }

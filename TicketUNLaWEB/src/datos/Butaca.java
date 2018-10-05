@@ -53,7 +53,12 @@ public class Butaca {
 	public void setSeccion(Seccion seccion) {
 		this.seccion = seccion;
 	}
-
+	public String asd() {
+		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + ", seccion=" +seccion
+				+ "]";
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + ", seccion=" +seccion.getNombreSeccion()
