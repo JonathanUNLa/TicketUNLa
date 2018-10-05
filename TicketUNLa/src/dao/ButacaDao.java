@@ -94,14 +94,26 @@ public class ButacaDao {
 		return objeto;
 	}
 	
-	public Butaca traerButaca(Funcion funcion) throws HibernateException {
-		Butaca objeto = null;
-		int idFuncion = funcion.getIdFuncion();
+	public List<Butaca> traerButacaFuncion(int funcion) throws HibernateException {
+		List<Butaca> objeto = null;
+		//int idFuncion = funcion.getIdFuncion();
 		
 		try {
 			iniciaOperacion();
 			String hql= "from Butaca b "+
-						"inner join fetch b.seccion s "+
+						"left join fetch b.seccion s "+
+						"left join fetch s.auditorio a "+
+						"left join fetch a.tipoAuditorio "+
+						"left join fetch a.lstEventos e "+
+						"left join fetch e.auditorio "+
+						"left join fetch e.lstFunciones f "+
+						"left join fetch f.evento "+
+						"left join fetch f.lstCodDesc lst "+
+						"left join fetch f.diaDescuento "+
+						"left join fetch lst.seccion "+
+						"where f.idFuncion=" +funcion;
+			/*String hql= "from Butaca b "+
+						"left join fetch b.seccion s "+
 						"left join fetch s.lstButacas "+
 						"left join fetch s.auditorio a "+
 						"left join fetch a.tipoAuditorio "+
@@ -112,12 +124,12 @@ public class ButacaDao {
 						"left join fetch a.lstEventos e "+
 						"left join fetch e.auditorio "+
 						"left join fetch e.lstFunciones f "+
-						"inner join fetch f.lstCodDesc dsc " +
-						"inner join fetch dsc.seccion "+
-						"inner join fetch dsc.funcion "+
-						"inner join fetch f.diaDescuento "+
-						"where f.idFuncion= "+idFuncion;
-			objeto = (Butaca) session.createQuery(hql).uniqueResult();
+						"left join fetch f.lstCodDesc dsc " +
+						"left join fetch dsc.seccion "+
+						"left join fetch dsc.funcion "+
+						"left join fetch f.diaDescuento "+
+						"where f.idFuncion= "+funcion;*/
+			objeto = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

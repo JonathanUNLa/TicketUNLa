@@ -117,7 +117,7 @@ public class EventoDao {
 						"left join fetch dsc.funcion "+
 						"left join fetch f.diaDescuento "+
 						"left join fetch a.lstSecciones s "+
-						"left join fetch s.lstButacas "+
+						"left join fetch s.lstButacas b "+
 						"where a.nombre= "+"'"+auditorio+"'";
 			eventos = session.createQuery(hql).list();
 		} finally {

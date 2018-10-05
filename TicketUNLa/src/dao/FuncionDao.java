@@ -105,11 +105,11 @@ public class FuncionDao {
 		try {
 			iniciaOperacion();
 			String hql= "from Funcion f "+
-						"inner join fetch f.evento e "+
-						"inner join fetch f.lstCodDesc dsc " +
-						"inner join fetch dsc.seccion "+
-						"inner join fetch dsc.funcion "+
-						"inner join fetch f.diaDescuento "+
+						"left join fetch f.evento e "+
+						"left join fetch f.lstCodDesc dsc " +
+						"left join fetch dsc.seccion "+
+						"left join fetch dsc.funcion "+
+						"left join fetch f.diaDescuento "+
 						"where e.nombre= "+"'"+evento+"'";
 			funcion = session.createQuery(hql).list();
 		} finally {

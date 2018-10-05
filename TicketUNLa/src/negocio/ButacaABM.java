@@ -27,8 +27,8 @@ public class ButacaABM {
 		return butaca;
 	}
 	
-	public Butaca traerButaca(Funcion funcion)throws Exception {
-		Butaca butaca = dao.traerButaca(funcion);
+	public List<Butaca> traerButacaFuncion(int funcion)throws Exception {
+		List<Butaca> butaca = dao.traerButacaFuncion(funcion);
 		if(butaca == null)throw new Exception("La Butaca no existe");
 		return butaca;
 	}

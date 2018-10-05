@@ -35,14 +35,8 @@ public class TestMain {
 		try {
 			
 			// agregar 
-		/*	
 			
-			tipoAuditorioAbm.agregar("Vacio");
-			auditorioAbm.agregar("Auditorio Vacio", tipoAuditorioAbm.traerTipoAuditorio(1));
-			seccionAbm.agregar("seccion Vacia", 0, auditorioAbm.traerAuditorio(1));
-			diaDescuentoAbm.agregar("Ninguno", 0);
-			tipoBeneficioAbm.agregar("Ninguno", 0);
-			
+	/*
 			tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
@@ -61,7 +55,7 @@ public class TestMain {
 			butacaAbm.agregar(1, 2, seccionAbm.traerSeccion(3));
 			butacaAbm.agregar(2, 1, seccionAbm.traerSeccion(3));
 			eventoAbm.agregar("Evento 1", auditorioAbm.traerAuditorio(2));
-			eventoAbm.agregar("Evento 2", auditorioAbm.traerAuditorio(3));
+			eventoAbm.agregar("Evento 2", auditorioAbm.traerAuditorio(1));
 			diaDescuentoAbm.agregar("Lunes", 15.0);
 			diaDescuentoAbm.agregar("Martes", 20.0);
 			funcionAbm.agregar(500.0, new GregorianCalendar(), eventoAbm.traerEvento(1), diaDescuentoAbm.traerDiaDescuento(1));
@@ -78,25 +72,25 @@ public class TestMain {
 			usuarioAbm.agregar(40, "Jose", "Lucero", "40364587", "asd", "123456", tipoUsuarioAbm.traerTipoUsuario(1), tipoBeneficioAbm.traerTipoBeneficio(1),auditorioAbm.traerAuditorio(1));
 			usuarioAbm.agregar(50, "Empleado", "Asd", "43698789", "asdasd", "asd123", tipoUsuarioAbm.traerTipoUsuario(3), tipoBeneficioAbm.traerTipoBeneficio(1),auditorioAbm.traerAuditorio(1));
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
+			entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
 			*/
-			//entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
-			
 			//traer e imprimir
 			
 			/*System.out.println(butacaAbm.traerButacaHql(1));
 			System.out.println(seccionAbm.traerSeccionHql(1));
-			System.out.println(eventoAbm.traerEventoHql(1));
+		//	System.out.println(eventoAbm.traerEventoHql(1));
 			System.out.println(funcionAbm.traerFuncionHql(1));
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
-			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));*/
-			//System.out.println(usuarioAbm.traerUsuario("Jon"));
-			//System.out.println(entradaAbm.traerEntradaHql(1));
-			//System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
-			System.out.println(eventoAbm.traerEvento("el monumental"));
+			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
+			System.out.println(usuarioAbm.traerUsuario("Jon"));
+			System.out.println(entradaAbm.traerEntradaHql(1));
+			System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
+			*/
+			//System.out.println(eventoAbm.traerEvento("el monumental"));
 			//funcionAbm.agregar(500.0, new GregorianCalendar(), eventoAbm.traerEvento(1), diaDescuentoAbm.traerDiaDescuento(1));
 			
-			
-			
+			//System.out.println(funcionAbm.traerFuncion("Evento 1"));
+			System.out.println(butacaAbm.traerButacaFuncion(1));
 			//entradaAbm.agregar(butacaAbm.traerButacaHql(1), funcionAbm.traerFuncionHql(1), "asd", reservaAbm.traerReserva(1));
 		//System.out.println(reservaAbm.traerReservaHql(1));
 		} catch (Exception e) {
