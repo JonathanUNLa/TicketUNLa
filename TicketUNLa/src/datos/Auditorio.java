@@ -16,6 +16,7 @@ public class Auditorio {
 		this.nombre = nombre;
 		this.lstSecciones = lstSecciones;
 		this.tipoAuditorio = tipoAuditorio;
+
 	}
 	
 	public Auditorio(String nombre, TipoAuditorio tipoAuditorio) {

@@ -103,7 +103,7 @@ public class UsuarioDao {
 		Usuario objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Usuario) session.createQuery("from Usuario u left join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
+			objeto = (Usuario) session.createQuery("from Usuario u inner join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
 													"'"+nombreUsuario+"'").uniqueResult();
 		} finally {
 			session.close();

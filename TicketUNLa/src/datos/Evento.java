@@ -10,16 +10,12 @@ public class Evento {
 	
 	public Evento() {}
 	
-	public Evento(String nombre, Auditorio auditorio, Set<Funcion> lstFunciones) {
-		this.nombre = nombre;
-		this.auditorio = auditorio;
-		this.lstFunciones = lstFunciones;
-	}	
-	
 	public Evento(String nombre, Auditorio auditorio) {
 		this.nombre = nombre;
 		this.auditorio = auditorio;
-	}	
+	}
+
+	
 
 	public int getIdEvento() {
 		return idEvento;

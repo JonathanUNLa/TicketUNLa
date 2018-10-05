@@ -4,7 +4,6 @@ import java.util.List;
 
 import dao.ButacaDao;
 import datos.Butaca;
-import datos.Funcion;
 import datos.Seccion;
 
 public class ButacaABM {
@@ -26,13 +25,6 @@ public class ButacaABM {
 		if(butaca == null)throw new Exception("La Butaca no existe");
 		return butaca;
 	}
-	
-	public List<Butaca> traerButacaFuncion(int funcion)throws Exception {
-		List<Butaca> butaca = dao.traerButacaFuncion(funcion);
-		if(butaca == null)throw new Exception("La Butaca no existe");
-		return butaca;
-	}
-	
 	public Butaca traerButacaHql(int idButaca)throws Exception {
 		Butaca butaca = dao.traerButacaHql(idButaca);
 		if(butaca == null)throw new Exception("La Butaca no existe");

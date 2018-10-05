@@ -116,25 +116,11 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		String retorno=null;
-		
-		if(auditorio==null) {
-			retorno= "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-					+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-					+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() +"]";
-		}else {
 
-			retorno= "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-					+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
-					+ ", tipoUsuario=" + tipoUsuario.getNombreTipo() + ", tipoBeneficio=" + tipoBeneficio.getBeneficio() +auditorio+"]";
-		}
-
-		
-		return retorno;
-	/*	return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
+	return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
 				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contrase�a=" + contraseña
 				+ ", tipoUsuario=" + tipoUsuario + ", tipoBeneficio=" + tipoBeneficio + ", auditorio=" + auditorio
-				+ "]";*/
+				+ "]";
 	}
 	
 }

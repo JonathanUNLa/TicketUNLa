@@ -76,7 +76,6 @@ public class FuncionDao {
 		
 		return objeto;
 	}
-	
 	public Funcion traerFuncionHql(int idFuncion) throws HibernateException {
 		Funcion objeto = null;
 		
@@ -96,27 +95,6 @@ public class FuncionDao {
 		}
 		
 		return objeto;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Funcion> traerFuncion(String evento) throws HibernateException {
-		List<Funcion> funcion = null;
-		
-		try {
-			iniciaOperacion();
-			String hql= "from Funcion f "+
-						"left join fetch f.evento e "+
-						"left join fetch f.lstCodDesc dsc " +
-						"left join fetch dsc.seccion "+
-						"left join fetch dsc.funcion "+
-						"left join fetch f.diaDescuento "+
-						"where e.nombre= "+"'"+evento+"'";
-			funcion = session.createQuery(hql).list();
-		} finally {
-			session.close();
-		}
-		
-		return funcion;
 	}
 	
 	@SuppressWarnings("unchecked")

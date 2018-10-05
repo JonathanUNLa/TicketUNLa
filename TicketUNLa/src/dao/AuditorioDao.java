@@ -89,11 +89,6 @@ public class AuditorioDao {
 					"left join fetch b.seccion s "+
 					"left join fetch a.lstEventos e "+
 					"left join fetch e.auditorio "+
-					"left join fetch e.lstFunciones f "+
-					"inner join fetch f.lstCodDesc dsc " +
-					"inner join fetch dsc.seccion "+
-					"inner join fetch dsc.funcion "+
-					"inner join fetch f.diaDescuento "+
 					"where a.idAuditorio= "+ idAuditorio;
 
 			objeto = (Auditorio) session.createQuery(hql).uniqueResult();

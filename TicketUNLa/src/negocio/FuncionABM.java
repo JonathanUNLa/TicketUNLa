@@ -29,11 +29,6 @@ public class FuncionABM {
 		if(funcion == null)throw new Exception("La funcion no existe");
 		return funcion;
 	}
-	
-	public List<Funcion> traerFuncion(String evento)throws Exception {
-		return dao.traerFuncion(evento);
-	}
-	
 	public Funcion traerFuncion(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);
 		if(funcion!=null){
