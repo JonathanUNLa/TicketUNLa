@@ -1,5 +1,7 @@
 package test;
 
+import java.util.GregorianCalendar;
+
 import negocio.AuditorioABM;
 import negocio.ButacaABM;
 import negocio.CodigoDescuentoABM;
@@ -90,7 +92,8 @@ public class TestMain {
 			//System.out.println(usuarioAbm.traerUsuario("Jon"));
 			//System.out.println(entradaAbm.traerEntradaHql(1));
 			//System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
-			System.out.println(eventoAbm.traerEventoHql(1));
+			System.out.println(eventoAbm.traerEvento("el monumental"));
+			//funcionAbm.agregar(500.0, new GregorianCalendar(), eventoAbm.traerEvento(1), diaDescuentoAbm.traerDiaDescuento(1));
 			
 			
 			
