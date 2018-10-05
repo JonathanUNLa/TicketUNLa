@@ -36,7 +36,7 @@ public class TestMain {
 			
 			// agregar 
 			
-	/*
+	
 			tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
@@ -135,7 +135,7 @@ public class TestMain {
 			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
 			
-		*/	
+			
 			//traer e imprimir
 		
 			

@@ -18,4 +18,41 @@
 		<url-pattern>/vistapersonasindice</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ControladorReservar1</servlet-name>
+		<servlet-class>controladores.ControladorReservar1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorReservar1</servlet-name>
+		<url-pattern>/reservar1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorReservar2</servlet-name>
+		<servlet-class>controladores.ControladorReservar2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorReservar2</servlet-name>
+		<url-pattern>/reservar2</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorReservar3</servlet-name>
+		<servlet-class>controladores.ControladorReservar3</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorReservar3</servlet-name>
+		<url-pattern>/reservar3</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControladorReservar4</servlet-name>
+		<servlet-class>controladores.ControladorReservar4</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorReservar4</servlet-name>
+		<url-pattern>/reservar4</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
