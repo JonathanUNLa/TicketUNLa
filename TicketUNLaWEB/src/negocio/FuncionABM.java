@@ -30,22 +30,12 @@ public class FuncionABM {
 		return funcion;
 	}
 	
+	public List<Funcion> traerFuncion(String evento)throws Exception {
+		return dao.traerFuncion(evento);
+	}
+	
 	public Funcion traerFuncion(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncion(idFuncion);
-		if(funcion!=null){
-			return funcion;
-		}else throw new Exception ("id de Funcion no existe");
-	}
-	
-	public List<Funcion> traerFuncionEvento(int idEvento)throws Exception {
-		List<Funcion> funcion = dao.traerFuncionEvento(idEvento);
-		if(funcion!=null){
-			return funcion;
-		}else throw new Exception ("id de Funcion no existe");
-	}
-	
-	public List<Funcion> traerFuncionEvento(String nombre)throws Exception {
-		List<Funcion> funcion = dao.traerFuncionEvento(nombre);
 		if(funcion!=null){
 			return funcion;
 		}else throw new Exception ("id de Funcion no existe");

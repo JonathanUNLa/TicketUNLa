@@ -7,7 +7,6 @@ import datos.Butaca;
 import datos.Entrada;
 import datos.Funcion;
 import datos.Reserva;
-import datos.Usuario;
 
 public class EntradaABM {
 	private static EntradaABM instancia;

@@ -76,6 +76,21 @@ public class TipoAuditorioDao {
 		return objeto;
 	}
 	
+	public TipoAuditorio traerTipoAuditorio(String nombre) throws HibernateException {
+		TipoAuditorio objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from TipoAuditorio a "
+					+ "where a.nombre= "+"'"+nombre+"'";
+			objeto = (TipoAuditorio) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<TipoAuditorio> traerTipoAuditorio() throws HibernateException {
 		List<TipoAuditorio> tiposAuditorios = null;

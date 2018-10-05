@@ -107,7 +107,15 @@ public class EntradaDao {
 		
 		try {
 			iniciaOperacion();
-			entradas = session.createQuery("from Entrada").list();
+			String 	hql =  "from Entrada e "+
+					"inner  join fetch e.butaca s "+
+					"inner  join fetch e.funcion v "+
+					"left join fetch s.seccion "+
+					"left join fetch v.diaDescuento "+
+					"left join fetch v.lstCodDesc lst "+
+					"left join fetch v.evento "+
+					"left join fetch lst.seccion ";
+			entradas = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

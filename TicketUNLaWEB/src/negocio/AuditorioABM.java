@@ -5,7 +5,6 @@ import java.util.Set;
 
 import dao.AuditorioDao;
 import datos.Auditorio;
-import datos.Evento;
 import datos.Seccion;
 import datos.TipoAuditorio;
 
@@ -34,6 +33,13 @@ public class AuditorioABM {
 		if (auditorio==null) throw new Exception("El auditorio no existe");
 		return auditorio;
 	}
+	
+	public Auditorio traerAuditorioHql(String nombre) throws Exception {
+		Auditorio auditorio = dao.traerAuditorioHql(nombre);
+		if (auditorio==null) throw new Exception("El auditorio no existe");
+		return auditorio;
+	}
+	
 	public List<Auditorio> traerAuditorio() throws Exception {
 		return dao.traerAuditorio();
 	}

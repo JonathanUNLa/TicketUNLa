@@ -26,6 +26,12 @@ public class TipoAuditorioABM {
 		return tipoAuditorio;
 	}
 	
+	public TipoAuditorio traerTipoAuditorio(String nombre) throws Exception {
+		TipoAuditorio tipoAuditorio = dao.traerTipoAuditorio(nombre);
+		if (tipoAuditorio==null) throw new Exception("El TipoAuditorio no existe");
+		return tipoAuditorio;
+	}
+	
 	public List<TipoAuditorio> traerTipoAuditorio() throws Exception {
 		return dao.traerTipoAuditorio();
 	}

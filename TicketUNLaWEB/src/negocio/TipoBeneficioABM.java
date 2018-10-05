@@ -25,6 +25,12 @@ public class TipoBeneficioABM {
 		return tipoBeneficio;
 	}
 	
+	public TipoBeneficio traerTipoBeneficio(String beneficio) throws Exception {
+		TipoBeneficio tipoBeneficio = dao.traerTipoBeneficio(beneficio);
+		if (tipoBeneficio==null) throw new Exception("El Tipo de Beneficio no existe");
+		return tipoBeneficio;
+	}
+	
 	public List<TipoBeneficio> traerTipoBeneficio() throws Exception {
 		return dao.traerTipoBeneficio();
 	}

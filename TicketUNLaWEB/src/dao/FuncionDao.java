@@ -7,7 +7,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import datos.Evento;
 import datos.Funcion;
 
 public class FuncionDao {
@@ -77,6 +76,7 @@ public class FuncionDao {
 		
 		return objeto;
 	}
+	
 	public Funcion traerFuncionHql(int idFuncion) throws HibernateException {
 		Funcion objeto = null;
 		
@@ -99,19 +99,19 @@ public class FuncionDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Funcion> traerFuncionEvento(int idEvento) throws HibernateException {
+	public List<Funcion> traerFuncion(String evento) throws HibernateException {
 		List<Funcion> funcion = null;
 		
 		try {
 			iniciaOperacion();
 			String hql= "from Funcion f "+
-						"inner join fetch f.evento e "+
-						"inner join fetch f.lstCodDesc dsc " +
-						"inner join fetch dsc.seccion "+
-						"inner join fetch dsc.funcion "+
-						"inner join fetch f.diaDescuento "+
-						"where e.idEvento= "+idEvento;
-			funcion =  session.createQuery(hql).list();
+						"left join fetch f.evento e "+
+						"left join fetch f.lstCodDesc dsc " +
+						"left join fetch dsc.seccion "+
+						"left join fetch dsc.funcion "+
+						"left join fetch f.diaDescuento "+
+						"where e.nombre= "+"'"+evento+"'";
+			funcion = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}
@@ -120,32 +120,18 @@ public class FuncionDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Funcion> traerFuncionEvento(String nombre) throws HibernateException {
-		List<Funcion> funcion = null;
-		
-		try {
-			iniciaOperacion();
-			String hql= "from Funcion f "+
-						"inner join fetch f.evento e "+
-						"inner join fetch f.lstCodDesc dsc " +
-						"inner join fetch dsc.seccion "+
-						"inner join fetch dsc.funcion "+
-						"inner join fetch f.diaDescuento "+
-						"where e.nombre= "+ "'"+nombre+"'";
-			funcion =  session.createQuery(hql).list();
-		} finally {
-			session.close();
-		}
-		
-		return funcion;
-	}
-	@SuppressWarnings("unchecked")
 	public List<Funcion> traerFuncion() throws HibernateException {
 		List<Funcion> funciones = null;
 		
 		try {
 			iniciaOperacion();
-			funciones = session.createQuery("from Funcion").list();
+			String hql= "from Funcion f "+
+					"inner join fetch f.evento "+
+					"inner join fetch f.lstCodDesc dsc " +
+					"inner join fetch dsc.seccion "+
+					"inner join fetch dsc.funcion "+
+					"inner join fetch f.diaDescuento ";
+			funciones = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

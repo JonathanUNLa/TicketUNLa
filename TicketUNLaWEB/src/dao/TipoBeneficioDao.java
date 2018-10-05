@@ -76,6 +76,21 @@ public class TipoBeneficioDao {
 		return objeto;
 	}
 	
+	public TipoBeneficio traerTipoBeneficio(String beneficio) throws HibernateException {
+		TipoBeneficio objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from TipoBeneficio b "
+					+ "where b.beneficio= "+"'"+beneficio+"'";
+			objeto = (TipoBeneficio) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<TipoBeneficio> traerTipoBeneficio() throws HibernateException {
 		List<TipoBeneficio> tiposBeneficios = null;

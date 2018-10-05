@@ -76,6 +76,21 @@ public class DiaDescuentoDao {
 		return objeto;
 	}
 	
+	public DiaDescuento traerDiaDescuento(String dia) throws HibernateException {
+		DiaDescuento objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from DiaDescuento d "
+					+ "where d.dia= "+"'"+dia+"'";
+			objeto = (DiaDescuento) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<DiaDescuento> traerDiaDescuento() throws HibernateException {
 		List<DiaDescuento> diaDescuentos = null;

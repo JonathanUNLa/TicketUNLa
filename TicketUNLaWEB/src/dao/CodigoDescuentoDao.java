@@ -79,6 +79,7 @@ public class CodigoDescuentoDao {
 		
 		return objeto;
 	}
+	
 	public CodigoDescuento traerCodigoDescuento(int idCodigoDescuento) throws HibernateException {
 		CodigoDescuento objeto = null;
 		
@@ -92,13 +93,33 @@ public class CodigoDescuentoDao {
 		return objeto;
 	}
 	
+	public CodigoDescuento traerCodigoDescuento(String codigo) throws HibernateException {
+		CodigoDescuento objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from CodigoDescuento c "+
+					"inner join fetch c.seccion "+
+					"inner join fetch c.funcion "+
+					"where c.codigo= "+"'"+codigo+"'";
+			objeto = (CodigoDescuento) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<CodigoDescuento> traerCodigoDescuento() throws HibernateException {
 		List<CodigoDescuento> codigosDescuentos = null;
 		
 		try {
 			iniciaOperacion();
-			codigosDescuentos = session.createQuery("from CodigoDescuento").list();
+			String hql= "from CodigoDescuento c "+
+					"inner join fetch c.seccion "+
+					"inner join fetch c.funcion ";
+			codigosDescuentos = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

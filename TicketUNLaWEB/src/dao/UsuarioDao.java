@@ -81,7 +81,6 @@ public class UsuarioDao {
 		try {
 			iniciaOperacion();
 
-			
 			String 	hql =  "from Usuario a "+
 					"inner join fetch a.tipoUsuario "+
 					"left join fetch a.tipoBeneficio "+
@@ -104,7 +103,7 @@ public class UsuarioDao {
 		Usuario objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Usuario) session.createQuery("from Usuario u inner join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
+			objeto = (Usuario) session.createQuery("from Usuario u left join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
 													"'"+nombreUsuario+"'").uniqueResult();
 		} finally {
 			session.close();
@@ -138,7 +137,15 @@ public class UsuarioDao {
 		
 		try {
 			iniciaOperacion();
-			Usuarios = session.createQuery("from Usuario").list();
+			String 	hql =  "from Usuario a "+
+					"inner join fetch a.tipoUsuario "+
+					"left join fetch a.tipoBeneficio "+
+					"left join fetch a.auditorio d "+
+					"left join fetch d.tipoAuditorio "+
+					"left join fetch d.lstSecciones s "+
+					"left join fetch s.lstButacas b "+
+					"left join fetch b.seccion ";
+			Usuarios = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

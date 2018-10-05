@@ -82,11 +82,20 @@ public class AuditorioDao {
 		try {
 			iniciaOperacion();
 			String hql= "from Auditorio a "+
-						"left join fetch a.tipoAuditorio "+
-						"left join fetch a.lstSecciones  lst "+
-						"left join fetch lst.lstButacas  b "+
-						"left join fetch b.seccion "+
-						"where a.idAuditorio= "+ idAuditorio;
+					"left join fetch a.tipoAuditorio "+
+					"left join fetch a.lstSecciones  lst "+
+					"left join fetch lst.auditorio "+
+					"left join fetch lst.lstButacas  b "+
+					"left join fetch b.seccion s "+
+					"left join fetch a.lstEventos e "+
+					"left join fetch e.auditorio "+
+					"left join fetch e.lstFunciones f "+
+					"inner join fetch f.lstCodDesc dsc " +
+					"inner join fetch dsc.seccion "+
+					"inner join fetch dsc.funcion "+
+					"inner join fetch f.diaDescuento "+
+					"where a.idAuditorio= "+ idAuditorio;
+
 			objeto = (Auditorio) session.createQuery(hql).uniqueResult();
 			
 		} finally {
@@ -96,13 +105,49 @@ public class AuditorioDao {
 		return objeto;
 	}
 	
+	public Auditorio traerAuditorioHql(String nombre) throws HibernateException {				
+		Auditorio objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Auditorio) session.createQuery("from Auditorio a "+
+					"left join fetch a.tipoAuditorio "+
+					"left join fetch a.lstSecciones  lst "+
+					"left join fetch lst.auditorio "+
+					"left join fetch lst.lstButacas  b "+
+					"left join fetch b.seccion s "+
+					"left join fetch a.lstEventos e "+
+					"left join fetch e.auditorio "+
+					"where a.nombre= " +"'"+nombre+"'").uniqueResult();
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
+	public Auditorio traerAuditorio(String nombre) throws HibernateException {
+		Auditorio objeto = null;
+
+		try {
+			iniciaOperacion();
+			objeto = (Auditorio) session.createQuery("from Auditorio a where a.nombre=" + nombre).uniqueResult();
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Auditorio> traerAuditorio() throws HibernateException {
 		List<Auditorio> auditorios = null;
 		
 		try {
 			iniciaOperacion();
-			auditorios = session.createQuery("from Auditorio").list();
+			String hql= "from Auditorio a "+
+					"left join fetch a.tipoAuditorio "+
+					"left join fetch a.lstSecciones  lst "+
+					"left join fetch lst.lstButacas  b "+
+					"left join fetch b.seccion ";
+			auditorios = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}
