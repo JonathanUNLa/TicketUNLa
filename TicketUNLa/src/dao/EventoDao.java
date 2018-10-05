@@ -81,8 +81,12 @@ public class EventoDao {
 		try {
 			iniciaOperacion();
 			String hql= "from Evento e "+
-						"inner join fetch e.auditorio a "+
-					"inner join fetch a.tipoAuditorio "+
+						"left join fetch e.auditorio a "+
+						"left join fetch e.lstFunciones f "+
+						"left join fetch f.lstCodDesc dsc " +
+						"left join fetch dsc.seccion "+
+						"left join fetch dsc.funcion "+
+						"left join fetch f.diaDescuento "+
 						"left join fetch a.lstSecciones s "+
 						"left join fetch s.lstButacas "+
 						"where e.idEvento= "+idEvento;
@@ -100,7 +104,12 @@ public class EventoDao {
 		
 		try {
 			iniciaOperacion();
-			eventos = session.createQuery("from Evento").list();
+			String hql= "from Evento e "+
+					"inner join fetch e.auditorio a "+
+				"inner join fetch a.tipoAuditorio "+
+					"left join fetch a.lstSecciones s "+
+					"left join fetch s.lstButacas ";
+			eventos = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

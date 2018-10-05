@@ -26,6 +26,12 @@ public class TipoUsuarioABM {
 		return tipoUsuario;
 	}
 	
+	public TipoUsuario traerTipoUsuario(String nombreTipo) throws Exception {
+		TipoUsuario tipoUsuario = dao.traerTipoUsuario(nombreTipo);
+		if (tipoUsuario==null) throw new Exception("El Seccion no existe");
+		return tipoUsuario;
+	}
+	
 	public List<TipoUsuario> traerTipoUsuario() throws Exception {
 		return dao.traerTipoUsuario();
 	}

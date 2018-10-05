@@ -76,6 +76,21 @@ public class TipoUsuarioDao {
 		return objeto;
 	}
 	
+	public TipoUsuario traerTipoUsuario(String nombreTipo) throws HibernateException {
+		TipoUsuario objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from TipoUsuario u "
+					+ "where u.nombreTipo= "+"'"+nombreTipo+"'";
+			objeto = (TipoUsuario) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<TipoUsuario> traerTipoUsuario() throws HibernateException {
 		List<TipoUsuario> tiposUsuarios = null;

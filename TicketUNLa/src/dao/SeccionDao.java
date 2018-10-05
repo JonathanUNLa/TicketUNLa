@@ -103,7 +103,12 @@ public class SeccionDao {
 		
 		try {
 			iniciaOperacion();
-			secciones = session.createQuery("from Seccion").list();
+			String hql= "from Seccion s "+
+					"left join fetch s.lstButacas b "+
+					"left join fetch b.seccion "+
+					"left join fetch s.auditorio a "+
+					"left join fetch a.tipoAuditorio ";
+			secciones = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

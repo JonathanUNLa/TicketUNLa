@@ -26,7 +26,11 @@ public class DiaDescuentoABM {
 		return diaDescuento;
 	}
 	
-
+	public DiaDescuento traerDiaDescuento(String dia)throws Exception {
+		DiaDescuento diaDescuento = dao.traerDiaDescuento(dia);
+		if(diaDescuento == null)throw new Exception("El Dia de Descuento no existe");
+		return diaDescuento;
+	}
 	
 	public List<DiaDescuento> traerDiaDescuento(){
 		return dao.traerDiaDescuento();

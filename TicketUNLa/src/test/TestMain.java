@@ -1,7 +1,5 @@
 package test;
 
-import java.util.*;
-
 import negocio.AuditorioABM;
 import negocio.ButacaABM;
 import negocio.CodigoDescuentoABM;
@@ -83,15 +81,16 @@ public class TestMain {
 			
 			//traer e imprimir
 			
-		/*	System.out.println(butacaAbm.traerButacaHql(1));
+			/*System.out.println(butacaAbm.traerButacaHql(1));
 			System.out.println(seccionAbm.traerSeccionHql(1));
 			System.out.println(eventoAbm.traerEventoHql(1));
 			System.out.println(funcionAbm.traerFuncionHql(1));
 			System.out.println(auditorioAbm.traerAuditorioHql(1));
 			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));*/
-		//	System.out.println(usuarioAbm.traerUsuario("Jon"));
+			//System.out.println(usuarioAbm.traerUsuario("Jon"));
 			//System.out.println(entradaAbm.traerEntradaHql(1));
-			System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
+			//System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
+			System.out.println(eventoAbm.traerEventoHql(1));
 			
 			
 			
