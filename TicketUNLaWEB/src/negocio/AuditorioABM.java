@@ -44,12 +44,14 @@ public class AuditorioABM {
 		return dao.traerAuditorio();
 	}
 	
-	public int agregar(String nombre, TipoAuditorio tipoAuditorio) {
+	public int agregar(String nombre, TipoAuditorio tipoAuditorio)throws Exception {
+		if (dao.traerAuditorioNombre(nombre)!=null) throw new Exception("El auditorio ya existe");
 		Auditorio auditorio = new Auditorio(nombre,tipoAuditorio);
 		return dao.agregar(auditorio);
 	}
 	
-	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
+	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio)throws Exception {
+		if (dao.traerAuditorioNombre(nombre)!=null) throw new Exception("El auditorio ya existe");
 		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio);
 		return dao.agregar(auditorio);
 	}

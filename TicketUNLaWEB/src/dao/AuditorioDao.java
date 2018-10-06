@@ -76,6 +76,21 @@ public class AuditorioDao {
 		return objeto;
 	}
 	
+	public Auditorio traerAuditorioNombre(String nombre) throws HibernateException {
+		Auditorio objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql;
+			hql = "from Auditorio a where a.nombre=" + "'"+nombre+"'";
+			objeto = (Auditorio) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	public Auditorio traerAuditorioHql(int idAuditorio) throws HibernateException {
 		Auditorio objeto = null;
 		

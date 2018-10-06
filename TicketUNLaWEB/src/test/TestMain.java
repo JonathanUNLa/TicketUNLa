@@ -37,7 +37,7 @@ public class TestMain {
 			// agregar 
 			
 	
-			tipoAuditorioAbm.agregar("estadio");
+			/*tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
 			auditorioAbm.agregar("El Monumental", tipoAuditorioAbm.traerTipoAuditorio(1));
@@ -133,27 +133,29 @@ public class TestMain {
 			//agregar etradas usuario 3
 			entradaAbm.agregar(butacaAbm.traerButacaHql(21),  funcionAbm.traerFuncion(2),"QWERTY",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));*/
 			
 			
 			//traer e imprimir
 		
 			
-		/*	
-			System.out.println(butacaAbm.traerButacaHql(1));
-			System.out.println(seccionAbm.traerSeccionHql(1));
-		//	System.out.println(eventoAbm.traerEventoHql(1));
-		//	System.out.println(funcionAbm.traerFuncionHql(1));
-		//	System.out.println(auditorioAbm.traerAuditorioHql(1));
-			System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
-		//	System.out.println(entradaAbm.traerEntradaHql(1));
-		//	System.out.println(funcionAbm.traerFuncionHql(1).damianSeLaCome());
-		//	System.out.println(eventoAbm.traerEvento("El monumental"));
-		//	System.out.println(usuarioAbm.traerUsuario("jlucero"));
-		//	System.out.println(funcionAbm.traerFuncion("Fito Paez"));
-			System.out.println(butacaAbm.traerButacaFuncion(1));
-		//	System.out.println(reservaAbm.traerReservaHql(1));
-			*/
+			
+		//	System.out.println(butacaAbm.traerButacaHql(1));+++++++++++
+		//	System.out.println(seccionAbm.traerSeccionHql(1));+++++++++
+		//	System.out.println(eventoAbm.traerEventoHql(1)); -----------
+		//	System.out.println(funcionAbm.traerFuncionHql(1));++++++++++ le saque el getDia del toString
+		//	auditorioAbm.agregar("asdasd", tipoAuditorioAbm.traerTipoAuditorio(1));
+		//	System.out.println(auditorioAbm.traerAuditorioHql(1));------------- no trae el primero los demas si
+		//	System.out.println(codigoDescuentoAbm.traerCodigoDescuentoHql(1));
+		//	System.out.println(entradaAbm.traerEntradaHql(1));+++++++++++++
+		//	System.out.println(funcionAbm.traerFuncionHql(2).damianSeLaCome()); +++++++ le saque el getDia del toString
+		//	System.out.println(eventoAbm.traerEvento("El monumental"));+++++++++
+		//	System.out.println(usuarioAbm.traerUsuario("jlucero")); ---------- esta mal el hql
+		//	System.out.println(funcionAbm.traerFuncion("Fito Paez"));++++++++ creo que anda
+		//	System.out.println(butacaAbm.traerButacaAuditorio(4).size()); +++++ parece que anda			
+		//	System.out.println(butacaAbm.traerButacaFuncion(4).size()); //-------- desde el 4 en adelante no andan
+		//	System.out.println(reservaAbm.traerReservaHql(1)); ++++++++
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

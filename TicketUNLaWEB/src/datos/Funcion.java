@@ -85,14 +85,14 @@ public class Funcion {
 
 	public String damianSeLaCome() {
 		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + Funciones.traerDia(diaHora) + ", evento="
-				+ evento.getNombre()  +  ", diaDescuento=" + diaDescuento.getDia()
+				+ evento.getNombre()  +  ", diaDescuento=" + diaDescuento
 				+ "]";
 	}
 	
 	@Override
 	public String toString() {
 		return "Funcion [idFuncion=" + idFuncion + ", precioBase=" + precioBase + ", diaHora=" + Funciones.traerDia(diaHora) + ", evento="
-				+ evento.getNombre()  + " lstCodDesc=" +lstCodDesc +  ", diaDescuento=" + diaDescuento.getDia()
+				+ evento.getNombre()  + " lstCodDesc=" +lstCodDesc +  ", diaDescuento=" + diaDescuento
 				+ "]";
 	}
 	

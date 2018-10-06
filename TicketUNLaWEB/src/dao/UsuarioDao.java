@@ -103,7 +103,22 @@ public class UsuarioDao {
 		Usuario objeto = null;
 		try {
 			iniciaOperacion();
-			objeto = (Usuario) session.createQuery("from Usuario u left join fetch u.tipoBeneficio inner join fetch u.tipoUsuario left join fetch u.auditorio where u.nombreUsuario =" + 
+			objeto = (Usuario) session.createQuery("from Usuario u "
+					+ "left join fetch u.tipoBeneficio "
+					+ "left join fetch u.tipoUsuario "
+					+ "left join fetch u.auditorio a "
+					+ "left join fetch a.lstSecciones lst "
+					+ "left join fetch lst.auditorio "
+					+ "left join fetch lst.lstButacas b "
+					+ "left join fetch b.seccion s "
+					+ "left join fetch a.lstEventos e "
+					+ "left join fetch e.auditorio "
+					+"left join fetch e.lstFunciones f "
+					+"left join fetch f.lstCodDesc dsc " 
+					+"left join fetch dsc.seccion "
+					+"left join fetch dsc.funcion "
+					+"left join fetch f.diaDescuento "
+					+ "where u.nombreUsuario =" +
 													"'"+nombreUsuario+"'").uniqueResult();
 		} finally {
 			session.close();

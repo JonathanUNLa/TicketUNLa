@@ -110,6 +110,22 @@ public class CodigoDescuentoDao {
 		return objeto;
 	}
 	
+	public CodigoDescuento traerCodigoDescuentoCodigo(String codigo) throws HibernateException {
+		CodigoDescuento objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql;
+			hql = "from CodigoDescuento c where c.codigo=" + "'"+codigo+"'";
+			objeto = (CodigoDescuento) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+
+	
 	@SuppressWarnings("unchecked")
 	public List<CodigoDescuento> traerCodigoDescuento() throws HibernateException {
 		List<CodigoDescuento> codigosDescuentos = null;

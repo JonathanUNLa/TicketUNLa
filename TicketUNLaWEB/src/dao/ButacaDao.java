@@ -8,7 +8,6 @@ import org.hibernate.Transaction;
 
 
 import datos.Butaca;
-import datos.Funcion;
 import datos.Seccion;
 
 public class ButacaDao {
@@ -136,6 +135,37 @@ public class ButacaDao {
 						"left join fetch dsc.funcion "+
 						"left join fetch f.diaDescuento "+
 						"where f.idFuncion= "+funcion;
+			objeto = session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Butaca> traerButacaAuditorio(int auditorio) throws HibernateException {
+		List<Butaca> objeto = null;
+		
+		try {
+			iniciaOperacion();
+				String hql= "from Butaca b "+
+						"left join fetch b.seccion s "+
+						"left join fetch s.lstButacas "+
+						"left join fetch s.auditorio a "+
+						"left join fetch a.tipoAuditorio "+
+						"left join fetch a.lstSecciones  lst "+
+						"left join fetch lst.auditorio "+
+						"left join fetch lst.lstButacas  b "+
+						"left join fetch b.seccion s "+
+						"left join fetch a.lstEventos e "+
+						"left join fetch e.auditorio "+
+						"left join fetch e.lstFunciones f "+
+						"left join fetch f.lstCodDesc dsc " +
+						"left join fetch dsc.seccion "+
+						"left join fetch dsc.funcion "+
+						"left join fetch f.diaDescuento "+
+						"where a.idAuditorio= "+auditorio;
 			objeto = session.createQuery(hql).list();
 		} finally {
 			session.close();
