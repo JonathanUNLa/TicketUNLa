@@ -1,5 +1,6 @@
 package negocio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.EntradaDao;
@@ -38,8 +39,12 @@ public class EntradaABM {
 		return dao.traerEntrada();
 	}
 	
-	public List<Entrada> traerEntradaFuncion(int funcion){
-		return dao.traerEntradaFuncion(funcion);
+	public List<Butaca> traerEntradaFuncion(int funcion){
+		List<Butaca>but=new ArrayList();
+		for(Entrada e: dao.traerEntradaFuncion(funcion)){
+			but.add(e.getButaca());
+		}
+		return but;
 	}
 	
 	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva) {

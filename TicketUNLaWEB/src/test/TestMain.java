@@ -37,7 +37,7 @@ public class TestMain {
 			// agregar 
 			
 	
-			/*tipoAuditorioAbm.agregar("estadio");
+		/*	tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
 			auditorioAbm.agregar("El Monumental", tipoAuditorioAbm.traerTipoAuditorio(1));
@@ -133,9 +133,9 @@ public class TestMain {
 			//agregar etradas usuario 3
 			entradaAbm.agregar(butacaAbm.traerButacaHql(21),  funcionAbm.traerFuncion(2),"QWERTY",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));*/
+			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
 			
-			
+			*/
 			//traer e imprimir
 		
 			
@@ -156,7 +156,7 @@ public class TestMain {
 		//	System.out.println(entradaAbm.traerEntradaFuncion(2).size());
 		//	System.out.println(butacaAbm.traerButacaFuncion(4).size()); //-------- desde el 4 en adelante no andan
 		//	System.out.println(reservaAbm.traerReservaHql(1)); ++++++++
-			
+			System.out.println(entradaAbm.traerEntradaFuncion(2).size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
