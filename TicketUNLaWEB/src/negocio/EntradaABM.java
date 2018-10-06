@@ -38,6 +38,10 @@ public class EntradaABM {
 		return dao.traerEntrada();
 	}
 	
+	public List<Entrada> traerEntradaFuncion(int funcion){
+		return dao.traerEntradaFuncion(funcion);
+	}
+	
 	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva) {
 		Entrada entrada = new Entrada(butaca, funcion, codigo, reserva);
 		return dao.agregar(entrada);

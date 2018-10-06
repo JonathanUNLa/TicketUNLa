@@ -36,7 +36,8 @@ public class DiaDescuentoABM {
 		return dao.traerDiaDescuento();
 	}
 	
-	public int agregar(String dia, double descuento) {
+	public int agregar(String dia, double descuento)throws Exception {
+		if(dao.traerDiaDescuento(dia) != null)throw new Exception("El Dia de Descuento ya existe");
 		DiaDescuento diaDescuento = new DiaDescuento(dia,descuento);
 		return dao.agregar(diaDescuento);
 	}

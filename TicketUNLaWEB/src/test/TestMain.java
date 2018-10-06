@@ -152,7 +152,8 @@ public class TestMain {
 		//	System.out.println(eventoAbm.traerEvento("El monumental"));+++++++++
 		//	System.out.println(usuarioAbm.traerUsuario("jlucero")); ---------- esta mal el hql
 		//	System.out.println(funcionAbm.traerFuncion("Fito Paez"));++++++++ creo que anda
-		//	System.out.println(butacaAbm.traerButacaAuditorio(4).size()); +++++ parece que anda			
+		//	System.out.println(butacaAbm.traerButacaAuditorio(4).size()); +++++ parece que anda
+		//	System.out.println(entradaAbm.traerEntradaFuncion(2).size());
 		//	System.out.println(butacaAbm.traerButacaFuncion(4).size()); //-------- desde el 4 en adelante no andan
 		//	System.out.println(reservaAbm.traerReservaHql(1)); ++++++++
 			
