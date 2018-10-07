@@ -61,7 +61,7 @@
 		<header>
 			<div>
 				<h1>
-					<a href="index.html"><img src="images/logo.jpg" alt=""></a>
+					<a href=""><img src="images/logo.jpg" alt=""></a>
 				</h1>
 				<div class="social-icons">
 					<span>Follow Us:</span> <a href="#" class="icon-3"></a> <a href="#"
@@ -79,12 +79,8 @@
 				</div>
 				<nav>
 					<ul class="menu">
-						<li class="current"><a href="index.html">Main</a></li>
-						<li><a href="buying.html">Buying</a></li>
-						<li><a href="selling.html">Selling</a></li>
-						<li><a href="renting.html">Renting</a></li>
-						<li><a href="finance.html">Finance</a></li>
-						<li><a href="contacts.html">Contacts</a></li>
+						<li class="current"><a href="">Main</a></li>
+						<li><a href="contacto.html">Contacts</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -93,46 +89,16 @@
 		<section id="content">
 			<div class="container_12">
 				<div class="grid_8">
-					<h2 class="top-1 p3">Welcome message!</h2>
+					<h2 class="top-1 p3">BIENVENIDO</h2>
 					<p class="p2">
-						Real Estate is one of <a
-							href="http://blog.templatemonster.com/free-website-templates/"
-							target="_blank" class="link">free website templates</a> created
-						by TemplateMonster.com team. This website template is optimized
-						for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.
+						algo escrito
 					</p>
 					<p class="line-1">
-						Download the basic package of this <a class="link"
-							href="http://blog.templatemonster.com/2012/04/09/free-website-template-real-estate-justslider/"
-							target="_blank" rel="nofollow">Real Estate Template</a> (without
-						PSD source) that is available for anyone without registration. If
-						you need PSD source files, please go to the template download page
-						at TemplateMonster to leave the e-mail address that you want the
-						free template ZIP package to be delivered to.
+						algo escrito2
 					</p>
-					<h2 class="p4">Buyers. Sellers. Proprietors. Agents.</h2>
+					<h2 class="p4">titulo2</h2>
 					<div class="wrap block-1">
-						<div>
-							<img src="images/page1-img1.jpg" alt="" class="img-border">
-							<h3>Selling</h3>
-							<p>Nam liber tempor cum soluta no eleifend option congue
-								nihil imperdiet doming iquod mazim placerat.</p>
-							<a href="#" class="button">More</a>
-						</div>
-						<div>
-							<img src="images/page1-img2.jpg" alt="" class="img-border">
-							<h3>Investing</h3>
-							<p>Nam liber tempor cum soluta no eleifend option congue
-								nihil imperdiet doming iquod mazim placerat.</p>
-							<a href="#" class="button">More</a>
-						</div>
-						<div class="last">
-							<img src="images/page1-img3.jpg" alt="" class="img-border">
-							<h3>Renting</h3>
-							<p>Nam liber tempor cum soluta no eleifend option congue
-								nihil imperdiet doming iquod mazim placerat.</p>
-							<a href="#" class="button">More</a>
-						</div>
+						nada (?)
 					</div>
 				</div>
 				<div class="grid_4">
@@ -164,7 +130,7 @@
 	</div>
 	<!--==============================footer=================================-->
 	<footer>
-		<p>© 2012 Real Estate</p>
+		<p>UNLa Ticket 2018</p>
 		<p>
 			Website Template by <a href="http://www.templatemonster.com/"
 				target="_blank" rel="nofollow">www.templatemonster</a>

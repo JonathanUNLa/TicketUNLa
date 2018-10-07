@@ -93,10 +93,18 @@ public class ControladorReservar5 extends HttpServlet {
 				entradaAbm.agregar(e.getButaca(), e.getFuncion(), e.getCodigo(), rabm.traerReserva(rabm.traerReserva().size()));
 			}
 
+			
+			Auditorio a = aabm.traerAuditorio(idauditorio);
+			Evento e = eabm.traerEvento(idevento);
+			
 			request.setAttribute("idusuario",idusuario);
+			request.setAttribute("usuario",u);
 			request.setAttribute("idauditorio",idauditorio);
+			request.setAttribute("auditorio",a);
 			request.setAttribute("idevento",idevento);
+			request.setAttribute("evento",e);
 			request.setAttribute("idfuncion",idfuncion);
+			request.setAttribute("funcion",f);
 			request.setAttribute("idbutaca",select);
 			request.setAttribute("precio", r.getPrecioTotal());
 			request.getRequestDispatcher("/reservar5.jsp").forward(request , response);

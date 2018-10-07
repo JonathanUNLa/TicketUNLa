@@ -48,6 +48,7 @@ public class ControladorReservar1 extends HttpServlet {
 			
 			request.setAttribute("la",la);
 			request.setAttribute("idusuario",idusuario);
+			request.setAttribute("usuario",u);
 			request.getRequestDispatcher("/reservar1.jsp").forward(request , response);
 
 			

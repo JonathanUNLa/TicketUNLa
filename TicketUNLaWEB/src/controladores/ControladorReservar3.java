@@ -50,16 +50,22 @@ public class ControladorReservar3 extends HttpServlet {
 		}
 		try {
 			Usuario u = usuarioAbm.traerUsuario(idusuario);
-			//AuditorioABM aabm = AuditorioABM.getInstancia();
+			AuditorioABM aabm = AuditorioABM.getInstancia();
 			EventoABM eabm = EventoABM.getInstancia();
 			FuncionABM fabm = FuncionABM.getInstancia();
 			
 			List<Funcion> fl = fabm.traerFuncion(eabm.traerEvento(idevento).getNombre());
 			
+			Auditorio a = aabm.traerAuditorio(idauditorio);
+			Evento e = eabm.traerEvento(idevento);
 			request.setAttribute("fl",fl);
 			request.setAttribute("idusuario",idusuario);
+			request.setAttribute("usuario",u);
 			request.setAttribute("idauditorio",idauditorio);
+			request.setAttribute("auditorio",a);
 			request.setAttribute("idevento",idevento);
+			request.setAttribute("evento",e);
+			
 			request.getRequestDispatcher("/reservar3.jsp").forward(request , response);
 
 			

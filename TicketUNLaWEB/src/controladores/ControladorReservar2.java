@@ -52,9 +52,12 @@ public class ControladorReservar2 extends HttpServlet {
 			
 			List<Evento> el = eabm.traerEvento(aabm.traerAuditorio(idauditorio).getNombre());
 			
+			Auditorio a = aabm.traerAuditorio(idauditorio);
 			request.setAttribute("el",el);
 			request.setAttribute("idusuario",idusuario);
+			request.setAttribute("usuario",u);
 			request.setAttribute("idauditorio",idauditorio);
+			request.setAttribute("auditorio",a);
 			request.getRequestDispatcher("/reservar2.jsp").forward(request , response);
 
 			

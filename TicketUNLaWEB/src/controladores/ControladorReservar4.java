@@ -60,10 +60,10 @@ public class ControladorReservar4 extends HttpServlet {
 		
 		
 		try {
-			//Usuario u = usuarioAbm.traerUsuario(idusuario);
-			//AuditorioABM aabm = AuditorioABM.getInstancia();
-			//EventoABM eabm = EventoABM.getInstancia();
-			//FuncionABM fabm = FuncionABM.getInstancia();
+			Usuario u = usuarioAbm.traerUsuario(idusuario);
+			AuditorioABM aabm = AuditorioABM.getInstancia();
+			EventoABM eabm = EventoABM.getInstancia();
+			FuncionABM fabm = FuncionABM.getInstancia();
 			ButacaABM babm = ButacaABM.getInstancia();
 			List<Butaca> bt =butacaAbm.traerButacaAuditorio(idauditorio);
 			List<Butaca> bts =entradaAbm.traerEntradaFuncion(idfuncion);
@@ -73,12 +73,21 @@ public class ControladorReservar4 extends HttpServlet {
 				x++;
 			}
 			
+			
+			Auditorio a = aabm.traerAuditorio(idauditorio);
+			Evento e = eabm.traerEvento(idevento);
+			Funcion f = fabm.traerFuncion(idfuncion);
+			
 			request.setAttribute("bl",bt);
 			request.setAttribute("idusuario",idusuario);
+			request.setAttribute("usuario",u);
 			request.setAttribute("idauditorio",idauditorio);
+			request.setAttribute("auditorio",a);
 			request.setAttribute("idevento",idevento);
+			request.setAttribute("evento",e);
 			request.setAttribute("idfuncion",idfuncion);
-			//request.setAttribute("idfunciones",select);
+			request.setAttribute("funcion",f);
+
 
 			request.getRequestDispatcher("/reservar4.jsp").forward(request , response);
 

@@ -38,8 +38,8 @@ public class TestMain {
 		try {
 			
 			// agregar 
-			
-	/*
+			/*
+	
 			tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
@@ -142,7 +142,7 @@ public class TestMain {
 			
 			//traer e imprimir
 		
-			System.out.println(reservaAbm.traerReservaHql(1));
+			
 			
 		//	System.out.println(butacaAbm.traerButacaHql(1));+++++++++++
 		//	System.out.println(seccionAbm.traerSeccionHql(1));+++++++++
