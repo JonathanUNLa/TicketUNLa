@@ -54,5 +54,14 @@
 		<url-pattern>/reservar4</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ControladorReservar5</servlet-name>
+		<servlet-class>controladores.ControladorReservar5</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControladorReservar5</servlet-name>
+		<url-pattern>/reservar5</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>

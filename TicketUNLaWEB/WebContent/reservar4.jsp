@@ -26,7 +26,7 @@
 					int idf = (int) request.getAttribute("idfuncion");
 					%>
 					
-					vista reservar3 <br>
+					vista reservar4 <br>
 					id de usuario: <%=idu%>
 					id de auditorio: <%=ida%>
 					id de evento: <%=ide%>
@@ -46,7 +46,7 @@
 					<% for (Butaca butaca : butacas) { %>
 					<p>
 					Columna:
-					<input type="radio" id="idfuncion" name="idfuncion" value="<%= butaca.getIdButaca() %>" checked><%= butaca.getColumna() %><br>
+					<input type="checkbox" id="idbutaca" name="idbutaca" value="<%= butaca.getIdButaca() %>" checked><%= butaca.getColumna() %><br>
 					<br>
 					Fila <%= butaca.getFila() %>
 				<br>	Precio de la seccion <%= butaca.getSeccion().getPrecioSeccion() %><br>
@@ -57,9 +57,10 @@
 					<br>
 					<br>
 					<INPUT type="hidden" id="idfuncion" name="idfuncion" value="<%= idf %>" />
+					<INPUT type="hidden" id="idevento" name="idevento" value="<%= ide %>" />
 					<INPUT type="hidden" id="idauditorio" name="idauditorio" value="<%= ida %>" />
 					<INPUT type="hidden" id="idusuario" name="idusuario" value="<%= idu %>" />
-					<input class="button" type="submit" value="siguiente" id="siguiente">
+					<input class="button" type="submit" value="reservar" id="siguiente">
 					</FORM>
 </body>
 </html>

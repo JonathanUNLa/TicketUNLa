@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,17 +17,20 @@ import datos.Usuario;
 import funciones.Funciones;
 import datos.Auditorio;
 import datos.Butaca;
+import datos.Entrada;
 import datos.Evento;
 import datos.Funcion;
+import datos.Reserva;
 import datos.TipoUsuario;
 import negocio.AuditorioABM;
 import negocio.ButacaABM;
 import negocio.EntradaABM;
 import negocio.EventoABM;
 import negocio.FuncionABM;
+import negocio.ReservaABM;
 import negocio.UsuarioABM;
 
-public class ControladorReservar4 extends HttpServlet {
+public class ControladorReservar5 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		procesarPeticion(request, response);
@@ -40,6 +45,10 @@ public class ControladorReservar4 extends HttpServlet {
 		UsuarioABM usuarioAbm = UsuarioABM.getInstancia();
 		EntradaABM entradaAbm= EntradaABM.getInstancia();
 		ButacaABM butacaAbm= ButacaABM.getInstancia();
+		AuditorioABM aabm = AuditorioABM.getInstancia();
+		EventoABM eabm = EventoABM.getInstancia();
+		FuncionABM fabm = FuncionABM.getInstancia();
+		ReservaABM rabm = ReservaABM.getInstancia();
 		int error=0;
 		
 		int idauditorio = Integer.parseInt(request.getParameter("idauditorio"));
@@ -47,40 +56,47 @@ public class ControladorReservar4 extends HttpServlet {
 		int idevento = Integer.parseInt(request.getParameter("idevento"));
 		int idfuncion = Integer.parseInt(request.getParameter("idfuncion"));
 		
-		/*
-		String select[] = request.getParameterValues("idfuncion"); 
+		
+		String select[] = request.getParameterValues("idbutaca"); 
 		if (select != null && select.length != 0) {
-		System.out.println("You have selected: ");
+		System.out.println("seleccionaste: ");
 			for (int i = 0; i < select.length; i++) {
 				System.out.println(select[i]); 
 			}
 		}
-		*/
+		
 		//int idusuario = request.getParameter("idusuario");
 		
 		
 		try {
-			//Usuario u = usuarioAbm.traerUsuario(idusuario);
-			//AuditorioABM aabm = AuditorioABM.getInstancia();
-			//EventoABM eabm = EventoABM.getInstancia();
-			//FuncionABM fabm = FuncionABM.getInstancia();
-			ButacaABM babm = ButacaABM.getInstancia();
-			List<Butaca> bt =butacaAbm.traerButacaAuditorio(idauditorio);
-			List<Butaca> bts =entradaAbm.traerEntradaFuncion(idfuncion);
-			int x=0 ;
-			while(x<bts.size()) {
-				bt.remove(bts.get(x));
-				x++;
+			Usuario u = usuarioAbm.traerUsuario(idusuario);
+			Funcion f = fabm.traerFuncion(idfuncion);
+			Reserva r = new Reserva(u, false);
+				Set<Entrada> lstEntradas = new  HashSet<Entrada>();
+			
+			if (select != null && select.length != 0) {
+				System.out.println(" ");
+					for (int i = 0; i < select.length; i++) {
+						Butaca b = butacaAbm.traerButaca(Integer.parseInt(select[i]));
+						Entrada e = new Entrada(b, f, "123asd", r);
+						lstEntradas.add(e);
+						//System.out.println(select[i]); 
+					}
+			}
+			r.setLstEntradas(lstEntradas);
+			rabm.agregar(u, lstEntradas, 0, false);
+			
+			for(Entrada e: lstEntradas) {
+				entradaAbm.agregar(e.getButaca(), e.getFuncion(), e.getCodigo(), rabm.traerReserva(rabm.traerReserva().size()));
 			}
 			
-			request.setAttribute("bl",bt);
 			request.setAttribute("idusuario",idusuario);
 			request.setAttribute("idauditorio",idauditorio);
 			request.setAttribute("idevento",idevento);
 			request.setAttribute("idfuncion",idfuncion);
-			//request.setAttribute("idfunciones",select);
+			request.setAttribute("idbutaca",select);
 
-			request.getRequestDispatcher("/reservar4.jsp").forward(request , response);
+			request.getRequestDispatcher("/reservar5.jsp").forward(request , response);
 
 			
 		}

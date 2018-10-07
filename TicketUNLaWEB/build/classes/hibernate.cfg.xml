@@ -24,7 +24,6 @@
 		<mapping resource="mapeos/DiaDescuento.hbm.xml"/>
 		<mapping resource="mapeos/Evento.hbm.xml"/>
 		<mapping resource="mapeos/TipoUsuario.hbm.xml"/>
-
 		<mapping resource="mapeos/Reserva.hbm.xml"/>
 		
 	</session-factory>
