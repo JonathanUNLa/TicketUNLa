@@ -44,5 +44,8 @@
 						<%}%>
 					<%}%>
 					
+					<h1>reserva realizada</h1>
+					<h2>Total de la reserva </h2>
+					
 </body>
 </html>

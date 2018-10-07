@@ -69,16 +69,17 @@ public class ControladorReservar5 extends HttpServlet {
 		
 		
 		try {
-			Usuario u = usuarioAbm.traerUsuario(idusuario);
-			Funcion f = fabm.traerFuncion(idfuncion);
+			Usuario u = usuarioAbm.traerUsuarioHql(idusuario);
+			Funcion f = fabm.traerFuncionHql(idfuncion);
 			Reserva r = new Reserva(u, false);
 				Set<Entrada> lstEntradas = new  HashSet<Entrada>();
 			
 			if (select != null && select.length != 0) {
 				System.out.println(" ");
 					for (int i = 0; i < select.length; i++) {
-						Butaca b = butacaAbm.traerButaca(Integer.parseInt(select[i]));
+						Butaca b = butacaAbm.traerButacaHql(Integer.parseInt(select[i]));
 						Entrada e = new Entrada(b, f, "123asd", r);
+
 						lstEntradas.add(e);
 						//System.out.println(select[i]); 
 					}
@@ -87,6 +88,7 @@ public class ControladorReservar5 extends HttpServlet {
 			rabm.agregar(u, lstEntradas, 0, false);
 			
 			for(Entrada e: lstEntradas) {
+				
 				entradaAbm.agregar(e.getButaca(), e.getFuncion(), e.getCodigo(), rabm.traerReserva(rabm.traerReserva().size()));
 			}
 			

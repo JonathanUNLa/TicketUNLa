@@ -126,7 +126,7 @@ public class Entrada {
 		return desc;
 	}
 
-	public double calcularPrecioFinal(){
+	public  double calcularPrecioFinal(){
 		double precio=0;
 		double desCod=0;
 		if(esValido()!=0) {
