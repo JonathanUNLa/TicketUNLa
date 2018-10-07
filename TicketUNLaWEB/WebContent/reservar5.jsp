@@ -25,7 +25,7 @@
 					<%
 					int idf = (int) request.getAttribute("idfuncion");
 					%>
-					
+					<% double precio = (double) request.getAttribute("precio"); %>
 					<%
 					String idb[] = (String[]) request.getAttribute("idbutaca");
 					%>
@@ -45,7 +45,8 @@
 					<%}%>
 					
 					<h1>reserva realizada</h1>
-					<h2>Total de la reserva </h2>
+					<h2>Total de la reserva <%=precio %> </h2>
+					
 					
 </body>
 </html>
