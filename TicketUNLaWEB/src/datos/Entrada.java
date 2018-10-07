@@ -19,7 +19,7 @@ public class Entrada {
 		this.butaca = butaca;
 		this.funcion = funcion;
 		this.codigo = codigo;
-		this.precioFinal=500;
+		this.precioFinal = calcularPrecioFinal();
 		this.reserva = reserva;
 	}
 
@@ -115,9 +115,39 @@ public class Entrada {
 		return precio;
 		
 	}
+	*/
+	public double esValido() {
+		double desc=0;
+		for (CodigoDescuento c : funcion.getLstCodDesc()) {
+			if(codigo.equals(c.getCodigo())) {
+				desc=c.getDescuento();
+			}
+		}
+		return desc;
+	}
+
+	public double calcularPrecioFinal(){
+		double precio=0;
+		double desCod=0;
+		if(esValido()!=0) {
+			desCod=esValido();
+		}
+		precio=funcion.getPrecioBase()+butaca.getSeccion().getPrecioSeccion();
+
+		if(funcion.getDiaDescuento()!=null) {
+		desCod+=funcion.getDiaDescuento().getDescuento();
+		}
+		if(desCod>100) {
+			precio=0;
+		}else {
+			precio-=precio*(desCod/100);
+		}
+		return precio;
+		
+	}
 
 
-*/
+
 	@Override
 	public String toString() {
 		return "Entrada [idEntrada=" + idEntrada + ", butaca=" + butaca +  ", funcion="

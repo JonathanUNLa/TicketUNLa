@@ -39,8 +39,8 @@ public class TestMain {
 			
 			// agregar 
 			
-	
-		/*	tipoAuditorioAbm.agregar("estadio");
+	/*
+			tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
 			auditorioAbm.agregar("El Monumental", tipoAuditorioAbm.traerTipoAuditorio(1));
@@ -125,20 +125,21 @@ public class TestMain {
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(2), false);
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(3), false);
-			//agregar entradas usuario 1
-			entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncion(1),"SDE5697",reservaAbm.traerReserva(1));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(5),  funcionAbm.traerFuncion(1),"s",reservaAbm.traerReserva(1));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(10),  funcionAbm.traerFuncion(1),"QWERTY",reservaAbm.traerReserva(1));
-			//agregar entradas usuario 2
-			entradaAbm.agregar(butacaAbm.traerButacaHql(13),  funcionAbm.traerFuncion(2),"asd",reservaAbm.traerReserva(2));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(17),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(2));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(20),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(2));
-			//agregar etradas usuario 3
-			entradaAbm.agregar(butacaAbm.traerButacaHql(21),  funcionAbm.traerFuncion(2),"QWERTY",reservaAbm.traerReserva(3));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
-			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncion(2),"s",reservaAbm.traerReserva(3));
-			
 			*/
+			//agregar entradas usuario 1
+			entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(5),  funcionAbm.traerFuncionHql(1),"s",reservaAbm.traerReserva(1));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(10),  funcionAbm.traerFuncionHql(1),"QWERTY",reservaAbm.traerReserva(1));
+			//agregar entradas usuario 2
+			entradaAbm.agregar(butacaAbm.traerButacaHql(13),  funcionAbm.traerFuncionHql(2),"asd",reservaAbm.traerReserva(2));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(17),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(2));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(20),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(2));
+			//agregar etradas usuario 3
+			entradaAbm.agregar(butacaAbm.traerButacaHql(21),  funcionAbm.traerFuncionHql(2),"QWERTY",reservaAbm.traerReserva(3));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(3));
+			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(3));
+			
+			
 			//traer e imprimir
 		
 			
