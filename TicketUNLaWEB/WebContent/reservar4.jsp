@@ -49,6 +49,7 @@
 					<input type="radio" id="idfuncion" name="idfuncion" value="<%= butaca.getIdButaca() %>" checked><%= butaca.getColumna() %><br>
 					<br>
 					Fila <%= butaca.getFila() %>
+				<br>	Precio de la seccion <%= butaca.getSeccion().getPrecioSeccion() %><br>
 					</p>
 					------------------------------------------------------------
 					<%} %>

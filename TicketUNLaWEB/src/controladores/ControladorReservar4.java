@@ -20,6 +20,7 @@ import datos.Funcion;
 import datos.TipoUsuario;
 import negocio.AuditorioABM;
 import negocio.ButacaABM;
+import negocio.EntradaABM;
 import negocio.EventoABM;
 import negocio.FuncionABM;
 import negocio.UsuarioABM;
@@ -37,6 +38,8 @@ public class ControladorReservar4 extends HttpServlet {
 			throws ServletException, IOException {
 		
 		UsuarioABM usuarioAbm = UsuarioABM.getInstancia();
+		EntradaABM entradaAbm= EntradaABM.getInstancia();
+		ButacaABM butacaAbm= ButacaABM.getInstancia();
 		int error=0;
 		
 		int idauditorio = Integer.parseInt(request.getParameter("idauditorio"));
@@ -53,10 +56,15 @@ public class ControladorReservar4 extends HttpServlet {
 			//EventoABM eabm = EventoABM.getInstancia();
 			//FuncionABM fabm = FuncionABM.getInstancia();
 			ButacaABM babm = ButacaABM.getInstancia();
+			List<Butaca> bt =butacaAbm.traerButacaFuncion(idfuncion);
+			List<Butaca> bts =entradaAbm.traerEntradaFuncion(idfuncion);
+			int x=0 ;
+			while(x<bts.size()) {
+				bt.remove(bts.get(x));
+				x++;
+			}
 			
-			List<Butaca> bl = babm.traerButacaFuncion(idfuncion);
-			
-			request.setAttribute("bl",bl);
+			request.setAttribute("bl",bt);
 			request.setAttribute("idusuario",idusuario);
 			request.setAttribute("idauditorio",idauditorio);
 			request.setAttribute("idevento",idevento);

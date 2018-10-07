@@ -1,15 +1,18 @@
 package negocio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.ButacaDao;
+import dao.EntradaDao;
 import datos.Butaca;
+import datos.Entrada;
 import datos.Seccion;
 
 public class ButacaABM {
 	private static ButacaABM instancia;
 	protected ButacaDao dao;
-	
+	protected EntradaABM abm;
 	protected ButacaABM() {
 		dao = new ButacaDao();
 	}
@@ -32,6 +35,8 @@ public class ButacaABM {
 		
 		return butaca;
 	}
+	
+
 	
 	public List<Butaca> traerButacaAuditorio(int auditorio){
 		return dao.traerButacaAuditorio(auditorio);

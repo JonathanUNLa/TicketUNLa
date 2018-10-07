@@ -59,6 +59,17 @@ public class Butaca {
 	}
 	
 	
+
+	@Override
+	public boolean equals(Object e){
+		return ((Butaca) e).getIdButaca() == this.getIdButaca();
+	}
+	
+	@Override
+	public int hashCode() {
+	      return (int) idButaca;
+	}
+
 	@Override
 	public String toString() {
 		return "Butaca [idButaca=" + idButaca + ", fila=" + fila + ", columna=" + columna + ", seccion=" +seccion.getNombreSeccion()

@@ -1,7 +1,10 @@
 package test;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
+import datos.Butaca;
+import datos.Entrada;
 import negocio.AuditorioABM;
 import negocio.ButacaABM;
 import negocio.CodigoDescuentoABM;
@@ -155,8 +158,10 @@ public class TestMain {
 		//	System.out.println(butacaAbm.traerButacaAuditorio(4).size()); +++++ parece que anda
 		//	System.out.println(entradaAbm.traerEntradaFuncion(2).size());
 		//	System.out.println(butacaAbm.traerButacaFuncion(4).size()); //-------- desde el 4 en adelante no andan
-		//	System.out.println(reservaAbm.traerReservaHql(1)); ++++++++
-			System.out.println(entradaAbm.traerEntradaFuncion(2).size());
+		//	System.out.println(sreservaAbm.traerReservaHql(1)); ++++++++
+		//	System.out.println(entradaAbm.traerEntradaFuncion(1).size());
+	
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
