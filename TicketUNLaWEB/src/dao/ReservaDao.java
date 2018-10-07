@@ -93,7 +93,10 @@ public class ReservaDao {
 					"left join fetch v.evento "+
 					"left join fetch v.lstCodDesc lst "+
 					"left join fetch lst.seccion "+
-					"where r.idReserva= "+ idReserva;						
+					"where r.idReserva= "+ idReserva;
+			
+			
+
 
 			objeto = (Reserva) session.createQuery(hql).uniqueResult();
 		} finally {

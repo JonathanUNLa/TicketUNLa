@@ -17,9 +17,11 @@ public class Reserva {
 		public Reserva(Usuario usuario, boolean entregado) {
 			super();
 			this.usuario = usuario;
-			this.precioTotal = 0;
+			this.precioTotal = 500.0;
 			this.entregado = entregado;
-		}		
+		}
+
+		
 
 		public Reserva(Usuario usuario, Set<Entrada> lstEntradas, double precioTotal, boolean entregado) {
 			super();
@@ -28,6 +30,8 @@ public class Reserva {
 			this.precioTotal = calcularTotal();
 			this.entregado = entregado;
 		}
+
+
 	
 		public int getIdReserva() {
 			return idReserva;
@@ -59,7 +63,9 @@ public class Reserva {
 
 		public void setEntregado(boolean entregado) {
 			this.entregado = entregado;
-		}		
+		}
+		
+		
 		
 		public Set<Entrada> getLstEntradas() {
 			return lstEntradas;
@@ -73,7 +79,7 @@ public class Reserva {
 			double precio=0;
 			
 			for(Entrada e: lstEntradas) {
-				precio+=e.getPrecioFinal();
+				precio=precio+e.getPrecioFinal();
 			}
 			
 			if(usuario.getTipoBeneficio()!=null) {
@@ -82,6 +88,7 @@ public class Reserva {
 			
 			return precio;
 		}
+		
 		
 		@Override
 		public String toString() {
