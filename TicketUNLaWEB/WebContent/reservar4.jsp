@@ -145,15 +145,21 @@
 					<% for (Butaca butaca : butacas) { %>
 					<p>
 					Columna:
-					<input type="checkbox" id="idbutaca" name="idbutaca" value="<%= butaca.getIdButaca() %>" checked><%= butaca.getColumna() %><br>
+					<input type="checkbox" id="idbutaca" name="idbutaca" value="<%= butaca.getIdButaca() %>" ><%= butaca.getColumna() %><br>
 					<br>
 					Fila <%= butaca.getFila() %>
 				<br>	Precio de la seccion <%= butaca.getSeccion().getPrecioSeccion() %><br>
+				<br1><%= butaca.getSeccion().getNombreSeccion() %> <br1>
 					</p>
 					------------------------------------------------------------
 					<%} %>
 					<%} %>
 					<br>
+					<div class="select-1">
+								<label>Codigo</label> 
+								<input name="codigo" type="text" id="codigo"
+									placeholder="ingrese codigo">
+					</div>
 					<br>
 					<INPUT type="hidden" id="idfuncion" name="idfuncion" value="<%= idf %>" />
 					<INPUT type="hidden" id="idevento" name="idevento" value="<%= ide %>" />
@@ -172,7 +178,9 @@
 						Evento: <%=e.getNombre()%><br>
 						Funcion: <%=Funciones.traerFechaCorta(f.getDiaHora())%><br>
 						
-						
+						<img src="images/plano1.jpg" alt="" /> <br>
+						<img src="images/plano2.jpg" alt="" /> <br>
+						<img src="images/plano3.jpg" alt="" /> <br>
 					</div>
 			</div>		
 		

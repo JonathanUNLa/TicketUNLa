@@ -125,6 +125,10 @@
 					%>
 					
 					<%
+					String codigo = (String) request.getAttribute("codigo");
+					%>
+					
+					<%
 					int idf = (int) request.getAttribute("idfuncion");
 					%>
 					<% double precio = (double) request.getAttribute("precio"); %>
@@ -145,6 +149,7 @@
 					
 					<h1>reserva realizada</h1>
 					<h2>Total de la reserva <%=precio %> </h2>
+					<h3>codigo ingresado: <%=codigo %></h3>
 					
 					</div>
 			<div class="grid_4">

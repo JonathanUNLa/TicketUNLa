@@ -56,6 +56,8 @@ public class ControladorReservar5 extends HttpServlet {
 		int idevento = Integer.parseInt(request.getParameter("idevento"));
 		int idfuncion = Integer.parseInt(request.getParameter("idfuncion"));
 		
+		String codigo = request.getParameter("codigo");
+
 		
 		String select[] = request.getParameterValues("idbutaca"); 
 		if (select != null && select.length != 0) {
@@ -78,7 +80,7 @@ public class ControladorReservar5 extends HttpServlet {
 				System.out.println(" ");
 					for (int i = 0; i < select.length; i++) {
 						Butaca b = butacaAbm.traerButacaHql(Integer.parseInt(select[i]));
-						Entrada e = new Entrada(b, f, "123asd", r);
+						Entrada e = new Entrada(b, f, codigo, r);
 
 						lstEntradas.add(e);
 						//System.out.println(select[i]); 
@@ -107,6 +109,9 @@ public class ControladorReservar5 extends HttpServlet {
 			request.setAttribute("funcion",f);
 			request.setAttribute("idbutaca",select);
 			request.setAttribute("precio", r.getPrecioTotal());
+			
+			request.setAttribute("codigo", codigo);
+			
 			request.getRequestDispatcher("/reservar5.jsp").forward(request , response);
 
 			
