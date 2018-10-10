@@ -7,6 +7,14 @@
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/style.css">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/grid_12.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -90,16 +98,10 @@
 			<div class="container_12">
 				<div class="grid_8">
 					<h2 class="top-1 p3">BIENVENIDO</h2>
-					<p class="p2">
-						algo escrito
-					</p>
-					<p class="line-1">
-						algo escrito2
-					</p>
+					<p class="p2">algo escrito</p>
+					<p class="line-1">algo escrito2</p>
 					<h2 class="p4">titulo2</h2>
-					<div class="wrap block-1">
-						nada (?)
-					</div>
+					<div class="wrap block-1">nada (?)</div>
 				</div>
 				<div class="grid_4">
 					<div class="left-1">
@@ -109,19 +111,18 @@
 						<FORM method="POST" action="/TicketUNLaWEB/vistapersonasindice"
 							id="form-1" class="form-1 bot-1">
 							<div class="select-1">
-								<label>Usuario</label> 
-								<input name="usuario" type="text" id="usuario"
-									placeholder="Ingrese Usuario" required>
+								<label>Usuario</label> <input name="usuario" type="text"
+									id="usuario" placeholder="Ingrese Usuario" required>
 							</div>
 							<div>
-								<label>Contraseña</label> 
-								<input name="contrasenia" type="password" id="contrasenia"
+								<label>Contraseña</label> <input name="contrasenia"
+									type="password" id="contrasenia"
 									placeholder="Ingresa Contraseña" required>
 							</div>
-							<INPUT  type="submit" value="ingresar" class="button"> 
+							<INPUT type="submit" value="ingresar" class="button btn blue">
 						</form>
 
-						
+
 					</div>
 				</div>
 				<div class="clear"></div>
