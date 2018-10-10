@@ -10,12 +10,10 @@
 <head>
 <title>vista cliente indice</title>
 <meta charset="utf-8">
-
 <link type="text/css" rel="stylesheet" href="css/materialize.min.css"
 	media="screen,projection" />
-<!--  <script type="text/javascript" src="js/materialize.min.js"></script> -->
-
-
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -136,7 +134,7 @@
 				%>
 				<br> <br> <INPUT type="hidden" id="idusuario"
 					name="idusuario" value="<%=idu%>" /> <input
-					class="button btn blue" type="submit" value="siguiente"
+					class="waves-effect waves-light btn-large" type="submit" value="siguiente"
 					id="siguiente">
 			</FORM>
 		</div>

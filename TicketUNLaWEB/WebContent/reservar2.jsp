@@ -9,6 +9,9 @@
 <head>
 <title>vista cliente indice</title>
 <meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
+<script type="text/javascript" src="js/materialize.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -124,11 +127,14 @@
 					<br>
 					<FORM method="POST" action="/TicketUNLaWEB/reservar3">
 					
-					<% for (Evento evento : eventos) { %>
+					<% for (Evento evento : eventos) { %>					
 					<p>
-					<input type="radio" id="idevento" name="idevento" value="<%= evento.getIdEvento() %>" checked> <%=evento.getNombre()%><br>
-					<br>
-					</p>
+					<label> <input class="with-gap" name="idevento"
+						type="radio" id="idevento" value="<%=evento.getIdEvento()%>"
+						checked /> <span><%=evento.getNombre()%></span>
+					</label>
+				</p>
+				<br> <br>
 					------------------------------------------------------------
 					<%} %>
 					<%} %>
@@ -136,7 +142,7 @@
 					<br>
 					<INPUT type="hidden" id="idauditorio" name="idauditorio" value="<%= ida %>" />
 					<INPUT type="hidden" id="idusuario" name="idusuario" value="<%= idu %>" />
-					<input class="button" type="submit" value="siguiente" id="siguiente">
+					<input class="waves-effect waves-light btn-large" type="submit" value="siguiente" id="siguiente">
 					</FORM>
 			</div>
 			<div class="grid_4">

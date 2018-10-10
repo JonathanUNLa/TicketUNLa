@@ -3,18 +3,15 @@
 <head>
 <title>Main</title>
 <meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
+<script type="text/javascript" src="js/materialize.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/style.css">
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-<!-- Compiled and minified JavaScript -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/grid_12.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -30,6 +27,7 @@
 <script src="js/tms-0.4.x.js"></script>
 <script src="js/jquery.jqtransform.js"></script>
 <script src="js/FF-cash.js"></script>
+
 <script>
 	$(document).ready(function() {
 		$('.form-1').jqTransform();
@@ -51,17 +49,6 @@
 		})
 	});
 </script>
-<!--[if lt IE 8]>
-       <div style=' clear: both; text-align:center; position: relative;'>
-         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-      </div>
-    <![endif]-->
-<!--[if lt IE 9]>
-   		<script type="text/javascript" src="js/html5.js"></script>
-    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
-	<![endif]-->
 </head>
 <body>
 	<div class="main">
@@ -119,7 +106,8 @@
 									type="password" id="contrasenia"
 									placeholder="Ingresa Contraseña" required>
 							</div>
-							<INPUT type="submit" value="ingresar" class="button btn blue">
+							<input type="submit" value="ingresar"
+								class="waves-effect waves-light btn-large">
 						</form>
 
 

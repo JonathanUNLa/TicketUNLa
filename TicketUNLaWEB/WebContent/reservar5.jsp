@@ -12,6 +12,9 @@
 <head>
 <title>vista cliente indice</title>
 <meta charset="utf-8">
+<!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" -->
+<!-- 	media="screen,projection" /> -->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
