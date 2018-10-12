@@ -3,15 +3,10 @@
 <head>
 <title>Main</title>
 <meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
-<script type="text/javascript" src="js/materialize.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/style.css">
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/grid_12.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -27,7 +22,6 @@
 <script src="js/tms-0.4.x.js"></script>
 <script src="js/jquery.jqtransform.js"></script>
 <script src="js/FF-cash.js"></script>
-
 <script>
 	$(document).ready(function() {
 		$('.form-1').jqTransform();
@@ -49,6 +43,17 @@
 		})
 	});
 </script>
+<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+<!--[if lt IE 9]>
+   		<script type="text/javascript" src="js/html5.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+	<![endif]-->
 </head>
 <body>
 	<div class="main">
@@ -85,10 +90,16 @@
 			<div class="container_12">
 				<div class="grid_8">
 					<h2 class="top-1 p3">BIENVENIDO</h2>
-					<p class="p2">algo escrito</p>
-					<p class="line-1">algo escrito2</p>
+					<p class="p2">
+						algo escrito
+					</p>
+					<p class="line-1">
+						algo escrito2
+					</p>
 					<h2 class="p4">titulo2</h2>
-					<div class="wrap block-1">nada (?)</div>
+					<div class="wrap block-1">
+						nada (?)
+					</div>
 				</div>
 				<div class="grid_4">
 					<div class="left-1">
@@ -98,19 +109,19 @@
 						<FORM method="POST" action="/TicketUNLaWEB/vistapersonasindice"
 							id="form-1" class="form-1 bot-1">
 							<div class="select-1">
-								<label>Usuario</label> <input name="usuario" type="text"
-									id="usuario" placeholder="Ingrese Usuario" required>
+								<label>Usuario</label> 
+								<input name="usuario" type="text" id="usuario"
+									placeholder="Ingrese Usuario" required>
 							</div>
 							<div>
-								<label>Contraseña</label> <input name="contrasenia"
-									type="password" id="contrasenia"
+								<label>Contraseña</label> 
+								<input name="contrasenia" type="password" id="contrasenia"
 									placeholder="Ingresa Contraseña" required>
 							</div>
-							<input type="submit" value="ingresar"
-								class="waves-effect waves-light btn-large">
+							<INPUT  type="submit" value="ingresar" class="button"> 
 						</form>
 
-
+						
 					</div>
 				</div>
 				<div class="clear"></div>

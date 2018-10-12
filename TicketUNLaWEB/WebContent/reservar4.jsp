@@ -13,9 +13,6 @@
 <head>
 <title>vista cliente indice</title>
 <meta charset="utf-8">
-<!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css" -->
-<!-- 	media="screen,projection" /> -->
-<!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -182,7 +179,7 @@
 						Funcion: <%=Funciones.traerFechaCorta(f.getDiaHora())%><br>
 						
 						<img src="images/plano1.jpg" alt="" /> <br>
-						<img src="images/plano2.jpg" alt="" /> <br>
+						<img src="images/plano-2.png" alt="" /> <br>
 						<img src="images/plano3.jpg" alt="" /> <br>
 					</div>
 			</div>		

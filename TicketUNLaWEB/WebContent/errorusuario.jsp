@@ -5,9 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
-<script type="text/javascript" src="js/materialize.min.js"></script>
 </head>
 <body>
 NOMBRE DE USUARIO NO VALIDO

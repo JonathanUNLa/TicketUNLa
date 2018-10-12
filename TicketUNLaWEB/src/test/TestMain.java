@@ -38,8 +38,8 @@ public class TestMain {
 		try {
 			
 			// agregar 
-			/*
-	
+			
+	/*
 			tipoAuditorioAbm.agregar("estadio");
 			tipoAuditorioAbm.agregar("teatro");
 			tipoAuditorioAbm.agregar("cine");
@@ -121,11 +121,13 @@ public class TestMain {
 			usuarioAbm.agregar(4444444, "Martin", "Olmos", "444444", "molmos", "qwe", tipoUsuarioAbm.traerTipoUsuario(2), null, auditorioAbm.traerAuditorio(3));
 			//administrador
 			usuarioAbm.agregar(5555555, "Nehuen", "Verges", "333333", "nverges", "987654", tipoUsuarioAbm.traerTipoUsuario(3), null,null);
+			*/
+			/*
 			//generar reservas
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(2), false);
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(3), false);
-			
+			/*
 			//agregar entradas usuario 1
 			entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(5),  funcionAbm.traerFuncionHql(1),"s",reservaAbm.traerReserva(1));
@@ -138,11 +140,11 @@ public class TestMain {
 			entradaAbm.agregar(butacaAbm.traerButacaHql(21),  funcionAbm.traerFuncionHql(2),"QWERTY",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(3));
+			
 			*/
-			
 			//traer e imprimir
-		
-			
+//System.out.println(		reservaAbm.traerReservaHql(1));
+			System.out.println(reservaAbm.traerReservaUsuario(1));
 			
 		//	System.out.println(butacaAbm.traerButacaHql(1));+++++++++++
 		//	System.out.println(seccionAbm.traerSeccionHql(1));+++++++++

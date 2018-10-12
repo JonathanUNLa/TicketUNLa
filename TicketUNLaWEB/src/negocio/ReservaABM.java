@@ -34,6 +34,13 @@ public class ReservaABM {
 		return reserva;
 	}
 	
+	
+	public List<Reserva> traerReservaUsuario(int idUsuario)throws Exception {
+		List<Reserva> reservas = dao.traerReservaUsuario(idUsuario);
+		if(reservas == null)throw new Exception("La Reserva no existe");
+		return reservas;
+	}
+	
 	public List<Reserva> traerReserva(){
 		return dao.traerReserva();
 	}

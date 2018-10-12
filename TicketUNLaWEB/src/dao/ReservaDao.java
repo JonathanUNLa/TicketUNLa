@@ -82,16 +82,16 @@ public class ReservaDao {
 		try {
 			iniciaOperacion();
 			String hql="from Reserva r "+
-					"inner join fetch r.usuario u "+
-					"inner join fetch r.lstEntradas e "+
+					"left join fetch r.usuario u "+
+					"left  join fetch r.lstEntradas e "+
 					"left join fetch e.butaca s "+
-					"left join fetch e.funcion v "+
+					"left join fetch e.funcion f "+
 					"left join fetch s.seccion "+
 					"left join fetch u.tipoBeneficio "+
 					"left join fetch u.tipoUsuario "+
-					"left join fetch v.diaDescuento "+
-					"left join fetch v.evento "+
-					"left join fetch v.lstCodDesc lst "+
+					"left join fetch f.diaDescuento "+
+					"left join fetch f.evento "+
+					"left join fetch f.lstCodDesc lst "+
 					"left join fetch lst.seccion "+
 					"where r.idReserva= "+ idReserva;
 			
@@ -105,6 +105,33 @@ public class ReservaDao {
 		
 		return objeto;
 	}
+
+		@SuppressWarnings("unchecked")
+		public List<Reserva> traerReservaUsuario(int idUsuario) throws HibernateException {
+			List<Reserva> objeto = null;
+			
+			try {
+				iniciaOperacion();
+				String hql="from Reserva r "+
+						"left join fetch r.usuario u "+
+						"left  join fetch r.lstEntradas e "+
+						"left join fetch e.butaca s "+
+						"left join fetch e.funcion f "+
+						"left join fetch s.seccion "+
+						"left join fetch u.tipoBeneficio "+
+						"left join fetch u.tipoUsuario "+
+						"left join fetch f.diaDescuento "+
+						"left join fetch f.evento "+
+						"left join fetch f.lstCodDesc lst "+
+						"left join fetch lst.seccion "+
+						"where u.idUsuario= "+ idUsuario;
+				objeto = session.createQuery(hql).list();
+			} finally {
+				session.close();
+			}
+			
+			return objeto;
+		}
 	
 	@SuppressWarnings("unchecked")
 	public List<Reserva> traerReserva() throws HibernateException {

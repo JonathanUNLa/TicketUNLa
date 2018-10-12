@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@page import="datos.Auditorio"%>
+	pageEncoding="ISO-8859-1"%>
+<%@page import="datos.Butaca"%>
+<%@page import="funciones.Funciones"%>
+<%@page import="datos.Entrada"%>
 <%@page import="datos.Usuario"%>
+<%@page import="datos.Auditorio"%>
+<%@page import="datos.Funcion"%>
+<%@page import="datos.Reserva"%>
 <%@page import="java.util.List"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>vista cliente indice</title>
+<title>Vista reservas del cliente</title>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
@@ -64,92 +67,93 @@
 </head>
 <body>
 
-<!--==============================header=================================-->
-		<header>
-			<div>
-				<h1>
-					<a href=""><img src="images/logo.jpg" alt=""></a>
-				</h1>
-				<div class="social-icons">
-					<span>Follow Us:</span> <a href="#" class="icon-3"></a> <a href="#"
-						class="icon-2"></a> <a href="#" class="icon-1"></a>
-				</div>
-				<div id="slide">
-					<div class="slider">
-						<ul class="items">
-							<li><img src="images/slider-1.jpg" alt="" /></li>
-							<li><img src="images/slider-2.jpg" alt="" /></li>
-							<li><img src="images/slider-3.jpg" alt="" /></li>
-						</ul>
-					</div>
-					<a href="#" class="prev"></a><a href="#" class="next"></a>
-				</div>
-				<nav>
-					<ul class="menu">
-						<li class="current"><a href="">Main</a></li>
-						<li><a href="contacto.html">Contacts</a></li>
+	<!--==============================header=================================-->
+	<header>
+		<div>
+			<h1>
+				<a href=""><img src="images/logo.jpg" alt=""></a>
+			</h1>
+			<div class="social-icons">
+				<span>Follow Us:</span> <a href="#" class="icon-3"></a> <a href="#"
+					class="icon-2"></a> <a href="#" class="icon-1"></a>
+			</div>
+			<div id="slide">
+				<div class="slider">
+					<ul class="items">
+						<li><img src="images/slider-1.jpg" alt="" /></li>
+						<li><img src="images/slider-2.jpg" alt="" /></li>
+						<li><img src="images/slider-3.jpg" alt="" /></li>
 					</ul>
-				</nav>
+				</div>
+				<a href="#" class="prev"></a><a href="#" class="next"></a>
 			</div>
-		</header>
-		<!--==============================content================================-->
-		<section id="content">
-		
+			<nav>
+				<ul class="menu">
+					<li class="current"><a href="">Main</a></li>
+					<li><a href="contacto.html">Contacts</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!--==============================content================================-->
+	<section id="content">
 		<div class="grid_8">
-		
-		<%
-					Usuario u = (Usuario) request.getAttribute("usuario");
-					%>
-					
-					<%
-					int idu = (int) request.getAttribute("idusuario");
-					%>
-					vista reservar1 <br>
-					
-					 <br>
-					<% List<Auditorio> auditorios = (List) request.getAttribute("la"); %>
-					
-					<%if(auditorios.isEmpty()){ %>
-					<h2>No hay auditorios</h2>
-					<br><br><br>
-					<%}else{%>
-					<h2>Auditorios:</h2>
-					<br>
-					<FORM method="POST" action="/TicketUNLaWEB/reservar2">
-					
-					<% for (Auditorio auditorio : auditorios) { %>
-					<p>
-					<input type="radio" id="idauditorio" name="idauditorio" value="<%= auditorio.getIdAuditorio() %>" checked> <%=auditorio.getNombre()%><br>
-					<br>
-					</p>
-					------------------------------------------------------------
-					<%} %>
-					<%} %>
-					<br>
-					<br>
-					<INPUT type="hidden" id="idusuario" name="idusuario" value="<%= idu %>" />
-					<input class="button" type="submit" value="siguiente" id="siguiente">
-					</FORM>
-			</div>
-					
-			<div class="grid_4">
-					<div class="left-1">
-						<h2 class="top-1 p3">informacion:</h2>
+	
+			
+			
+			<%
+				Usuario u = (Usuario) request.getAttribute("usuario");
+			%>
 
-						Nombre: <%=u.getNombre()%> <%=u.getApellido()%><br>
+			<%
+				int idu = (int) request.getAttribute("idusuario");
+			%>
+			<%
+				List<Reserva> reserva = (List) request.getAttribute("reservas");
+			%>
 
-						
-					</div>
-			</div>
-				</section>
+			vista reservas del usuario <br>
+			 <br>
+
+
+			<%
+				if (reserva.isEmpty()) {
+			%>
+			<h2>No hay reservas</h2>
+			<br>
+			<br>
+			<br>
+			<%
+				} else {
+			%>
+			<h2>Reservas:</h2>
+			<br>
+			
+				<p>
+					<%for (Reserva r : reserva) { %>
+					<h1>	Reserva:
+						<%=r.getPrecioTotal()%>"> <%=r.isEntregado()%>"> 
+					</h1>			
+							<%for (Entrada e : r.getLstEntradas()) {%>
+								<br> <%= e.getButaca().getColumna()%>  
+									 <%= e.getButaca().getFila() %>  
+
+									 <%= e.getPrecioFinal() %>  
+									 <%= e.getFuncion().getEvento().getNombre() %> 
+
+								 <br>
+							<% } %>
+					<% } %>
+				</p>
 				
-			
-			
-			
-			
+		<%} %>
+
 				
-				
-<!--==============================footer=================================-->
+	</div>
+
+	</section>
+
+	<!--==============================footer=================================-->
 	<footer>
 		<p>UNLa Ticket 2018</p>
 		<p>
@@ -160,5 +164,6 @@
 	<script>
 		Cufon.now();
 	</script>
+
 </body>
 </html>

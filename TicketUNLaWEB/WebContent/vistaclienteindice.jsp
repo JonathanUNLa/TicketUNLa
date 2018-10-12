@@ -6,9 +6,6 @@
 <head>
 <title>vista cliente indice</title>
 <meta charset="utf-8">
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
-<script type="text/javascript" src="js/materialize.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
@@ -49,6 +46,17 @@
 		})
 	});
 </script>
+<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+<!--[if lt IE 9]>
+   		<script type="text/javascript" src="js/html5.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+	<![endif]-->
 </head>
 <body>
 
@@ -93,9 +101,15 @@
 					
                 <FORM method="POST" action="/TicketUNLaWEB/reservar1">
                 <INPUT type="hidden" id="idusuario" name="idusuario" value="<%= u.getIdUsuario() %>" />
-				<input class="waves-effect waves-light btn-large" type="submit" value="reservar">
+				<input class="button" type="submit" value="reservar">
 				</FORM>
 		
+					
+					
+                <FORM method="POST" action="/TicketUNLaWEB/reservasUsuario">
+                <INPUT type="hidden" id="idusuario" name="idusuario" value="<%= u.getIdUsuario() %>" />
+				<input class="button" type="submit" value="consultar">
+				</FORM>
 		</div>
 		
 		<div class="grid_4">
