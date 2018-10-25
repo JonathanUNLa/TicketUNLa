@@ -39,6 +39,18 @@ public class EntradaABM {
 		return dao.traerEntrada();
 	}
 	
+	public List<Entrada> traerEntradaDescuento(){
+		List<Entrada> entradas = new ArrayList();
+		for (Entrada e: dao.traerEntrada()) {
+			double precioBase=e.getButaca().getSeccion().getPrecioSeccion()+e.getFuncion().getPrecioBase();
+			if(precioBase!=e.getPrecioFinal()) {
+				entradas.add(e);
+			}
+		}
+		
+		return entradas;
+	}
+	
 	public List<Butaca> traerEntradaFuncion(int funcion){
 		List<Butaca>but=new ArrayList();
 		for(Entrada e: dao.traerEntradaFuncion(funcion)){

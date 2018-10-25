@@ -132,14 +132,26 @@ public class ReservaDao {
 			
 			return objeto;
 		}
-	
+		
 	@SuppressWarnings("unchecked")
 	public List<Reserva> traerReserva() throws HibernateException {
 		List<Reserva> reserva = null;
 		
 		try {
 			iniciaOperacion();
-			reserva = session.createQuery("from Reserva").list();
+			String hql="from Reserva r "+
+					"left join fetch r.usuario u "+
+					"left  join fetch r.lstEntradas e "+
+					"left join fetch e.butaca s "+
+					"left join fetch e.funcion f "+
+					"left join fetch s.seccion "+
+					"left join fetch u.tipoBeneficio "+
+					"left join fetch u.tipoUsuario "+
+					"left join fetch f.diaDescuento "+
+					"left join fetch f.evento "+
+					"left join fetch f.lstCodDesc lst "+
+					"left join fetch lst.seccion ";
+			reserva = session.createQuery(hql).list();
 		} finally {
 			session.close();
 		}

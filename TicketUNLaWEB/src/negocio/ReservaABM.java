@@ -1,5 +1,7 @@
 package negocio;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -43,6 +45,23 @@ public class ReservaABM {
 	
 	public List<Reserva> traerReserva(){
 		return dao.traerReserva();
+	}
+	
+	public List<Reserva> traerReservaDescuento(){
+		List<Reserva> reservas = new ArrayList();
+		Set<Entrada> entradas = new HashSet<Entrada>();
+		for(Reserva r: dao.traerReserva()) {
+			for (Entrada e: r.getLstEntradas()) {
+				double precioBase=e.getButaca().getSeccion().getPrecioSeccion()+e.getFuncion().getPrecioBase();
+				if(precioBase==e.getPrecioFinal()) {
+					entradas.add(e);
+				}
+			}
+			reservas.add(r);
+			reservas.get(reservas.size()-1).setLstEntradas(entradas);
+		}
+		
+		return reservas;
 	}
 	
 	public int agregar(Usuario usuario,boolean entregado) {

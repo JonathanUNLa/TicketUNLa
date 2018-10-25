@@ -144,7 +144,7 @@ public class TestMain {
 			*/
 			//traer e imprimir
 //System.out.println(		reservaAbm.traerReservaHql(1));
-			System.out.println(reservaAbm.traerReservaUsuario(1));
+			//System.out.println(reservaAbm.traerReservaUsuario(1));
 			
 		//	System.out.println(butacaAbm.traerButacaHql(1));+++++++++++
 		//	System.out.println(seccionAbm.traerSeccionHql(1));+++++++++
@@ -163,7 +163,7 @@ public class TestMain {
 		//	System.out.println(butacaAbm.traerButacaFuncion(4).size()); //-------- desde el 4 en adelante no andan
 		//	System.out.println(sreservaAbm.traerReservaHql(1)); ++++++++
 		//	System.out.println(entradaAbm.traerEntradaFuncion(1).size());
-	
+			System.out.println(reservaAbm.traerReservaDescuento());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
