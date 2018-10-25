@@ -60,4 +60,14 @@
     <servlet-name>ControladorConsultaReserva</servlet-name>
     <url-pattern>/reservasUsuario</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorAjaxticketxfuncion</servlet-name>
+    <servlet-class>controladores.ControladorAjaxticketxfuncion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAjaxticketxfuncion</servlet-name>
+    <url-pattern>/ajaxticketxfuncion</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
