@@ -137,9 +137,8 @@ public class EntradaDao {
 						"inner join fetch e.butaca b "+
 						"inner join fetch b.seccion "+
 						"inner join fetch f.evento "+
-					 
-						"where u.idUsuario= "+idUsuario;
-
+						"where u.idUsuario= "+idUsuario+
+						"order by r.idReserva asc";
 			entradas = session.createQuery(hql1).list();
 		} finally {
 			session.close();
