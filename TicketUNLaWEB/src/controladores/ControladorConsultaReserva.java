@@ -7,8 +7,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import datos.Entrada;
 import datos.Reserva;
 import datos.Usuario;
+import negocio.EntradaABM;
 import negocio.ReservaABM;
 import negocio.UsuarioABM;
 
@@ -38,14 +41,14 @@ public class ControladorConsultaReserva extends HttpServlet{
 		}
 		try {
 			
-			ReservaABM rabm = ReservaABM.getInstancia();
+			EntradaABM eabm = EntradaABM.getInstancia();
 			//error=2;
-			List<Reserva> reservas= rabm.traerReservaUsuario(idusuario);
+			List<Entrada> entradas= eabm.traerReservaUsuario(idusuario);
 			error=2;
 			Usuario u = usuarioAbm.traerUsuario(idusuario);
 			request.setAttribute("idusuario",idusuario);
 			request.setAttribute("usuario",u);
-			request.setAttribute("reservas",reservas);
+			request.setAttribute("entradas",entradas);
 			request.getRequestDispatcher("/reservasUsuario.jsp").forward(request , response);
 		}
 		catch (Exception e) {

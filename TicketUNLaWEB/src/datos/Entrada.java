@@ -146,7 +146,13 @@ public class Entrada {
 		
 	}
 
-
+ public void metodoImpresion() {
+	System.out.println("fila "+butaca.getFila());
+	System.out.println("columna "+ butaca.getColumna());
+	System.out.println("seccion "+butaca.getSeccion().getNombreSeccion());
+	System.out.println("precio final: "+ precioFinal);
+	System.out.println("Evento "+ funcion.getEvento().getNombre());
+ }
 
 	@Override
 	public String toString() {

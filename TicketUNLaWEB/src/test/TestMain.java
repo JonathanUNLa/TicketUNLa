@@ -122,12 +122,12 @@ public class TestMain {
 			//administrador
 			usuarioAbm.agregar(5555555, "Nehuen", "Verges", "333333", "nverges", "987654", tipoUsuarioAbm.traerTipoUsuario(3), null,null);
 			*/
-			/*
+			
 			//generar reservas
-			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
+		/*	reservaAbm.agregar(usuarioAbm.traerUsuarioHql(1), false);
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(2), false);
 			reservaAbm.agregar(usuarioAbm.traerUsuarioHql(3), false);
-			/*
+			
 			//agregar entradas usuario 1
 			entradaAbm.agregar(butacaAbm.traerButacaHql(1),  funcionAbm.traerFuncionHql(1),"SDE5697",reservaAbm.traerReserva(1));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(5),  funcionAbm.traerFuncionHql(1),"s",reservaAbm.traerReserva(1));
@@ -140,8 +140,8 @@ public class TestMain {
 			entradaAbm.agregar(butacaAbm.traerButacaHql(21),  funcionAbm.traerFuncionHql(2),"QWERTY",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(24),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(3));
 			entradaAbm.agregar(butacaAbm.traerButacaHql(26),  funcionAbm.traerFuncionHql(2),"s",reservaAbm.traerReserva(3));
-			
 			*/
+			
 			//traer e imprimir
 //System.out.println(		reservaAbm.traerReservaHql(1));
 			//System.out.println(reservaAbm.traerReservaUsuario(1));
@@ -163,8 +163,11 @@ public class TestMain {
 		//	System.out.println(butacaAbm.traerButacaFuncion(4).size()); //-------- desde el 4 en adelante no andan
 		//	System.out.println(sreservaAbm.traerReservaHql(1)); ++++++++
 		//	System.out.println(entradaAbm.traerEntradaFuncion(1).size());
-			System.out.println(reservaAbm.traerReservaDescuento());
-			
+	//	reservaAbm.traerReservaHql(2).algo();
+			for(Entrada e: entradaAbm.traerReservaUsuario(1)) {
+				e.metodoImpresion();
+			}
+	//	System.out.println(entradaAbm.traerEntrada().size());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

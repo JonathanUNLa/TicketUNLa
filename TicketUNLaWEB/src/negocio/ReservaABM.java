@@ -48,7 +48,7 @@ public class ReservaABM {
 	}
 	
 	public List<Reserva> traerReservaDescuento(){
-		List<Reserva> reservas = new ArrayList();
+	/*	List<Reserva> reservas = new ArrayList();
 		Set<Entrada> entradas = new HashSet<Entrada>();
 		for(Reserva r: dao.traerReserva()) {
 			for (Entrada e: r.getLstEntradas()) {
@@ -60,8 +60,8 @@ public class ReservaABM {
 			reservas.add(r);
 			reservas.get(reservas.size()-1).setLstEntradas(entradas);
 		}
-		
-		return reservas;
+		*/
+		return dao.traerReserva();
 	}
 	
 	public int agregar(Usuario usuario,boolean entregado) {

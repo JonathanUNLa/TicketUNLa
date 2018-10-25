@@ -89,7 +89,14 @@ public class Reserva {
 			return precio;
 		}
 		
-		
+		public void algo () {
+			Set<Entrada>asd=getLstEntradas();
+			System.out.println(asd.size());
+			for(Entrada e:asd ) {
+				System.out.println("entrada "+e.getIdEntrada()+" reserva "+idReserva+ " butaca "+e.getButaca().getIdButaca());
+			}
+			
+		}
 		@Override
 		public String toString() {
 			return "Reserva [IdReserva=" + idReserva + ", usuario=" + usuario + ", lstEntradas=" + lstEntradas

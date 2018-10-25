@@ -59,6 +59,15 @@ public class EntradaABM {
 		return but;
 	}
 	
+	
+	
+	public List<Entrada> traerReservaUsuario(int idUsuario)throws Exception {
+		List<Entrada> entradas = dao.traerReservaUsuario(idUsuario);
+		if(entradas == null)throw new Exception("El usuario no tiene entradas");
+		return entradas;
+	}
+	
+	
 	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva) {
 		Entrada entrada = new Entrada(butaca, funcion, codigo, reserva);
 		return dao.agregar(entrada);

@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Entrada;
+import datos.Reserva;
 
 public class EntradaDao {
 	private static Session session;
@@ -124,6 +125,28 @@ public class EntradaDao {
 		return entradas;
 	}
 	
+	public List<Entrada> traerReservaUsuario(int idUsuario) throws HibernateException {
+		List<Entrada> entradas = null;
+		
+		try {
+			iniciaOperacion();
+			String hql1="from Entrada e "+
+						"inner join fetch e.reserva r "+
+						"inner join fetch r.usuario u "+
+						"inner join fetch e.funcion f "+
+						"inner join fetch e.butaca b "+
+						"inner join fetch b.seccion "+
+						"inner join fetch f.evento "+
+					 
+						"where u.idUsuario= "+idUsuario;
+
+			entradas = session.createQuery(hql1).list();
+		} finally {
+			session.close();
+		}
+		
+		return entradas;
+	}
 	@SuppressWarnings("unchecked")
 	public List<Entrada> traerEntrada() throws HibernateException {
 		List<Entrada> entradas = null;

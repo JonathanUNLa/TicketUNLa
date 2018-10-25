@@ -109,7 +109,7 @@
 				int idu = (int) request.getAttribute("idusuario");
 			%>
 			<%
-				List<Reserva> reserva = (List) request.getAttribute("reservas");
+				List<Entrada> entradas = (List) request.getAttribute("entradas");
 			%>
 
 			vista reservas del usuario <br>
@@ -117,7 +117,7 @@
 
 
 			<%
-				if (reserva.isEmpty()) {
+				if (entradas.isEmpty()) {
 			%>
 			<h2>No hay reservas</h2>
 			<br>
@@ -130,19 +130,15 @@
 			<br>
 			
 				<p>
-					<%for (Reserva r : reserva) { %>
-					<h1>	Reserva:
-						<%=r.getPrecioTotal()%>"> <%=r.isEntregado()%>"> 
-					</h1>			
-							<%for (Entrada e : r.getLstEntradas()) {%>
-								<br> <%= e.getButaca().getColumna()%>  
-									 <%= e.getButaca().getFila() %>  
+					<%for (Entrada e : entradas) { %>				
+								<br>Fila: <%= e.getButaca().getColumna()%>  <br>
+								<br>Columna: <%= e.getButaca().getFila() %> <br>  
+								<br>Seccion: <%= e.getButaca().getSeccion().getNombreSeccion() %> <br>
+								<br>Precio entrada: <%= e.getPrecioFinal() %>   <br>
+								<br>Nombre funcion: <%= e.getFuncion().getEvento().getNombre() %>  <br>
 
-									 <%= e.getPrecioFinal() %>  
-									 <%= e.getFuncion().getEvento().getNombre() %> 
-
-								 <br>
-							<% } %>
+								
+							
 					<% } %>
 				</p>
 				
