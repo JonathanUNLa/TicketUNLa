@@ -97,4 +97,58 @@
     <url-pattern>/TicketConDescuento</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>ControladorAjaxabms</servlet-name>
+    <servlet-class>controladores.ControladorAjaxabms</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAjaxabms</servlet-name>
+    <url-pattern>/ajaxabms</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorAbmAuditorios</servlet-name>
+    <servlet-class>controladores.ControladorAbmAuditorios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAbmAuditorios</servlet-name>
+    <url-pattern>/abmauditorios</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ControladorAbmClientes</servlet-name>
+    <servlet-class>controladores.ControladorAbmClientes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAbmClientes</servlet-name>
+    <url-pattern>/abmclientes</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorAbmDescuentos</servlet-name>
+    <servlet-class>controladores.ControladorAbmDescuentos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAbmDescuentos</servlet-name>
+    <url-pattern>/abmdescuentos</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorAbmEventos</servlet-name>
+    <servlet-class>controladores.ControladorAbmEventos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAbmEventos</servlet-name>
+    <url-pattern>/abmeventos</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorAbmFunciones</servlet-name>
+    <servlet-class>controladores.ControladorAbmFunciones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAbmFunciones</servlet-name>
+    <url-pattern>/abmfunciones</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

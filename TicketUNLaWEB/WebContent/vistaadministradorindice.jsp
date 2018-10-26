@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@page import="datos.Usuario"%>
 <!DOCTYPE html>
 <html>
@@ -47,42 +47,43 @@
 	});
 </script>
 <script src="js/jquery-2.2.4.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#ticketxfuncion').click(function() {
-					var idusuario = $('#idusuario').val();
-					$.ajax({
-						method : "POST",
-						url : "ajaxticketxfuncion",
-						data : {
-							idusuario : idusuario
-							},
-						async : false
-					}).done(function(data) {
-						$("#respuesta").html(data);
-					})
-				});
-			});
-		</script>
-	<!-- botones  --> 	
-		
-		<script src="js/jquery-2.2.4.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#consultas').click(function() {
-					$.ajax({
-						method : "POST",
-						url : "ajaxticketxfuncion",
-						data : {
-							idusuario : idusuario
-							},
-						async : false
-					}).done(function(data) {
-						$("#respuesta").html(data);
-					})
-				});
-			});
-		</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#ticketxfuncion').click(function() {
+			var idusuario = $('#idusuario').val();
+			$.ajax({
+				method : "POST",
+				url : "ajaxticketxfuncion",
+				data : {
+					idusuario : idusuario
+				},
+				async : false
+			}).done(function(data) {
+				$("#respuestaOfertas").html(data);
+			})
+		});
+	});
+</script>
+<!-- botones  -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#consultas').click(function() {
+			var idusuario = $('#idusuario').val();
+			$.ajax({
+				method : "POST",
+				url : "ajaxabms",
+				data : {
+					idusuario : idusuario
+				},
+				async : false
+			}).done(function(data) {
+				$("#respuestaConsultas").html(data);
+			})
+		});
+	});
+</script>
+
 <!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -97,68 +98,77 @@
 </head>
 <body>
 
-<!--==============================header=================================-->
-		<header>
-			<div>
-				<h1>
-					<a href=""><img src="images/logo.jpg" alt=""></a>
-				</h1>
-				<div class="social-icons">
-					<span>Follow Us:</span> <a href="#" class="icon-3"></a> <a href="#"
-						class="icon-2"></a> <a href="#" class="icon-1"></a>
-				</div>
-				<div id="slide">
-					<div class="slider">
-						<ul class="items">
-							<li><img src="images/slider-1.jpg" alt="" /></li>
-							<li><img src="images/slider-2.jpg" alt="" /></li>
-							<li><img src="images/slider-3.jpg" alt="" /></li>
-						</ul>
-					</div>
-					<a href="#" class="prev"></a><a href="#" class="next"></a>
-				</div>
-				<nav>
-					<ul class="menu">
-						<li class="current"><a href="">Main</a></li>
-						<li><a href="contacto.html">Contacts</a></li>
-					</ul>
-				</nav>
+	<!--==============================header=================================-->
+	<header>
+		<div>
+			<h1>
+				<a href=""><img src="images/logo.jpg" alt=""></a>
+			</h1>
+			<div class="social-icons">
+				<span>Follow Us:</span> <a href="#" class="icon-3"></a> <a href="#"
+					class="icon-2"></a> <a href="#" class="icon-1"></a>
 			</div>
-		</header>
-		<!--==============================content================================-->
-		<section id="content">
-		
-		<div class="grid_8">
-		
-					<%
-					Usuario u = (Usuario) request.getAttribute("usuario");
-					%>
-					vista administrador indice <br>
-					
-                <FORM method="POST" action="/TicketUNLaWEB/ajaxticketxfuncion">
-                <INPUT type="hidden" id="idusuario" name="idusuario" value="<%= u.getIdUsuario() %>" />
-				<input type="button" id="consultas" value="Consultas">
-				<input type="button" id="ticketxfuncion" value="ver ofertas">
-				</FORM>
-				
-				<div id="respuesta">
-
+			<div id="slide">
+				<div class="slider">
+					<ul class="items">
+						<li><img src="images/slider-1.jpg" alt="" /></li>
+						<li><img src="images/slider-2.jpg" alt="" /></li>
+						<li><img src="images/slider-3.jpg" alt="" /></li>
+					</ul>
 				</div>
-
+				<a href="#" class="prev"></a><a href="#" class="next"></a>
+			</div>
+			<nav>
+				<ul class="menu">
+					<li class="current"><a href="">Main</a></li>
+					<li><a href="contacto.html">Contacts</a></li>
+				</ul>
+			</nav>
 		</div>
-		
-		<div class="grid_4">
-					<div class="left-1">
-						<h2 class="top-1 p3">informacion:</h2>
+	</header>
+	<!--==============================content================================-->
+	<section id="content">
 
-						Bienvenido <%=u.getNombre()%> <%=u.getApellido()%>
-						
-					</div>
-			</div>		
-		
-			</section>
-				
-<!--==============================footer=================================-->
+		<div class="grid_8">
+
+			<%
+				Usuario u = (Usuario) request.getAttribute("usuario");
+			%>
+			vista administrador indice <br>
+
+			<FORM method="POST" action="/TicketUNLaWEB/ajaxticketxfuncion">
+				<INPUT type="hidden" id="idusuario" name="idusuario"
+					value="<%=u.getIdUsuario()%>" /> <input type="button"
+					id="ticketxfuncion" value="Consultas">
+			</FORM>
+
+			<FORM method="POST" action="/TicketUNLaWEB/ajaxabms">
+				<INPUT type="hidden" id="idusuario" name="idusuario"
+					value="<%=u.getIdUsuario()%>" /> <input type="button"
+					id="consultas" value="Altas Bajas Modificacion">
+			</FORM>
+			
+			<div id="respuestaOfertas"></div>
+			
+			<div id="respuestaConsultas"></div>
+
+			
+		</div>
+
+		<div class="grid_4">
+			<div class="left-1">
+				<h2 class="top-1 p3">informacion:</h2>
+
+				Bienvenido
+				<%=u.getNombre()%>
+				<%=u.getApellido()%>
+
+			</div>
+		</div>
+
+	</section>
+
+	<!--==============================footer=================================-->
 	<footer>
 		<p>UNLa Ticket 2018</p>
 		<p>

@@ -22,13 +22,13 @@ public class TipoUsuarioABM {
 	
 	public TipoUsuario traerTipoUsuario(int idTipoUsuario) throws Exception {
 		TipoUsuario tipoUsuario = dao.traerTipoUsuario(idTipoUsuario);
-		if (tipoUsuario==null) throw new Exception("El tipo usuario no existe");
+		if (tipoUsuario==null) throw new Exception("El Seccion no existe");
 		return tipoUsuario;
 	}
 	
 	public TipoUsuario traerTipoUsuario(String nombreTipo) throws Exception {
 		TipoUsuario tipoUsuario = dao.traerTipoUsuario(nombreTipo);
-		if (tipoUsuario==null) throw new Exception("El tipo usuario no existe");
+		if (tipoUsuario==null) throw new Exception("El Seccion no existe");
 		return tipoUsuario;
 	}
 	
@@ -36,8 +36,7 @@ public class TipoUsuarioABM {
 		return dao.traerTipoUsuario();
 	}
 	
-	public int agregar(String nombreTipo )throws Exception {
-		if(dao.traerTipoUsuario(nombreTipo)!=null)throw new Exception("El tipo usuario ya existe");
+	public int agregar(String nombreTipo ) {
 		TipoUsuario tipoUsuario = new TipoUsuario(nombreTipo);
 		return dao.agregar(tipoUsuario);
 	}
@@ -46,9 +45,9 @@ public class TipoUsuarioABM {
 		dao.actualizar(tipoUsuario);
 	}
 	
-	public void eliminar(int idTipoUsuario) throws Exception {
-		TipoUsuario tipoUsuario = dao.traerTipoUsuario(idTipoUsuario);
-		if(tipoUsuario == null)throw new Exception("El Tipo usuario que desea eliminar no existe");
+	public void eliminar(int idSeccion) throws Exception {
+		TipoUsuario tipoUsuario = dao.traerTipoUsuario(idSeccion);
+		if(tipoUsuario == null)throw new Exception("El Seccion que desea eliminar no existe");
 		dao.eliminar(tipoUsuario);
 	}
 }
