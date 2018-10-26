@@ -9,14 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import datos.Butaca;
+import datos.Entrada;
 import datos.Funcion;
 import datos.Reserva;
 import datos.Usuario;
+import negocio.ButacaABM;
+import negocio.EntradaABM;
 import negocio.FuncionABM;
 import negocio.ReservaABM;
 import negocio.UsuarioABM;
 
-public class ControladorAjaxticketxfuncion extends HttpServlet{
+public class ControladorTicketConDescuento extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		procesarPeticion(request, response);
@@ -27,35 +31,18 @@ public class ControladorAjaxticketxfuncion extends HttpServlet{
 	}
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
-		UsuarioABM usuarioAbm = UsuarioABM.getInstancia();
 		int error=0;
-		
-		int idusuario = Integer.parseInt(request.getParameter("idusuario"));
-		
-		//int idusuario = request.getParameter("idusuario");
-		
+	
 		try {
-			usuarioAbm.traerUsuario(idusuario);
-		} catch (Exception e1) {
-			error=0;
-		}
-		try {
-			FuncionABM fabm= FuncionABM.getInstancia();
-
-			List<Funcion> funciones= fabm.traerFuncion();
-
-			
-			Usuario u = usuarioAbm.traerUsuario(idusuario);
-			
-			request.setAttribute("idusuario",idusuario);
-			request.setAttribute("usuario",u);
-			request.setAttribute("lista",funciones);
-			request.getRequestDispatcher("/ajaxticketxfuncion.jsp").forward(request , response);
+			EntradaABM eabm=EntradaABM.getInstancia();
+		List<Entrada> entradas= eabm.traerEntradaDescuento();
+		
+			request.setAttribute("lista",entradas);
+			request.getRequestDispatcher("/TicketConDescuento.jsp").forward(request , response);
 		}
 		catch (Exception e) {
 			if(error==0){
-			response.sendError(500, "hubo un problemas trayendo el id de usuario");
+			response.sendError(500, "hubo un problemas al cargar");
 			}
 			
 			if(error==2){

@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@page import="datos.Butaca"%>
+	pageEncoding="ISO-8859-1"%>
 <%@page import="datos.Usuario"%>
-<%@page import="datos.Auditorio"%>
 <%@page import="java.util.List"%>
+<%@page import="datos.Funcion"%>
+<%@page import="datos.Butaca"%>
+<%@page import="funciones.Funciones"%>
 <!DOCTYPE html>
 <html>
-<head>
-<title>vista cliente indice</title>
+<head><title>vista cliente indice</title>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
@@ -49,22 +49,9 @@
 		})
 	});
 </script>
-<!--[if lt IE 8]>
-       <div style=' clear: both; text-align:center; position: relative;'>
-         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-        </a>
-      </div>
-    <![endif]-->
-<!--[if lt IE 9]>
-   		<script type="text/javascript" src="js/html5.js"></script>
-    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
-	<![endif]-->
 </head>
 <body>
-
-<!--==============================header=================================-->
-		<header>
+	<header>
 			<div>
 				<h1>
 					<a href=""><img src="images/logo.jpg" alt=""></a>
@@ -91,64 +78,51 @@
 				</nav>
 			</div>
 		</header>
-		<!--==============================content================================-->
+
+	<br>
 		<section id="content">
 				<div class="grid_8">
-				
-					<%
-					List<Butaca> butacas = (List) request.getAttribute("bts");
-					%>
-					
-	<%
-		if (butacas.isEmpty()) {
-	%>
-	<h2>No hay butacas</h2>
-	<br>
-	<br>
-	<br>
-	<%
-		} else {
-	%>
-	<h2>Butacas:</h2>
-	<br>
-
-	<%
-		for (Butaca butaca : butacas) {
-	%>
-	<p>
-		Columna:  <%=butaca.getColumna()%><br>
-		<br> Fila
-		<%=butaca.getFila()%>
-		<br> Precio de la seccion
-		<%=butaca.getSeccion().getPrecioSeccion()%><br>
-		<br1><%=butaca.getSeccion().getNombreSeccion()%> <br1>
-	</p>
-	------------------------------------------------------------
-	<%
-		}
-	%>
-	<%
-		}
-	%>
-
-				
+				<%
+					List<Butaca> butacas = (List) request.getAttribute("bt");
+				%>
+			
+				<%
+					if (butacas.isEmpty()) {
+				%>
+				<h2>No hay butacas</h2>
+				<br>
+				<br>
+				<br>
+				<%
+					} else {
+				%>
+				<h2>Butacas:</h2>
+				<br>
+			
+				<%
+					for (Butaca butaca : butacas) {
+				%>
+				<p>
+					Columna:  <%=butaca.getColumna()%><br>
+					<br> Fila
+					<%=butaca.getFila()%>
+					<br> Precio de la seccion
+					<%=butaca.getSeccion().getPrecioSeccion()%><br>
+					<br1><%=butaca.getSeccion().getNombreSeccion()%> <br1>
+				</p>
+				------------------------------------------------------------
+				<%
+					}
+				%>
+				<%
+					}
+				%>
+	
 			</div>
 			
 		
 					
 </section>
-				
-<!--==============================footer=================================-->
-	<footer>
-		<p>UNLa Ticket 2018</p>
-		<p>
-			Website Template by <a href="http://www.templatemonster.com/"
-				target="_blank" rel="nofollow">www.templatemonster</a>
-		</p>
-	</footer>
-	<script>
-		Cufon.now();
-	</script>
-					
+
 </body>
 </html>

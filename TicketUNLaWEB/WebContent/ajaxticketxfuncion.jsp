@@ -34,7 +34,9 @@ bienvenido usuario: <%= u.getApellido() %>
 						<br><br> <br>
 						
 						<p> Tickets reservados con descuentos </p> 
-						<input type="button" id="ticketxfuncion" value="Consultar">
+						<FORM method="POST" action="/TicketUNLaWEB/TicketConDescuento">
+						<input class="button" type="submit" value="Consultar" id="siguiente">
+						</FORM>
 						<br> <br> <br>
 						
 						<FORM method="POST" action="/TicketUNLaWEB/TicketNoReservado">

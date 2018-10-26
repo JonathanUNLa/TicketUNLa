@@ -35,17 +35,9 @@ public class ControladorTicketReservado extends HttpServlet{
 		try {
 			int idfuncion = Integer.parseInt(request.getParameter("codigo"));	
 			EntradaABM eabm=EntradaABM.getInstancia();
-			FuncionABM fabm= FuncionABM.getInstancia();
-			ButacaABM babm= ButacaABM.getInstancia();
-			int idauditorio= fabm.traerFuncionHql(idfuncion).getEvento().getAuditorio().getIdAuditorio();
-			List<Butaca> bt =babm.traerButacaAuditorio(idauditorio);
 			List<Butaca> bts =eabm.traerEntradaFuncion(idfuncion);
-			int x=0 ;
-			while(x<bts.size()) {
-				bt.remove(bts.get(x));
-				x++;
-			}		
-			request.setAttribute("bt",bt);
+		
+			request.setAttribute("bts",bts);
 			request.getRequestDispatcher("/TicketReservado.jsp").forward(request , response);
 		}
 		catch (Exception e) {

@@ -71,12 +71,30 @@
   </servlet-mapping>
   
    <servlet>
+    <servlet-name>ControladorTicketNoReservado</servlet-name>
+    <servlet-class>controladores.ControladorTicketNoReservado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketNoReservado</servlet-name>
+    <url-pattern>/TicketNoReservado</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
     <servlet-name>ControladorTicketReservado</servlet-name>
     <servlet-class>controladores.ControladorTicketReservado</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ControladorTicketReservado</servlet-name>
     <url-pattern>/TicketReservado</url-pattern>
+  </servlet-mapping>
+  
+       <servlet>
+    <servlet-name>ControladorTicketConDescuento</servlet-name>
+    <servlet-class>controladores.ControladorTicketConDescuento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketConDescuento</servlet-name>
+    <url-pattern>/TicketConDescuento</url-pattern>
   </servlet-mapping>
   
 </web-app>

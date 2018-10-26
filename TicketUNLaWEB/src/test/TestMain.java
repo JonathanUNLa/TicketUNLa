@@ -167,7 +167,7 @@ public class TestMain {
 		/*	for(Entrada e: entradaAbm.traerReservaUsuario(1)) {
 				e.metodoImpresion();
 			}*/
-			System.out.println(funcionAbm.traerFuncion().size());
+			System.out.println(entradaAbm.traerEntradaDescuento().size());
 	//	System.out.println(entradaAbm.traerEntrada().size());
 		} catch (Exception e) {
 			e.printStackTrace();

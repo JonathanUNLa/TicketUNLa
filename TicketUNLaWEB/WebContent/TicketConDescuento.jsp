@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="datos.Butaca"%>
+<%@page import="datos.Entrada"%>
 <%@page import="datos.Usuario"%>
 <%@page import="datos.Auditorio"%>
+<%@page import="funciones.Funciones"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -96,13 +97,13 @@
 				<div class="grid_8">
 				
 					<%
-					List<Butaca> butacas = (List) request.getAttribute("bts");
+					List<Entrada> entradas = (List) request.getAttribute("lista");
 					%>
 					
 	<%
-		if (butacas.isEmpty()) {
+		if (entradas.isEmpty()) {
 	%>
-	<h2>No hay butacas</h2>
+	<h2>No hay entradas</h2>
 	<br>
 	<br>
 	<br>
@@ -113,15 +114,14 @@
 	<br>
 
 	<%
-		for (Butaca butaca : butacas) {
+		for (Entrada entrada : entradas) {
 	%>
-	<p>
-		Columna:  <%=butaca.getColumna()%><br>
-		<br> Fila
-		<%=butaca.getFila()%>
-		<br> Precio de la seccion
-		<%=butaca.getSeccion().getPrecioSeccion()%><br>
-		<br1><%=butaca.getSeccion().getNombreSeccion()%> <br1>
+	<p>Entrada:
+		Evento:  <%=entrada.getFuncion().getEvento().getNombre()%>	<br>
+		Dia y hora <%= Funciones.traerFechaCortaHora(entrada.getFuncion().getDiaHora())%>	<br>
+		Precio Final <%= entrada.getPrecioFinal() %>	<br>
+		Butaca: fila <%= entrada.getButaca().getFila() %> <%= entrada.getButaca().getColumna() %>
+		Seccion: <%= entrada.getButaca().getSeccion().getNombreSeccion() %>
 	</p>
 	------------------------------------------------------------
 	<%
