@@ -164,9 +164,10 @@ public class TestMain {
 		//	System.out.println(sreservaAbm.traerReservaHql(1)); ++++++++
 		//	System.out.println(entradaAbm.traerEntradaFuncion(1).size());
 	//	reservaAbm.traerReservaHql(2).algo();
-			for(Entrada e: entradaAbm.traerReservaUsuario(1)) {
+		/*	for(Entrada e: entradaAbm.traerReservaUsuario(1)) {
 				e.metodoImpresion();
-			}
+			}*/
+			System.out.println(funcionAbm.traerFuncion().size());
 	//	System.out.println(entradaAbm.traerEntrada().size());
 		} catch (Exception e) {
 			e.printStackTrace();

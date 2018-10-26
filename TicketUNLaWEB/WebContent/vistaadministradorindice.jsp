@@ -64,6 +64,25 @@
 				});
 			});
 		</script>
+	<!-- botones  --> 	
+		
+		<script src="js/jquery-2.2.4.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#consultas').click(function() {
+					$.ajax({
+						method : "POST",
+						url : "ajaxticketxfuncion",
+						data : {
+							idusuario : idusuario
+							},
+						async : false
+					}).done(function(data) {
+						$("#respuesta").html(data);
+					})
+				});
+			});
+		</script>
 <!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -118,6 +137,7 @@
 					
                 <FORM method="POST" action="/TicketUNLaWEB/ajaxticketxfuncion">
                 <INPUT type="hidden" id="idusuario" name="idusuario" value="<%= u.getIdUsuario() %>" />
+				<input type="button" id="consultas" value="Consultas">
 				<input type="button" id="ticketxfuncion" value="ver ofertas">
 				</FORM>
 				

@@ -64,6 +64,7 @@ public class ControladorReservar4 extends HttpServlet {
 			AuditorioABM aabm = AuditorioABM.getInstancia();
 			EventoABM eabm = EventoABM.getInstancia();
 			FuncionABM fabm = FuncionABM.getInstancia();
+			@SuppressWarnings("unused")
 			ButacaABM babm = ButacaABM.getInstancia();
 			List<Butaca> bt =butacaAbm.traerButacaAuditorio(idauditorio);
 			List<Butaca> bts =entradaAbm.traerEntradaFuncion(idfuncion);

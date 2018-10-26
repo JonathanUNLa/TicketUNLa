@@ -70,4 +70,13 @@
     <url-pattern>/ajaxticketxfuncion</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <servlet-name>ControladorTicketReservado</servlet-name>
+    <servlet-class>controladores.ControladorTicketReservado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketReservado</servlet-name>
+    <url-pattern>/TicketReservado</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
