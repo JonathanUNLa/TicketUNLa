@@ -35,7 +35,8 @@ public class TipoBeneficioABM {
 		return dao.traerTipoBeneficio();
 	}
 	
-	public int agregar(String beneficio, double descuento) {
+	public int agregar(String beneficio, double descuento)throws Exception  {
+		if(dao.traerTipoBeneficio(beneficio)!=null)throw new Exception("El Tipo de Beneficio ya existe");
 		TipoBeneficio tipoBeneficio = new TipoBeneficio(beneficio,descuento);
 		return dao.agregar(tipoBeneficio);
 	}
