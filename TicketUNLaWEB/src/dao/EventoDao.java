@@ -102,6 +102,33 @@ public class EventoDao {
 		return objeto;
 	}
 	
+	public Evento traerEventoAuditorio(String nombre, int idAuditorio) throws HibernateException {
+		Evento objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Evento e "+
+						"left join fetch e.auditorio a "+
+						"left join fetch a.tipoAuditorio "+
+						"left join fetch e.lstFunciones f "+
+						"left join fetch f.lstCodDesc dsc " +
+						"left join fetch dsc.seccion "+
+						"left join fetch dsc.funcion "+
+						"left join fetch f.diaDescuento "+
+						"left join fetch a.lstSecciones s "+
+						"left join fetch s.auditorio "+
+						"left join fetch s.lstButacas b "+
+						"left join fetch b.seccion "+
+						"where e.nombre= "+"'"+nombre+"'"+
+						" and a.idAuditorio= "+idAuditorio;
+			objeto = (Evento) session.createQuery(hql).uniqueResult();
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Evento> traerEvento(String auditorio) throws HibernateException {
 		List<Evento> eventos = null;

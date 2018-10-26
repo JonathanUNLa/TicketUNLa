@@ -97,6 +97,24 @@ public class SeccionDao {
 		return objeto;
 	}
 	
+	/*public Seccion traerSeccionNombre(String nombre, int idAuditorio) throws HibernateException {
+		Seccion objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Seccion s "+
+					"left join fetch s.auditorio "+
+					"where s.nombreSeccion= "+"'"+nombre+"'"+
+					" and s.auditorio.idAuditorio= "+idAuditorio;
+			objeto = (Seccion) session.createQuery(hql).uniqueResult();
+			Hibernate.initialize(objeto.getLstButacas());
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}*/
+	
 	@SuppressWarnings("unchecked")
 	public List<Seccion> traerSeccion() throws HibernateException {
 		List<Seccion> secciones = null;

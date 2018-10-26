@@ -37,11 +37,18 @@ public class EventoABM {
 		return evento;
 	}
 	
+	public Evento traerEventoAuditorio(String nombre, int idAuditorio)throws Exception {
+		Evento evento = dao.traerEventoAuditorio(nombre, idAuditorio);
+		if(evento == null)throw new Exception("El evento no existe");
+		return evento;
+	}
+	
 	public List<Evento> traerEvento(){
 		return dao.traerEvento();
 	}
 	
-	public int agregar(String nombre, Auditorio auditorio) {
+	public int agregar(String nombre, Auditorio auditorio)throws Exception {
+		if(dao.traerEventoAuditorio(nombre, auditorio.getIdAuditorio())!=null)throw new Exception("El evento en ese auditorio ya existe");
 		Evento evento = new Evento(nombre,auditorio);
 		return dao.agregar(evento);
 	}

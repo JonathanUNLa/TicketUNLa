@@ -43,7 +43,8 @@ public class SeccionABM {
 		Seccion seccion = new Seccion(nombreSeccion, precioSeccion, lstButacas,auditorio);
 		return dao.agregar(seccion);
 	}
-	public int agregar(String nombreSeccion, double precioSeccion,Auditorio auditorio) {
+	public int agregar(String nombreSeccion, double precioSeccion,Auditorio auditorio)throws Exception {
+		//if(dao.traerSeccionNombre(nombreSeccion)!=null)throw new Exception ("la Seccion ya existe");
 		Seccion seccion = new Seccion(nombreSeccion, precioSeccion,auditorio);
 		return dao.agregar(seccion);
 	}
