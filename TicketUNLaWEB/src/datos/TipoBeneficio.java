@@ -13,11 +13,11 @@ public class TipoBeneficio {
 		this.descuento = descuento;
 	}
 
-	public int getidBeneficio() {
+	public int getIdBeneficio() {
 		return idBeneficio;
 	}
 
-	protected void setidBeneficio(int idBeneficio) {
+	protected void setIdBeneficio(int idBeneficio) {
 		this.idBeneficio = idBeneficio;
 	}
 

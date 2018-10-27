@@ -5,6 +5,7 @@
 <%@page import="datos.Funcion"%>
 <%@page import="datos.Evento"%>
 <%@page import="datos.Seccion"%>
+<%@page import="datos.TipoBeneficio"%>
 <%@page import="funciones.Funciones"%>
 <!DOCTYPE html>
 <html>
@@ -18,6 +19,7 @@
 
 <% List<Funcion> lista = (List) request.getAttribute("lista"); %>
 <% List<Evento> eventos = (List) request.getAttribute("evento"); %>
+<% List<TipoBeneficio> tipoBeneficio = (List) request.getAttribute("tipoBeneficio"); %>
 bienvenido usuario: <%= u.getApellido() %>
 						<br> <br> <br>
 						
@@ -60,7 +62,14 @@ bienvenido usuario: <%= u.getApellido() %>
 						
 						
 						<p> 11.ticket con descuentos por tipo de cliente en un periodo </p> 
-						<FORM method="POST" action="/TicketUNLaWEB/TicketConDescuento">
+						<FORM method="POST" action="/TicketUNLaWEB/TicketClienteBeneficioFecha">
+						<%for (TipoBeneficio t: tipoBeneficio){ %>
+							<input type="radio" id="beneficio" name="beneficio" value="<%= t.getIdBeneficio()%>" checked> Nombre Beneficio: <%= t.getBeneficio() %> <br>					
+							<% }%>
+						<p>Fecha inicial: </p> 
+												<input name="fecha1" type="text" id="fecha1" placeholder="dd/mm/aaaa">
+                         <p>Fecha final: </p>  <input name="fecha2" type="text" id="fecha2" placeholder="dd/mm/aaaa">
+                                				   <br> 
 						<input class="button" type="submit" value="Consultar" id="siguiente">
 						</FORM>
 						<br> <br> <br>

@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import datos.Evento;
 import datos.Funcion;
 import datos.Reserva;
+import datos.TipoBeneficio;
 import datos.Usuario;
 import negocio.EventoABM;
 import negocio.FuncionABM;
 import negocio.ReservaABM;
+import negocio.TipoBeneficioABM;
 import negocio.UsuarioABM;
 
 public class ControladorAjaxticketxfuncion extends HttpServlet{
@@ -45,14 +47,17 @@ public class ControladorAjaxticketxfuncion extends HttpServlet{
 		try {
 			FuncionABM fabm= FuncionABM.getInstancia();
 			EventoABM eabm= EventoABM.getInstancia();
+			TipoBeneficioABM tabm= TipoBeneficioABM.getInstancia();
 			List<Funcion> funciones= fabm.traerFuncion();
 			List<Evento> eventos= eabm.traerEvento();
+			List<TipoBeneficio> tipoBeneficio= tabm.traerTipoBeneficio();
 			Usuario u = usuarioAbm.traerUsuario(idusuario);
 			
 			request.setAttribute("idusuario",idusuario);
 			request.setAttribute("usuario",u);
 			request.setAttribute("lista",funciones);
 			request.setAttribute("evento",eventos);
+			request.setAttribute("tipoBeneficio",tipoBeneficio);
 			request.getRequestDispatcher("/ajaxticketxfuncion.jsp").forward(request , response);
 		}
 		catch (Exception e) {
