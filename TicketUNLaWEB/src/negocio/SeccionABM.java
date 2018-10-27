@@ -35,8 +35,8 @@ public class SeccionABM {
 		}else throw new Exception ("id de Factura no existe");
 	}
 	
-	public List<Seccion> traerSeccion() throws Exception {
-		return dao.traerSeccion();
+	public List<Seccion> traerSeccionAuditorio(int idAuditorio) throws Exception {
+		return dao.traerSeccionAuditorio(idAuditorio);
 	}
 	
 	public int agregar(String nombreSeccion, double precioSeccion, Set<Butaca> lstButacas,Auditorio auditorio) {

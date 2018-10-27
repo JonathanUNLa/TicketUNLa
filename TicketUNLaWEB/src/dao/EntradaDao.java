@@ -237,26 +237,28 @@ public class EntradaDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion) throws HibernateException {
+	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion,  GregorianCalendar fInicio, GregorianCalendar fFin) throws HibernateException {
 		List<Entrada> entradas = null;
 		
 		try {
 			iniciaOperacion();
-			String hql1="from Entrada e "+
-						"inner join fetch e.reserva r "+
-						"inner join fetch r.usuario u "+
-						"inner join fetch e.funcion f "+
-						"inner join fetch e.butaca b "+
-						"inner join fetch b.seccion s "+
-						"inner join fetch f.evento "+
-						"left join fetch f.diaDescuento "+
-						"left join fetch f.lstCodDesc lst "+
-						"left join fetch lst.seccion "+
-						"left join fetch u.tipoUsuario t "+
-						"where s.idSeccion= "+idSeccion +
-						"and f.idFuncion= "+idFuncion+
-						"order by r.idReserva asc";
-			entradas = session.createQuery(hql1).list();
+			String hql="from Entrada e "+
+					"inner join fetch e.reserva r "+
+					"inner join fetch r.usuario u "+
+					"inner join fetch e.funcion f "+
+					"inner join fetch e.butaca b "+
+					"inner join fetch b.seccion s "+
+					"inner join fetch f.evento "+
+					"left join fetch f.diaDescuento "+
+					"left join fetch f.lstCodDesc lst "+
+					"left join fetch lst.seccion "+
+					"left join fetch u.tipoUsuario t "+
+					"where f.diaHora between :fechaI and :fechaF "+
+					"and f.idFuncion= "+idFuncion+
+					"and s.idSeccion= "+idSeccion +
+					"order by r.idReserva asc";
+			
+			entradas = session.createQuery(hql).setParameter("fechaI", fInicio).setParameter("fechaF", fFin).list();
 		} finally {
 			session.close();
 		}

@@ -61,8 +61,8 @@ public class EntradaABM {
 		return dao.traerEntradasEvento(idEvento, fInicio, fFin);
 	}
 	
-	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion){
-		List<Entrada> entradas = dao.traerEntradasFuncionSeccion(idFuncion, idSeccion);
+	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion, GregorianCalendar fInicio, GregorianCalendar fFin){
+		List<Entrada> entradas = dao.traerEntradasFuncionSeccion(idFuncion, idSeccion,   fInicio,  fFin);
 		
 		return entradas;
 	}

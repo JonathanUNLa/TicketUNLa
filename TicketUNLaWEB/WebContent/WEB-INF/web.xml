@@ -106,6 +106,24 @@
     <url-pattern>/TicketFechaEvento</url-pattern>
   </servlet-mapping>
   
+           <servlet>
+    <servlet-name>ControladorTicketFuncionSeccion</servlet-name>
+    <servlet-class>controladores.ControladorTicketFuncionSeccion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketFuncionSeccion</servlet-name>
+    <url-pattern>/TicketFuncionSeccion</url-pattern>
+  </servlet-mapping>
+  
+             <servlet>
+    <servlet-name>ControladorTicketFuncionSeccionResultado</servlet-name>
+    <servlet-class>controladores.ControladorTicketFuncionSeccionResultado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketFuncionSeccionResultado</servlet-name>
+    <url-pattern>/TicketFuncionSeccionResultado</url-pattern>
+  </servlet-mapping>
+  
     <servlet>
     <servlet-name>ControladorAjaxabms</servlet-name>
     <servlet-class>controladores.ControladorAjaxabms</servlet-class>
