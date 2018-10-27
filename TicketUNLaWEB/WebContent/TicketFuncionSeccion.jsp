@@ -108,11 +108,10 @@
 						<%for (Seccion s: secciones){ %>
 						<input type="radio" id="seccion" name="seccion" value="<%= s.getIdSeccion() %>" checked>Nombre: <%= s.getNombreSeccion()%> <br>
 						<% }%>
-						
-						<p>Fecha inicial: </p> <input type="date" name="fecha1" min="2018-03-25"
-                                  				  max="2018-05-25" step="2" placeholder="dd/mm/aaaa"> 
-                         <p>Fecha final: </p>  <input type="date" name="fecha2" min="2018-03-25"
-                                				  max="2018-05-25" step="2" placeholder="dd/mm/aaaa">
+					
+						<p>Fecha inicial: </p> 
+												<input name="fecha1" type="text" id="fecha1" placeholder="dd/mm/aaaa">
+                         <p>Fecha final: </p>  <input name="fecha2" type="text" id="fecha2" placeholder="dd/mm/aaaa">
                                 				   <br> 
 						
 						<INPUT type="hidden" id="idfuncion" name="idfuncion" value="<%= id %>" />

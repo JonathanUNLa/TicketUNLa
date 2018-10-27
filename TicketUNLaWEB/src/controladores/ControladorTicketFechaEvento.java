@@ -41,7 +41,7 @@ public class ControladorTicketFechaEvento extends HttpServlet{
 			GregorianCalendar f1= Funciones.traerFechaInput(fecha1);
 			GregorianCalendar f2= Funciones.traerFechaInput(fecha2);
 			int idevento = Integer.parseInt(request.getParameter("codigo"));	
-			
+			System.out.println(Funciones.traerFechaCorta(f1));
 			EntradaABM eabm=EntradaABM.getInstancia();
 			List<Entrada> entradas= eabm.traerEntradasEvento(idevento, f1, f2);
 		

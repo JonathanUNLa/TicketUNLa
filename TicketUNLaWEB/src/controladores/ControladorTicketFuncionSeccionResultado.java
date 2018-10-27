@@ -40,17 +40,18 @@ public class ControladorTicketFuncionSeccionResultado extends HttpServlet{
 		int error=0;
 	
 		try {
-			
+			EntradaABM eabm=EntradaABM.getInstancia();
 			int idfuncion = Integer.parseInt(request.getParameter("idfuncion"));
 			int idseccion = Integer.parseInt(request.getParameter("seccion"));
 			String  fecha1=(String) request.getParameter("fecha1");
 			String  fecha2=(String) request.getParameter("fecha2");
-			GregorianCalendar f1= Funciones.traerFecha(fecha1);
-			GregorianCalendar f2= Funciones.traerFecha(fecha2);
-			EntradaABM eabm=EntradaABM.getInstancia();
-			GregorianCalendar as= new GregorianCalendar(2018,9,24);
-			GregorianCalendar asd= new GregorianCalendar(2018,10,24);
-			List<Entrada> lista= eabm.traerEntradasFuncionSeccion(idfuncion, idseccion ,Funciones.traerFecha(fecha1),Funciones.traerFecha(fecha2));
+			GregorianCalendar f1= Funciones.traerFechaInput(fecha1);
+			GregorianCalendar f2= Funciones.traerFechaInput(fecha2);
+			System.out.println(fecha1);
+			System.out.println(fecha2);
+			System.out.println(Funciones.traerFechaCorta(f1));
+			System.out.println(Funciones.traerFechaCorta(f2));
+			List<Entrada> lista= eabm.traerEntradasFuncionSeccion(idfuncion, idseccion ,f1,f2);
 			request.setAttribute("lista",lista);
 			request.getRequestDispatcher("/TicketFuncionSeccionResultado.jsp").forward(request , response);
 		}
