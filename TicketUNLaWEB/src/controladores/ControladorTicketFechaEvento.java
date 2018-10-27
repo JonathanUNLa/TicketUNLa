@@ -2,6 +2,7 @@ package controladores;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,16 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import datos.Evento;
+import datos.Butaca;
+import datos.Entrada;
 import datos.Funcion;
 import datos.Reserva;
 import datos.Usuario;
-import negocio.EventoABM;
+import funciones.Funciones;
+import negocio.ButacaABM;
+import negocio.EntradaABM;
 import negocio.FuncionABM;
 import negocio.ReservaABM;
 import negocio.UsuarioABM;
 
-public class ControladorAjaxticketxfuncion extends HttpServlet{
+public class ControladorTicketFechaEvento extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		procesarPeticion(request, response);
@@ -29,35 +33,24 @@ public class ControladorAjaxticketxfuncion extends HttpServlet{
 	}
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		
-		UsuarioABM usuarioAbm = UsuarioABM.getInstancia();
 		int error=0;
-		
-		int idusuario = Integer.parseInt(request.getParameter("idusuario"));
-		
-		//int idusuario = request.getParameter("idusuario");
-		
+	
 		try {
-			usuarioAbm.traerUsuario(idusuario);
-		} catch (Exception e1) {
-			error=0;
-		}
-		try {
-			FuncionABM fabm= FuncionABM.getInstancia();
-			EventoABM eabm= EventoABM.getInstancia();
-			List<Funcion> funciones= fabm.traerFuncion();
-			List<Evento> eventos= eabm.traerEvento();
-			Usuario u = usuarioAbm.traerUsuario(idusuario);
+			String  fecha1=request.getParameter("fecha1");
+			String  fecha2=request.getParameter("fecha2");
+			GregorianCalendar f1= Funciones.traerFechaInput(fecha1);
+			GregorianCalendar f2= Funciones.traerFechaInput(fecha2);
+			int idevento = Integer.parseInt(request.getParameter("codigo"));	
 			
-			request.setAttribute("idusuario",idusuario);
-			request.setAttribute("usuario",u);
-			request.setAttribute("lista",funciones);
-			request.setAttribute("evento",eventos);
-			request.getRequestDispatcher("/ajaxticketxfuncion.jsp").forward(request , response);
+			EntradaABM eabm=EntradaABM.getInstancia();
+			List<Entrada> entradas= eabm.traerEntradasEvento(idevento, f1, f2);
+		
+			request.setAttribute("entradas",entradas);
+			request.getRequestDispatcher("/TicketFechaEvento.jsp").forward(request , response);
 		}
 		catch (Exception e) {
 			if(error==0){
-			response.sendError(500, "hubo un problemas trayendo el id de usuario");
+			response.sendError(500, "hubo un problemas trayendo el id la Funcion");
 			}
 			
 			if(error==2){

@@ -97,6 +97,15 @@
     <url-pattern>/TicketConDescuento</url-pattern>
   </servlet-mapping>
   
+         <servlet>
+    <servlet-name>ControladorTicketFechaEvento</servlet-name>
+    <servlet-class>controladores.ControladorTicketFechaEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketFechaEvento</servlet-name>
+    <url-pattern>/TicketFechaEvento</url-pattern>
+  </servlet-mapping>
+  
     <servlet>
     <servlet-name>ControladorAjaxabms</servlet-name>
     <servlet-class>controladores.ControladorAjaxabms</servlet-class>

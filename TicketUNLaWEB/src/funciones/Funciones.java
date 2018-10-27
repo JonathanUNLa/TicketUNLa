@@ -17,6 +17,10 @@ public class Funciones {
 		return ret;
 	}
 	
+
+	public static GregorianCalendar traerFechaInput(String fecha) {		
+		return new GregorianCalendar(Integer.parseInt(fecha.substring(6,10)), Integer.parseInt(fecha.substring(0,2)) - 1, Integer.parseInt(fecha.substring(3,5)));
+	}
 	public static int traerAnio (GregorianCalendar f){
 		return f.get(Calendar.YEAR);
 	}

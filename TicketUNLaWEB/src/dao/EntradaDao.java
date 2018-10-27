@@ -237,7 +237,7 @@ public class EntradaDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, GregorianCalendar fInicio, GregorianCalendar fFin) throws HibernateException {
+	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion) throws HibernateException {
 		List<Entrada> entradas = null;
 		
 		try {
@@ -247,16 +247,16 @@ public class EntradaDao {
 						"inner join fetch r.usuario u "+
 						"inner join fetch e.funcion f "+
 						"inner join fetch e.butaca b "+
-						"inner join fetch b.seccion "+
+						"inner join fetch b.seccion s "+
 						"inner join fetch f.evento "+
 						"left join fetch f.diaDescuento "+
 						"left join fetch f.lstCodDesc lst "+
 						"left join fetch lst.seccion "+
 						"left join fetch u.tipoUsuario t "+
-						"where f.diaHora between :fechaI and :fechaF "+
+						"where s.idSeccion= "+idSeccion +
 						"and f.idFuncion= "+idFuncion+
 						"order by r.idReserva asc";
-			entradas = session.createQuery(hql1).setParameter("fechaI", fInicio).setParameter("fechaF", fFin).list();
+			entradas = session.createQuery(hql1).list();
 		} finally {
 			session.close();
 		}

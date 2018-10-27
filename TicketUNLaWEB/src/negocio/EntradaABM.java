@@ -61,13 +61,9 @@ public class EntradaABM {
 		return dao.traerEntradasEvento(idEvento, fInicio, fFin);
 	}
 	
-	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion, GregorianCalendar fInicio, GregorianCalendar fFin){
-		List<Entrada> entradas = new ArrayList();
-		for(Entrada e: dao.traerEntradasFuncionSeccion(idFuncion, fInicio, fFin)) {
-			if(e.getButaca().getSeccion().getIdSeccion()==idSeccion) {
-				entradas.add(e);
-			}
-		}
+	public List<Entrada> traerEntradasFuncionSeccion(int idFuncion, int idSeccion){
+		List<Entrada> entradas = dao.traerEntradasFuncionSeccion(idFuncion, idSeccion);
+		
 		return entradas;
 	}
 	

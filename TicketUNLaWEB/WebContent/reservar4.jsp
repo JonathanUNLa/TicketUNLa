@@ -157,8 +157,7 @@
 					<br>
 					<div class="select-1">
 								<label>Codigo</label> 
-								<input name="codigo" type="text" id="codigo"
-									placeholder="ingrese codigo">
+								<input name="codigo" type="text" id="codigo" placeholder="ingrese codigo">
 					</div>
 					<br>
 					<INPUT type="hidden" id="idfuncion" name="idfuncion" value="<%= idf %>" />
