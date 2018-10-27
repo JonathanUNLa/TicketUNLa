@@ -46,9 +46,9 @@ public class EntradaABM {
 		return dao.traerEntrada();
 	}
 	
-	public List<Entrada> traerEntradasTipoUsuario(int idTipoUsuario, GregorianCalendar fInicio, GregorianCalendar fFin){
+	public List<Entrada> traerEntradasTipoBeneficio(int idTipoBeneficio, GregorianCalendar fInicio, GregorianCalendar fFin){
 		List<Entrada> entradas = new ArrayList();
-		for(Entrada e: dao.traerEntradasTipoUsuario(idTipoUsuario, fInicio, fFin)) {
+		for(Entrada e: dao.traerEntradasTipoBeneficio(idTipoBeneficio, fInicio, fFin)) {
 			double precioBase=e.getButaca().getSeccion().getPrecioSeccion()+e.getFuncion().getPrecioBase();
 			if(precioBase!=e.getPrecioFinal()) {
 				entradas.add(e);

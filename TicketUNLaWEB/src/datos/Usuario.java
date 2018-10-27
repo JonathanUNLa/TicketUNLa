@@ -7,7 +7,7 @@ public class Usuario {
 	private String apellido;
 	private String telefono;
 	private String nombreUsuario;
-	private String contrase�a;
+	private String contraseña;
 	private TipoUsuario tipoUsuario;
 	private TipoBeneficio tipoBeneficio;
 	private Auditorio auditorio;
@@ -16,13 +16,13 @@ public class Usuario {
 	
 	
 	public Usuario( int dni, String nombre, String apellido, String telefono, String nombreUsuario,
-			String contrase�a, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio, Auditorio auditorio) {
+			String contraseña, TipoUsuario tipoUsuario, TipoBeneficio tipoBeneficio, Auditorio auditorio) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
 		this.nombreUsuario = nombreUsuario;
-		this.contrase�a = contrase�a;
+		this.contraseña = contraseña;
 		this.tipoUsuario = tipoUsuario;
 		this.tipoBeneficio = tipoBeneficio;
 		this.auditorio = auditorio;
@@ -76,12 +76,12 @@ public class Usuario {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getContrase�a() {
-		return contrase�a;
+	public String getcontraseña() {
+		return contraseña;
 	}
 
-	public void setContrase�a(String contrase�a) {
-		this.contrase�a = contrase�a;
+	public void setcontraseña(String contraseña) {
+		this.contraseña = contraseña;
 	}
 
 	public TipoUsuario getTipoUsuario() {
@@ -131,7 +131,7 @@ public class Usuario {
 				return retorno;
 	*/
 		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contrase�a
+				+ ", telefono=" + telefono + ", nombreUsuario=" + nombreUsuario + ", contraseña=" + contraseña
 				+ ", tipoUsuario=" + tipoUsuario + ", tipoBeneficio=" + tipoBeneficio + ", auditorio=" + auditorio
 				+ "]";
 	}

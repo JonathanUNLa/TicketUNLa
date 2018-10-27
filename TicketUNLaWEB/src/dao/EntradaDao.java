@@ -181,7 +181,7 @@ public class EntradaDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Entrada> traerEntradasTipoUsuario(int idTipoUsuario, GregorianCalendar fInicio, GregorianCalendar fFin) throws HibernateException {
+	public List<Entrada> traerEntradasTipoBeneficio(int idTipoBeneficio, GregorianCalendar fInicio, GregorianCalendar fFin) throws HibernateException {
 		List<Entrada> entradas = null;
 		
 		try {
@@ -196,9 +196,9 @@ public class EntradaDao {
 						"left join fetch f.diaDescuento "+
 						"left join fetch f.lstCodDesc lst "+
 						"left join fetch lst.seccion "+
-						"left join fetch u.tipoUsuario t "+
+						"left join fetch u.tipoBeneficio t "+
 						"where f.diaHora between :fechaI and :fechaF "+
-						"and t.idTipoUsuario= "+idTipoUsuario+
+						"and t.idBeneficio= "+idTipoBeneficio+
 						"order by r.idReserva asc";
 			entradas = session.createQuery(hql1).setParameter("fechaI", fInicio).setParameter("fechaF", fFin).list();
 		} finally {

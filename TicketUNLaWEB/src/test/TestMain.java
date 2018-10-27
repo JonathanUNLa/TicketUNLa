@@ -167,7 +167,7 @@ public class TestMain {
 		/*	for(Entrada e: entradaAbm.traerReservaUsuario(1)) {
 				e.metodoImpresion();
 			}*/
-			System.out.println(entradaAbm.traerEntradaDescuento().size());
+			System.out.println(entradaAbm.traerEntradasTipoBeneficio(1, new GregorianCalendar(2017,6,12),new GregorianCalendar()).size());
 	//	System.out.println(entradaAbm.traerEntrada().size());
 		} catch (Exception e) {
 			e.printStackTrace();
