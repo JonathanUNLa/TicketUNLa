@@ -244,5 +244,40 @@
     <url-pattern>/reservapagada</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>ControladorAltaAuditorio</servlet-name>
+    <servlet-class>controladores.ControladorAltaAuditorio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAltaAuditorio</servlet-name>
+    <url-pattern>/AltaAuditorio</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <servlet-name>ControladorCrearAuditorio</servlet-name>
+    <servlet-class>controladores.ControladorCrearAuditorio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCrearAuditorio</servlet-name>
+    <url-pattern>/CrearAuditorio</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+    <servlet-name>ControladorAltaEvento</servlet-name>
+    <servlet-class>controladores.ControladorAltaEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAltaEvento</servlet-name>
+    <url-pattern>/AltaEvento</url-pattern>
+  </servlet-mapping>
+  
+          <servlet>
+    <servlet-name>ControladorCrearEvento</servlet-name>
+    <servlet-class>controladores.ControladorCrearEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCrearEvento</servlet-name>
+    <url-pattern>/CrearEvento</url-pattern>
+  </servlet-mapping>
     
 </web-app>

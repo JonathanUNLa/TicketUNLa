@@ -102,7 +102,7 @@
 					<FORM method="POST" action="/TicketUNLaWEB/CrearEvento">
 					<input type="text" name="nombre" placeholder="Ingrese nombre" > <br>				
 					
-					<select name="Auditorio">
+					<select name="auditorio">
 					<option value="9999">  </option>
 					<%for(Auditorio a: auditorios){ %>
 						<option value="<%= a.getIdAuditorio() %>"> <%= a.getNombre() %></option>			

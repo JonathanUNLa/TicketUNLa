@@ -150,4 +150,23 @@ public class SeccionDao {
 		
 		return secciones;
 	}
+	@SuppressWarnings("unchecked")
+	public List<Seccion> traerSeccion() throws HibernateException {
+		List<Seccion> secciones = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Seccion s "+
+					"left join fetch s.lstButacas b "+
+					"left join fetch b.seccion "+
+					"left join fetch s.auditorio a "+
+					"left join fetch a.tipoAuditorio ";
+					
+			secciones = session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return secciones;
+	}
 }

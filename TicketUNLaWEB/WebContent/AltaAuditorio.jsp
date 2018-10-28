@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="datos.Auditorio"%>
-<%@page import="datos.Usuario"%>
+<%@page import="datos.Seccion"%>
+<%@page import="datos.TipoAuditorio"%>
 <%@page import="java.util.List"%>
 
 
@@ -96,38 +96,29 @@
 		<section id="content">
 		
 		<div class="grid_8">
-		Auditorios
-		
-		<%
-					Usuario u = (Usuario) request.getAttribute("usuario");
-					%>
-					
-					<FORM method="POST" action="/TicketUNLaWEB/AltaAuditorio">
-					<INPUT type="hidden" id="idusuario" name="idusuario"
-					value="<%=u.getIdUsuario()%>" /> <input type="submit"
-					id="id" value="alta">
+		alta clientes
+			
+			<%List<Seccion> seccion = (List) request.getAttribute("seccion");%>
+
+					<FORM method="POST" action="/TicketUNLaWEB/CrearAuditorio"> <br>
+					<input type="text" name="nombre" placeholder="Ingrese nombre" ><br>
+					 <select name="tipoAuditorio">
+						<option value="1">Estadio</option>
+						<option value="2">Teatro</option>
+						<option value="3">Cine</option>
+					</select> 
+					<br>
+					<% for(Seccion s:seccion){ %>
+							<input type="checkbox" id="idSeccion" name="idSeccion" value="<%= s.getIdSeccion() %>"> <%= s.getNombreSeccion() %><br>
+					<%} %>
+					<br>
+					 <input type="submit" value="crear">
 					</FORM>
-					
-					<FORM method="POST" action="/TicketUNLaWEB/BajaAuditorio">
-					<INPUT type="hidden" id="idusuario" name="idusuario"
-					value="<%=u.getIdUsuario()%>" /> <input type="submit"
-					id="id" value="baja">
-					</FORM>
-					
-					<FORM method="POST" action="/TicketUNLaWEB/ModificarAuditorio">
-					<INPUT type="hidden" id="idusuario" name="idusuario"
-					value="<%=u.getIdUsuario()%>" /> <input type="submit"
-					id="id" value="modificación">
-					</FORM>
-					
 			</div>
 					
 			<div class="grid_4">
 					<div class="left-1">
 						<h2 class="top-1 p3">informacion:</h2>
-
-						Nombre: <%=u.getNombre()%> <%=u.getApellido()%><br>
-
 						
 					</div>
 			</div>

@@ -50,6 +50,9 @@ public class SeccionABM {
 	public List<Seccion> traerSeccionAuditorio(int idAuditorio) throws Exception {
 		return dao.traerSeccionAuditorio(idAuditorio);
 	}
+	public List<Seccion> traerSeccion()  throws Exception {
+		return dao.traerSeccion();
+	}
 	
 	public int agregar(String nombreSeccion, double precioSeccion, Set<Butaca> lstButacas,Auditorio auditorio) {
 		Seccion seccion = new Seccion(nombreSeccion, precioSeccion, lstButacas,auditorio);
