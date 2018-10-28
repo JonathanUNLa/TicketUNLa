@@ -205,4 +205,44 @@
     <url-pattern>/abmfunciones</url-pattern>
   </servlet-mapping>
   
+  
+    <servlet>
+    <servlet-name>ControladorAltaClientes</servlet-name>
+    <servlet-class>controladores.ControladorAltaClientes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAltaClientes</servlet-name>
+    <url-pattern>/AltaClientes</url-pattern>
+  </servlet-mapping>
+
+
+ <servlet>
+    <servlet-name>ControladorCrearCliente</servlet-name>
+    <servlet-class>controladores.ControladorCrearCliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCrearCliente</servlet-name>
+    <url-pattern>/CrearCliente</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>ControladorAjaxreservascliente</servlet-name>
+    <servlet-class>controladores.ControladorAjaxreservascliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAjaxreservascliente</servlet-name>
+    <url-pattern>/ajaxreservascliente</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorReservapagada</servlet-name>
+    <servlet-class>controladores.ControladorReservapagada</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorReservapagada</servlet-name>
+    <url-pattern>/reservapagada</url-pattern>
+  </servlet-mapping>
+  
+    
 </web-app>

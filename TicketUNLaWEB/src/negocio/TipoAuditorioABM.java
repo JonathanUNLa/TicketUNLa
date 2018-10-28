@@ -36,8 +36,7 @@ public class TipoAuditorioABM {
 		return dao.traerTipoAuditorio();
 	}
 	
-	public int agregar(String nombre) throws Exception {
-		if(dao.traerTipoAuditorio(nombre)!=null) throw new Exception("El TipoAuditorio ya existe");
+	public int agregar(String nombre) {
 		TipoAuditorio tipoAuditorio = new TipoAuditorio(nombre);
 		return dao.agregar(tipoAuditorio);
 	}

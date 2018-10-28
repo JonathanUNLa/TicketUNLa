@@ -102,7 +102,7 @@
 					%>
 					
 					
-					<FORM method="POST" action="/TicketUNLaWEB/altaclientes">
+					<FORM method="POST" action="/TicketUNLaWEB/AltaClientes">
 					<INPUT type="hidden" id="idusuario" name="idusuario"
 					value="<%=u.getIdUsuario()%>" /> <input type="submit"
 					value="alta">
