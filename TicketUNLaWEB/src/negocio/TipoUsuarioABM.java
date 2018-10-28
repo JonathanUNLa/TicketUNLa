@@ -20,6 +20,12 @@ public class TipoUsuarioABM {
 		return instancia;
 	}
 	
+	public boolean validarTipoUsuario(String nombre) {
+		boolean validar=false;
+		if(dao.traerTipoUsuario(nombre)!=null)validar=true;
+		return validar;
+	}
+	
 	public TipoUsuario traerTipoUsuario(int idTipoUsuario) throws Exception {
 		TipoUsuario tipoUsuario = dao.traerTipoUsuario(idTipoUsuario);
 		if (tipoUsuario==null) throw new Exception("El Seccion no existe");

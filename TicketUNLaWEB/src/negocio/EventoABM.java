@@ -21,6 +21,12 @@ public class EventoABM {
 		return instancia;
 	}
 	
+	public boolean validarEvento(String nombre, Auditorio auditorio) {
+		boolean validar=false;
+		if(dao.traerEventoAuditorio(nombre, auditorio.getIdAuditorio())!=null)validar=true;
+		return validar;
+	}
+	
 	public Evento traerEvento(int idEvento)throws Exception {
 		Evento evento = dao.traerEvento(idEvento);
 		if(evento == null)throw new Exception("El evento no existe");
@@ -47,8 +53,7 @@ public class EventoABM {
 		return dao.traerEvento();
 	}
 	
-	public int agregar(String nombre, Auditorio auditorio)throws Exception {
-		if(dao.traerEventoAuditorio(nombre, auditorio.getIdAuditorio())!=null)throw new Exception("El evento en ese auditorio ya existe");
+	public int agregar(String nombre, Auditorio auditorio) {	
 		Evento evento = new Evento(nombre,auditorio);
 		return dao.agregar(evento);
 	}

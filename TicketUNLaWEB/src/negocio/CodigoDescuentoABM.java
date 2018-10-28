@@ -22,6 +22,11 @@ public class CodigoDescuentoABM {
 		return instancia;
 	}
 	
+	public boolean validarCodigoDescuento(String codigo) {
+		boolean validar=false;
+		if(dao.traerCodigoDescuento(codigo)!=null)validar=true;
+		return validar;
+	}
 	
 	public CodigoDescuento traerCodigoDescuento(int idCodigoDescuento)throws Exception {
 		CodigoDescuento butaca = dao.traerCodigoDescuento(idCodigoDescuento);
@@ -45,8 +50,7 @@ public class CodigoDescuentoABM {
 		return dao.traerCodigoDescuento();
 	}
 	
-	public int agregar(String codigo,double descuento,Seccion seccion, Funcion funcion)throws Exception {
-		if(dao.traerCodigoDescuentoCodigo(codigo)!=null)throw new Exception("El Codigo ya existe");
+	public int agregar(String codigo,double descuento,Seccion seccion, Funcion funcion) {
 		CodigoDescuento codigoDesc = new CodigoDescuento(codigo,descuento,seccion,funcion);
 		return dao.agregar(codigoDesc);
 	}

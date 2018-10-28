@@ -167,12 +167,12 @@ public class TestMain {
 		/*	for(Entrada e: entradaAbm.traerReservaUsuario(1)) {
 				e.metodoImpresion();
 			}*/
-			GregorianCalendar asda= new GregorianCalendar(2018,9,24);
+			/*GregorianCalendar asda= new GregorianCalendar(2018,9,24);
 			String asdff= "24/09/2018";
 			System.out.print(funciones.Funciones.traerFechaCorta(funciones.Funciones.traerFechaInput(asdff)));
 			GregorianCalendar asd= new GregorianCalendar(2018,11,24);
 			String ff= "24/11/2018";
-			System.out.println(entradaAbm.traerEntradasFuncionSeccion(1,1, funciones.Funciones.traerFechaInput(asdff), funciones.Funciones.traerFechaInput(ff)));
+			System.out.println(entradaAbm.traerEntradasFuncionSeccion(1,1, funciones.Funciones.traerFechaInput(asdff), funciones.Funciones.traerFechaInput(ff)));*/
 	//	System.out.println(entradaAbm.traerEntrada().size());
 		} catch (Exception e) {
 			e.printStackTrace();

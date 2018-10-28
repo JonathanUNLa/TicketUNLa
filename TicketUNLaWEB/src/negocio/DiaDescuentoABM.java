@@ -19,6 +19,11 @@ public class DiaDescuentoABM {
 		return instancia;
 	}
 	
+	public boolean validarDiaDescuento(String dia) {
+		boolean validar=false;
+		if(dao.traerDiaDescuento(dia)!=null)validar=true;
+		return validar;
+	}
 	
 	public DiaDescuento traerDiaDescuento(int idDiaDescuento)throws Exception {
 		DiaDescuento diaDescuento = dao.traerDiaDescuento(idDiaDescuento);

@@ -97,7 +97,7 @@ public class SeccionDao {
 		return objeto;
 	}
 	
-	/*public Seccion traerSeccionNombre(String nombre, int idAuditorio) throws HibernateException {
+	public Seccion traerSeccionNombre(String nombre, int idAuditorio) throws HibernateException {
 		Seccion objeto = null;
 		
 		try {
@@ -107,13 +107,29 @@ public class SeccionDao {
 					"where s.nombreSeccion= "+"'"+nombre+"'"+
 					" and s.auditorio.idAuditorio= "+idAuditorio;
 			objeto = (Seccion) session.createQuery(hql).uniqueResult();
+			//Hibernate.initialize(objeto.getLstButacas());
+		} finally {
+			session.close();
+		}
+		
+		return objeto;
+	}
+	
+	public Seccion traerSeccionNombre(String nombre) throws HibernateException {
+		Seccion objeto = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Seccion s "+
+					"where s.nombreSeccion= "+"'"+nombre+"'";
+			objeto = (Seccion) session.createQuery(hql).uniqueResult();
 			Hibernate.initialize(objeto.getLstButacas());
 		} finally {
 			session.close();
 		}
 		
 		return objeto;
-	}*/
+	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Seccion> traerSeccionAuditorio(int idAuditorio) throws HibernateException {

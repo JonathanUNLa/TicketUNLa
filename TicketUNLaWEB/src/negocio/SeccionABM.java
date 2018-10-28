@@ -22,8 +22,20 @@ public class SeccionABM {
 		return instancia;
 	}
 	
+	public boolean validarSeccion(String nombre,Auditorio auditorio) {
+		boolean validar=false;
+		if(dao.traerSeccionNombre(nombre, auditorio.getIdAuditorio())!=null)validar=true;
+		return validar;
+	}
+	
 	public Seccion traerSeccionHql(int idSeccion) throws Exception {
 		Seccion seccion = dao.traerSeccionHql(idSeccion);
+		if (seccion==null) throw new Exception("El Seccion no existe");
+		return seccion;
+	}
+	
+	public Seccion traerSeccionNombre(String nombre) throws Exception {
+		Seccion seccion = dao.traerSeccionNombre(nombre);
 		if (seccion==null) throw new Exception("El Seccion no existe");
 		return seccion;
 	}

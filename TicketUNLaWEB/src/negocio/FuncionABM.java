@@ -24,6 +24,16 @@ public class FuncionABM {
 		return instancia;
 	}
 	
+	public boolean validarFuncion(Evento evento, GregorianCalendar diaHora) {
+		boolean validar=false;
+		for(Funcion f: dao.traerFuncion(evento.getNombre())) {
+			if(f.getDiaHora().equals(diaHora)) {
+				validar=true;
+			}
+		}
+		return validar;
+	}
+	
 	public Funcion traerFuncionHql(int idFuncion)throws Exception {
 		Funcion funcion = dao.traerFuncionHql(idFuncion);
 		if(funcion == null)throw new Exception("La funcion no existe");

@@ -19,6 +19,12 @@ public class TipoBeneficioABM {
 		return instancia;
 	}
 	
+	public boolean validarTipoBeneficio(String nombre) {
+		boolean validar=false;
+		if(dao.traerTipoBeneficio(nombre)!=null)validar=true;
+		return validar;
+	}
+	
 	public TipoBeneficio traerTipoBeneficio(int idTipoBeneficio) throws Exception {
 		TipoBeneficio tipoBeneficio = dao.traerTipoBeneficio(idTipoBeneficio);
 		if (tipoBeneficio==null) throw new Exception("El Tipo de Beneficio no existe");

@@ -24,6 +24,12 @@ public class EntradaABM {
 		return instancia;
 	}
 	
+	public boolean validarEntrada(Butaca butaca, Funcion funcion) {
+		boolean validar=false;
+		if(dao.traerFuncionEntrada(funcion.getIdFuncion(), butaca.getIdButaca())!=null)validar=true;
+		return validar;
+	}
+	
 	public Entrada traerEntrada(int idEntrada)throws Exception {
 		Entrada entrada = dao.traerEntrada(idEntrada);
 		if(entrada == null)throw new Exception("La Entrada no existe");
@@ -112,8 +118,7 @@ public class EntradaABM {
 	}
 	
 	
-	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva)throws Exception {
-		if(dao.traerFuncionEntrada(funcion.getIdFuncion(), butaca.getIdButaca())!=null)throw new Exception("La entrada ya ha sido agregada");
+	public int agregar(Butaca butaca, Funcion funcion, String codigo, Reserva reserva){
 		Entrada entrada = new Entrada(butaca, funcion, codigo, reserva);
 		return dao.agregar(entrada);
 	}

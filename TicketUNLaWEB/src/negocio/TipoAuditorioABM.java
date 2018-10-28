@@ -19,6 +19,11 @@ public class TipoAuditorioABM {
 		return instancia;
 	}
 	
+	public boolean validarTipoAuditorio(String nombre) {
+		boolean validar=false;
+		if(dao.traerTipoAuditorio(nombre)!=null)validar=true;
+		return validar;
+	}
 	
 	public TipoAuditorio traerTipoAuditorio(int idTipoAuditorio) throws Exception {
 		TipoAuditorio tipoAuditorio = dao.traerTipoAuditorio(idTipoAuditorio);

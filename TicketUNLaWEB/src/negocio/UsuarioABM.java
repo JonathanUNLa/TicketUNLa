@@ -23,6 +23,12 @@ public class UsuarioABM {
 		return instancia;
 	}
 	
+	public boolean validarUsuario(int dni) {
+		boolean validar=false;
+		if(dao.traerUsuarioDni(dni)!=null)validar=true;
+		return validar;
+	}
+	
 	public Usuario traerUsuario(int idUsuario)throws Exception {
 		Usuario usuario = dao.traerUsuario(idUsuario);
 		if(usuario == null)throw new Exception("El usuario no existe");

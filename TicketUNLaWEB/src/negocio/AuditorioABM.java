@@ -22,6 +22,12 @@ public class AuditorioABM {
 		return instancia;
 	}
 	
+	public boolean validarAuditorio(String nombre) {
+		boolean validar=false;
+		if(dao.traerAuditorioNombre(nombre)!=null)validar=true;
+		return validar;
+	}
+	
 	public Auditorio traerAuditorio(int idAuditorio) throws Exception {
 		Auditorio auditorio = dao.traerAuditorio(idAuditorio);
 		if (auditorio==null) throw new Exception("El auditorio no existe");
@@ -44,14 +50,12 @@ public class AuditorioABM {
 		return dao.traerAuditorio();
 	}
 	
-	public int agregar(String nombre, TipoAuditorio tipoAuditorio)throws Exception {
-		if (dao.traerAuditorioNombre(nombre)!=null) throw new Exception("El auditorio ya existe");
+	public int agregar(String nombre, TipoAuditorio tipoAuditorio) {
 		Auditorio auditorio = new Auditorio(nombre,tipoAuditorio);
 		return dao.agregar(auditorio);
 	}
 	
-	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio)throws Exception {
-		if (dao.traerAuditorioNombre(nombre)!=null) throw new Exception("El auditorio ya existe");
+	public int agregar(String nombre, Set<Seccion> lstSecciones, TipoAuditorio tipoAuditorio) {
 		Auditorio auditorio = new Auditorio(nombre,lstSecciones,tipoAuditorio);
 		return dao.agregar(auditorio);
 	}
