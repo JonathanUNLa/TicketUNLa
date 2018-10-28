@@ -45,12 +45,26 @@ public class FuncionABM {
 		return dao.traerFuncion();
 	}
 	
-	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,  Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,  Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento)throws Exception {
+		boolean existe=false;
+		for(Funcion f: dao.traerFuncion(evento.getNombre())) {
+			if(f.getDiaHora().equals(diaHora)) {
+				existe=true;
+			}
+		}
+		if(existe) throw new Exception ("La Funcion ya existe");
 		Funcion funcion = new Funcion(precioBase,diaHora,evento, diaDescuento,lstCodDesc);
 		return dao.agregar(funcion);
 	}
 	
-	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento, DiaDescuento diaDescuento) {
+	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento, DiaDescuento diaDescuento)throws Exception {
+		boolean existe=false;
+		for(Funcion f: dao.traerFuncion(evento.getNombre())) {
+			if(f.getDiaHora().equals(diaHora)) {
+				existe=true;
+			}
+		}
+		if(existe) throw new Exception ("La Funcion ya existe");
 		Funcion funcion = new Funcion(precioBase,diaHora,evento, diaDescuento);
 		return dao.agregar(funcion);
 	}
