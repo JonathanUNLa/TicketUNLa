@@ -1,8 +1,7 @@
-@ -0,0 +1,145 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="datos.Auditorio"%>
 <%@page import="datos.Seccion"%>
+<%@page import="datos.Auditorio"%>
 <%@page import="java.util.List"%>
 
 
@@ -97,20 +96,18 @@
 		<section id="content">
 		
 		<div class="grid_8">
-		modificar auditorio
+		alta clientes
 			
-			<%List<Auditorio> auditorios = (List) request.getAttribute("auditorio");%>
-			
-				
-				
-				<FORM method="POST" action="/TicketUNLaWEB/AuditorioModificado">
-				
-					<%for (Auditorio a: auditorios){ %>
-						<p>	<input type="radio" id="idAuditorio" name="idAuditorio" value="<%= a.getIdAuditorio() %>" checked>
-							nombre: <%= a.getNombre() %> Tipo auditorio: <%= a.getTipoAuditorio().getNombre()%><br>				
-						</p>
+			<%List<Auditorio> auditorio = (List) request.getAttribute("auditorio");%>
+
+					<FORM method="POST" action="/TicketUNLaWEB/AuditorioModificado"> <br>
+					
+					<select name="auditorio">
+					<% for(Auditorio a: auditorio){ %>
+						<option value="<%= a.getIdAuditorio() %>"> <%= a.getNombre() %></option> <br>
 					<% } %>
-					<%List<Seccion> seccion = (List) request.getAttribute("seccion");%>
+					</select> 
+					<br>
 					<input type="text" name="nombre" placeholder="Ingrese nombre" ><br>
 					 <select name="tipoAuditorio">
 						<option value="1">Estadio</option>
@@ -118,10 +115,7 @@
 						<option value="3">Cine</option>
 					</select> 
 					<br>
-					<% for(Seccion s: seccion){ %>
-							<input type="checkbox" id="idSeccion" name="idSeccion" value="<%= s.getIdSeccion() %>"> <%= s.getNombreSeccion() %><br>
-					<%} %>
-					<br>
+					
 					 <input type="submit" value="crear">
 					</FORM>
 			</div>

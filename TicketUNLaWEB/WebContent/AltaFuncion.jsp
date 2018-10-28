@@ -101,25 +101,23 @@
 			
 			<%List<Evento> eventos = (List) request.getAttribute("eventos");%>
 			<%List<DiaDescuento> diasDescuentos = (List) request.getAttribute("diasDescuentos");%>
-					<FORM method="POST" action="/TicketUNLaWEB/CrearEvento">
+					<FORM method="POST" action="/TicketUNLaWEB/CrearFuncion">
 					<input type="text" name="precioBase" placeholder="Ingrese precio base" > <br>
 					<input type="text" name="diaHora" placeholder="Ingrese dia y hora" > <br>				
 					
-					<select name="Evento">
+					<select name="idEvento">
 					<option value="9999">  </option>
 					<%for(Evento e: eventos){ %>
 						<option value="<%= e.getIdEvento() %>"> <%= e.getNombre() %></option>			
 						<%}%>			
 					</select> 	
 					
-					<select name="DiaDescuento">
+					<select name="idDiaDescuento">
 					<option value="9999">  </option>
 					<%for(DiaDescuento d: diasDescuentos){ %>
 						<option value="<%= d.getIdDiaDescuento() %>"> <%= d.getDia() %></option>			
 						<%}%>			
 					</select> 
-					
-					
 					<br>
 					 <input type="submit" value="crear">
 					</FORM>

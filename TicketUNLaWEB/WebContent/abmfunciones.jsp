@@ -103,19 +103,19 @@
 					%>
 					
 					
-					<FORM method="POST" action="/TicketUNLaWEB/altafunciones">
+					<FORM method="POST" action="/TicketUNLaWEB/AltaFuncion">
 					<INPUT type="hidden" id="idusuario" name="idusuario"
 					value="<%=u.getIdUsuario()%>" /> <input type="submit"
 					id="id" value="alta">
 					</FORM>
 					
-					<FORM method="POST" action="/TicketUNLaWEB/bajafunciones">
+					<FORM method="POST" action="/TicketUNLaWEB/BajaFuncion">
 					<INPUT type="hidden" id="idusuario" name="idusuario"
 					value="<%=u.getIdUsuario()%>" /> <input type="submit"
 					id="id" value="baja">
 					</FORM>
 					
-					<FORM method="POST" action="/TicketUNLaWEB/modificacionfunciones">
+					<FORM method="POST" action="/TicketUNLaWEB/ModificarFuncion">
 					<INPUT type="hidden" id="idusuario" name="idusuario"
 					value="<%=u.getIdUsuario()%>" /> <input type="submit"
 					id="id" value="modificación">

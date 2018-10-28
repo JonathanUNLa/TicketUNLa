@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="datos.Auditorio"%>
+<%@page import="datos.Seccion"%>
 <%@page import="datos.Usuario"%>
+<%@page import="datos.Entrada"%>
+<%@page import="funciones.Funciones"%>
 <%@page import="java.util.List"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,51 +94,16 @@
 		</header>
 		<!--==============================content================================-->
 		<section id="content">
-		
-		<div class="grid_8">
-				Descuentos
-		
-		<%
-					Usuario u = (Usuario) request.getAttribute("usuario");
-					%>
-					
-					
-					<FORM method="POST" action="/TicketUNLaWEB/AltaCodigoDescuento">
-					<INPUT type="hidden" id="idusuario" name="idusuario"
-					value="<%=u.getIdUsuario()%>" /> <input type="submit"
-					id="id" value="alta">
-					</FORM>
-					
-					<FORM method="POST" action="/TicketUNLaWEB/BajaCodigoDescuento">
-					<INPUT type="hidden" id="idusuario" name="idusuario"
-					value="<%=u.getIdUsuario()%>" /> <input type="submit"
-					id="id" value="baja">
-					</FORM>
-					
-					<FORM method="POST" action="/TicketUNLaWEB/ModificarCodigoDescuento">
-					<INPUT type="hidden" id="idusuario" name="idusuario"
-					value="<%=u.getIdUsuario()%>" /> <input type="submit"
-					id="id" value="modificación">
-					</FORM>
-					
-			</div>
-					
-			<div class="grid_4">
-					<div class="left-1">
-						<h2 class="top-1 p3">informacion:</h2>
-
-						Nombre: <%=u.getNombre()%> <%=u.getApellido()%><br>
-
-						
-					</div>
-			</div>
-				</section>
+				<div class="grid_8">
 				
-			
-			
-			
-			
+	<%String respuesta =  (String) request.getAttribute("respuesta");%>
+	<h> <%= respuesta %></h>
 				
+			</div>
+			
+		
+					
+</section>
 				
 <!--==============================footer=================================-->
 	<footer>
@@ -151,5 +116,6 @@
 	<script>
 		Cufon.now();
 	</script>
+					
 </body>
 </html>

@@ -16,7 +16,10 @@ public class Funciones {
 		
 		return ret;
 	}
-	
+	public static GregorianCalendar traerFechaHoraInput(String fecha) {		
+		return new GregorianCalendar(Integer.parseInt(fecha.substring(6,10)), Integer.parseInt(fecha.substring(3,5)) - 1, Integer.parseInt(fecha.substring(0,2)),
+				Integer.parseInt(fecha.substring(11,13)),Integer.parseInt(fecha.substring(14,16)),Integer.parseInt(fecha.substring(17,19)));
+	}
 
 	public static GregorianCalendar traerFechaInput(String fecha) {		
 		return new GregorianCalendar(Integer.parseInt(fecha.substring(6,10)), Integer.parseInt(fecha.substring(3,5)) - 1, Integer.parseInt(fecha.substring(0,2)));

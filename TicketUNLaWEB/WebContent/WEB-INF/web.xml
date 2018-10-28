@@ -298,4 +298,43 @@
     <url-pattern>/ClienteModificado</url-pattern>
   </servlet-mapping>
     
+    
+        <servlet>
+    <servlet-name>ControladorAltaFunciones</servlet-name>
+    <servlet-class>controladores.ControladorAltaFunciones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAltaFunciones</servlet-name>
+    <url-pattern>/AltaFuncion</url-pattern>
+  </servlet-mapping>
+  
+  
+          <servlet>
+    <servlet-name>ControladorCrearFuncion</servlet-name>
+    <servlet-class>controladores.ControladorCrearFuncion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorCrearFuncion</servlet-name>
+    <url-pattern>/CrearFuncion</url-pattern>
+  </servlet-mapping>
+    
+          <servlet>
+    <servlet-name>ControladorModificarAuditorio</servlet-name>
+    <servlet-class>controladores.ControladorModificarAuditorio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarAuditorio</servlet-name>
+    <url-pattern>/ModificarAuditorio</url-pattern>
+  </servlet-mapping>
+  
+  
+            <servlet>
+    <servlet-name>ControladorAuditorioModificado</servlet-name>
+    <servlet-class>controladores.ControladorAuditorioModificado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAuditorioModificado</servlet-name>
+    <url-pattern>/AuditorioModificado</url-pattern>
+  </servlet-mapping>
+    
 </web-app>

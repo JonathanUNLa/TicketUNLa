@@ -1,21 +1,30 @@
 package controladores;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datos.Auditorio;
+import datos.Funcion;
+import datos.Reserva;
 import datos.Seccion;
+import datos.TipoBeneficio;
+import datos.TipoUsuario;
+import datos.Usuario;
 import negocio.AuditorioABM;
+import negocio.FuncionABM;
+import negocio.ReservaABM;
 import negocio.SeccionABM;
+import negocio.TipoBeneficioABM;
+import negocio.TipoUsuarioABM;
+import negocio.UsuarioABM;
 
-@WebServlet("/ControladorModificarAuditorio")
-public class ControladorModificarAuditorio extends HttpServlet {
+public class ControladorModificarAuditorio extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		procesarPeticion(request, response);
@@ -27,7 +36,7 @@ public class ControladorModificarAuditorio extends HttpServlet {
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		AuditorioABM auditorioAbm = AuditorioABM.getInstancia();
+		UsuarioABM usuarioAbm = UsuarioABM.getInstancia();
 		int error=0;
 		
 
@@ -36,9 +45,6 @@ public class ControladorModificarAuditorio extends HttpServlet {
 			AuditorioABM abm= AuditorioABM.getInstancia();
 			List<Auditorio> auditorio= abm.traerAuditorio();
 			request.setAttribute("auditorio",auditorio);
-			SeccionABM sabm= SeccionABM.getInstancia();
-			List<Seccion> seccion= sabm.traerSeccion();
-			request.setAttribute("seccion",seccion);
 			request.getRequestDispatcher("/ModificarAuditorio.jsp").forward(request , response);
 		}
 		catch (Exception e) {
@@ -49,5 +55,4 @@ public class ControladorModificarAuditorio extends HttpServlet {
 			
 		}
 	}
-
 }
