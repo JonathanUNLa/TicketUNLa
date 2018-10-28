@@ -114,7 +114,7 @@
 					value="baja">
 					</FORM>
 					
-					<FORM method="POST" action="/TicketUNLaWEB/modificacionclientes">
+					<FORM method="POST" action="/TicketUNLaWEB/ModificarCliente">
 					<INPUT type="hidden" id="idusuario" name="idusuario"
 					value="<%=u.getIdUsuario()%>" /> <input type="submit"
 					value="modificación">

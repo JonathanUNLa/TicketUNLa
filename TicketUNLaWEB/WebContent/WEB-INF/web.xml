@@ -279,5 +279,23 @@
     <servlet-name>ControladorCrearEvento</servlet-name>
     <url-pattern>/CrearEvento</url-pattern>
   </servlet-mapping>
+  
+            <servlet>
+    <servlet-name>ControladorModificarCliente</servlet-name>
+    <servlet-class>controladores.ControladorModificarCliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarCliente</servlet-name>
+    <url-pattern>/ModificarCliente</url-pattern>
+  </servlet-mapping>
+  
+              <servlet>
+    <servlet-name>ControladorClienteModificado</servlet-name>
+    <servlet-class>controladores.ControladorClienteModificado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorClienteModificado</servlet-name>
+    <url-pattern>/ClienteModificado</url-pattern>
+  </servlet-mapping>
     
 </web-app>
