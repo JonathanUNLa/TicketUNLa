@@ -89,12 +89,21 @@ bienvenido usuario: <%= u.getApellido() %>
 						<br> <br> <br>
 						
 						
-						<p> 12. ticket reservados por función y sector </p> 
+						<p> 13. ticket reservados por función y secccion </p> 
 						<FORM method="POST" action="/TicketUNLaWEB/TicketFuncionSeccion">
 						<p>Funcion </p>
 						<%for (Funcion f: lista){ %>
 						<input type="radio" id="funcion" name="funcion" value="<%= f.getIdFuncion() %>" checked>Fecha: <%= Funciones.traerFechaCortaHora(f.getDiaHora())%> Evento:  <%= f.getEvento().getNombre() %><br>
 						<% }%>
+						<input class="button" type="submit" value="Consultar" id="siguiente">
+						</FORM>
+						<br> <br> <br>
+						
+						<p> 14. ticket reservados  entre fechas por evento y cliente </p> 
+						<FORM method="POST" action="/TicketUNLaWEB/TicketFechaEventoCliente">
+						<%for (Evento e: eventos){ %>
+							<input type="radio" id="evento" name="evento" value="<%= e.getIdEvento() %>" checked> Nombre evento: <%= e.getNombre() %> Auditorio <%= e.getAuditorio().getNombre() %><br>					
+							<% }%>
 						<input class="button" type="submit" value="Consultar" id="siguiente">
 						</FORM>
 						<br> <br> <br>
