@@ -99,6 +99,7 @@ public class UsuarioDao {
 		return objeto;
 	}
 	
+	
 	public Usuario traerUsuarioDni(int dni) throws HibernateException {
 		Usuario objeto = null;
 		

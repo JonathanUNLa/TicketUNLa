@@ -124,7 +124,8 @@ public class ReservaDao {
 						"left join fetch f.evento "+
 						"left join fetch f.lstCodDesc lst "+
 						"left join fetch lst.seccion "+
-						"where u.idUsuario= "+ idUsuario;
+						//"where u.idUsuario= "+ idUsuario;
+						"where u.idUsuario= "+ idUsuario +"and r.entregado =" + (int)0;
 				objeto = session.createQuery(hql).list();
 			} finally {
 				session.close();
