@@ -382,4 +382,42 @@
     <servlet-name>ControladorTicketNoReservadoEvento</servlet-name>
     <url-pattern>/TicketNoReservadosEvento</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ControladorAuditorioseliminadios</servlet-name>
+    <servlet-class>controladores.ControladorAuditorioseliminadios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorAuditorioseliminadios</servlet-name>
+    <url-pattern>/auditorioseliminados</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
+    <servlet-name>ControladorUsuarioseliminados</servlet-name>
+    <servlet-class>controladores.ControladorUsuarioseliminados</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorUsuarioseliminados</servlet-name>
+    <url-pattern>/usuarioseliminados</url-pattern>
+  </servlet-mapping>
+  
+       <servlet>
+    <servlet-name>ControladorBajaclientes</servlet-name>
+    <servlet-class>controladores.ControladorBajaclientes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorBajaclientes</servlet-name>
+    <url-pattern>/bajaclientes</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ControladorBajaauditorios</servlet-name>
+    <servlet-class>controladores.ControladorBajaauditorios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorBajaauditorios</servlet-name>
+    <url-pattern>/bajaauditorios</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

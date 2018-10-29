@@ -113,7 +113,7 @@ public class TestMain {
 			//agregar usuarios
 			//cliente
 			usuarioAbm.agregar(1111111, "Romina", "Mansilla", "999999", "rmansilla", "oo1", tipoUsuarioAbm.traerTipoUsuario(1), tipoBeneficioAbm.traerTipoBeneficio(1), null);
-			usuarioAbm.agregar(2222222, "Alejandra", "Vranic", "888888", "avranic", "oo2", tipoUsuarioAbm.traerTipoUsuario(2), tipoBeneficioAbm.traerTipoBeneficio(2), null);
+			usuarioAbm.agregar(2222222, "Alejandra", "Vranic", "888888", "avranic", "oo2", tipoUsuarioAbm.traerTipoUsuario(1), tipoBeneficioAbm.traerTipoBeneficio(2), null);
 			usuarioAbm.agregar(3333333, "Damian", "Santirachi", "777777", "dsantirachi", "12345", tipoUsuarioAbm.traerTipoUsuario(1), null, null);
 			//empleado
 			usuarioAbm.agregar(4444444, "Jonathan", "Yañez", "666666", "jyañez", "zxc", tipoUsuarioAbm.traerTipoUsuario(2), null, auditorioAbm.traerAuditorio(1));
