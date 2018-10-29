@@ -374,4 +374,12 @@
     <url-pattern>/FuncionModificada</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <servlet-name>ControladorTicketNoReservadoEvento</servlet-name>
+    <servlet-class>controladores.ControladorTicketNoReservadoEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorTicketNoReservadoEvento</servlet-name>
+    <url-pattern>/TicketNoReservadosEvento</url-pattern>
+  </servlet-mapping>
 </web-app>

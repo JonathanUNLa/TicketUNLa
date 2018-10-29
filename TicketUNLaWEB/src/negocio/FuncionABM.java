@@ -55,6 +55,9 @@ public class FuncionABM {
 		return dao.traerFuncion();
 	}
 	
+	public List<Funcion> traerFuncionEvento( int idEvento){
+		return dao.traerFuncionEvento(idEvento);
+	}
 	public int agregar(double precioBase, GregorianCalendar diaHora,Evento evento,  Set<CodigoDescuento> lstCodDesc,DiaDescuento diaDescuento) {
 		Funcion funcion = new Funcion(precioBase,diaHora,evento, diaDescuento,lstCodDesc);
 		return dao.agregar(funcion);

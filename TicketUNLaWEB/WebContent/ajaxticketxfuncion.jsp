@@ -53,9 +53,9 @@ bienvenido usuario: <%= u.getApellido() %>
 							</FORM>
 						<br> <br> <br>
 					
-
+						
 						<p> 10. ubicaciones no ocupadas de un evento para un auditorio. </p> 
-						<FORM method="POST" action="/TicketUNLaWEB/TicketConDescuento">
+						<FORM method="POST" action="/TicketUNLaWEB/TicketNoReservadosEvento">
 						<%for (Evento e: eventos){ %>
 							<input type="radio" id="evento" name="evento" value="<%= e.getIdEvento() %>" checked>nombre: <%= e.getNombre() %> auditorio:  <%= e.getAuditorio().getNombre() %><br>
 							<br>

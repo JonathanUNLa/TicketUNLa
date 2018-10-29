@@ -83,20 +83,24 @@
 		<section id="content">
 				<div class="grid_8">
 				<%
-					List<Butaca> butacas = (List) request.getAttribute("bt");
+					List<Butaca> butacas = (List) request.getAttribute("butacasDevolver");
+				%>
+				
+				<%
+					String evento = (String) request.getAttribute("evento");
 				%>
 			
 				<%
 					if (butacas.isEmpty()) {
 				%>
-				<h2>No hay butacas</h2>
+				<h2>No hay butacas en el evento <%= evento %></h2>
 				<br>
 				<br>
 				<br>
 				<%
 					} else {
 				%>
-				<h2>Butacas:</h2>
+				<h2>Butacas del evento: <%= evento %>:</h2>
 				<br>
 			
 				<%

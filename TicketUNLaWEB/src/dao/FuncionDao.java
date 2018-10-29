@@ -137,4 +137,23 @@ public class FuncionDao {
 		
 		return funciones;
 	}
+	@SuppressWarnings("unchecked")
+	public List<Funcion> traerFuncionEvento(int idEvento) throws HibernateException {
+		List<Funcion> funciones = null;
+		
+		try {
+			iniciaOperacion();
+			String hql= "from Funcion f "+
+					"left join fetch f.evento e "+
+					"left join fetch e.auditorio a "+
+					"left join fetch a.lstSecciones s "+
+					"left join fetch s.lstButacas "+
+					"where e.idEvento= "+idEvento;
+			funciones = session.createQuery(hql).list();
+		} finally {
+			session.close();
+		}
+		
+		return funciones;
+	}
 }
