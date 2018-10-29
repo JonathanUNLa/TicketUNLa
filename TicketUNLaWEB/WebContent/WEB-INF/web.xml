@@ -336,5 +336,42 @@
     <servlet-name>ControladorAuditorioModificado</servlet-name>
     <url-pattern>/AuditorioModificado</url-pattern>
   </servlet-mapping>
+  
+       <servlet>
+    <servlet-name>ControladorModificarEvento</servlet-name>
+    <servlet-class>controladores.ControladorModificarEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarEvento</servlet-name>
+    <url-pattern>/ModificarEvento</url-pattern>
+  </servlet-mapping>
     
+    
+                <servlet>
+    <servlet-name>ControladorEventoModificado</servlet-name>
+    <servlet-class>controladores.ControladorEventoModificado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorEventoModificado</servlet-name>
+    <url-pattern>/EventoModificado</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>ControladorModificarFuncion</servlet-name>
+    <servlet-class>controladores.ControladorModificarFuncion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorModificarFuncion</servlet-name>
+    <url-pattern>/ModificarFuncion</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
+    <servlet-name>ControladorFuncionModificada</servlet-name>
+    <servlet-class>controladores.ControladorFuncionModificada</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorFuncionModificada</servlet-name>
+    <url-pattern>/FuncionModificada</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

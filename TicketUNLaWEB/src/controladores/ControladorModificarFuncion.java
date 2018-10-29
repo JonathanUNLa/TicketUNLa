@@ -12,14 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import datos.Auditorio;
 import datos.DiaDescuento;
 import datos.Evento;
+import datos.Funcion;
 import negocio.AuditorioABM;
 import negocio.DiaDescuentoABM;
 import negocio.EventoABM;
 import negocio.FuncionABM;
 
 
-
-public class ControladorAltaFunciones extends HttpServlet {
+@WebServlet("/ControladorAltaFunciones")
+public class ControladorModificarFuncion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		procesarPeticion(request, response);
@@ -37,13 +38,17 @@ public class ControladorAltaFunciones extends HttpServlet {
 
 		try {
 			error=2;
+			FuncionABM fabm=FuncionABM.getInstancia();
 			EventoABM eabm= EventoABM.getInstancia();
 			List<Evento> eventos= eabm.traerEvento();
-			request.setAttribute("eventos",eventos);
+			
 			DiaDescuentoABM dabm= DiaDescuentoABM.getInstancia();
 			List<DiaDescuento> diasDescuentos= dabm.traerDiaDescuento();
+			List<Funcion> funcion =fabm.traerFuncion();
+			request.setAttribute("funcion",funcion);
+			request.setAttribute("eventos",eventos);
 			request.setAttribute("diasDescuentos",diasDescuentos);
-			request.getRequestDispatcher("/AltaFuncion.jsp").forward(request , response);
+			request.getRequestDispatcher("/ModificarFuncion.jsp").forward(request , response);
 		}
 		catch (Exception e) {
 			

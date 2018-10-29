@@ -1,25 +1,30 @@
 package controladores;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datos.Auditorio;
-import datos.DiaDescuento;
 import datos.Evento;
+import datos.Funcion;
+import datos.Reserva;
+import datos.TipoBeneficio;
+import datos.TipoUsuario;
+import datos.Usuario;
 import negocio.AuditorioABM;
-import negocio.DiaDescuentoABM;
 import negocio.EventoABM;
 import negocio.FuncionABM;
+import negocio.ReservaABM;
+import negocio.TipoBeneficioABM;
+import negocio.TipoUsuarioABM;
+import negocio.UsuarioABM;
 
-
-
-public class ControladorAltaFunciones extends HttpServlet {
+public class ControladorModificarEvento extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws
 	ServletException, IOException {
 		procesarPeticion(request, response);
@@ -31,19 +36,19 @@ public class ControladorAltaFunciones extends HttpServlet {
 	private void procesarPeticion(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		FuncionABM funcionAbm = FuncionABM.getInstancia();
+		UsuarioABM usuarioAbm = UsuarioABM.getInstancia();
 		int error=0;
 		
 
 		try {
 			error=2;
+			AuditorioABM abm= AuditorioABM.getInstancia();
 			EventoABM eabm= EventoABM.getInstancia();
-			List<Evento> eventos= eabm.traerEvento();
-			request.setAttribute("eventos",eventos);
-			DiaDescuentoABM dabm= DiaDescuentoABM.getInstancia();
-			List<DiaDescuento> diasDescuentos= dabm.traerDiaDescuento();
-			request.setAttribute("diasDescuentos",diasDescuentos);
-			request.getRequestDispatcher("/AltaFuncion.jsp").forward(request , response);
+			List<Auditorio> auditorios= abm.traerAuditorio();
+			List<Evento> evento= eabm.traerEvento();
+			request.setAttribute("auditorios",auditorios);
+			request.setAttribute("evento",evento);
+			request.getRequestDispatcher("/ModificarEvento.jsp").forward(request , response);
 		}
 		catch (Exception e) {
 			
@@ -53,5 +58,4 @@ public class ControladorAltaFunciones extends HttpServlet {
 			
 		}
 	}
-
 }
